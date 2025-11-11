@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-11-11T22:44:43 IST" name="Default suite" finished-at="2025-11-11T22:45:05 IST" duration-ms="22753">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@7b02881e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-11-11T22:44:43 IST" name="Default test" finished-at="2025-11-11T22:45:05 IST" duration-ms="22753">
+      <class name="com.runner.TestRunnerTestNG">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runner.TestRunnerTestNG@7b02881e]" started-at="2025-11-11T22:44:43 IST" name="setUpClass" finished-at="2025-11-11T22:44:43 IST" duration-ms="871" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2b22a1cc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@7b02881e]" started-at="2025-11-11T22:44:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-11-11T22:44:54 IST" duration-ms="10923" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["user navigates through Website to open blog"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Navigate to Edureka Blog and open Machine Learning with Mahout article"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.TestRunnerTestNG@7b02881e]" started-at="2025-11-11T22:44:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-11-11T22:45:05 IST" duration-ms="10842" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["user registers for a webinar using dynamic data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Navigate to Edureka Blog and open Machine Learning with Mahout article"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <button class="register_webinar_upcoming register_webinar_btn registerbtn register-for-webinar_5_7443" data-webinar-id="7443" data-category-id="5" data-category-name="Machine Learning" data-webinar-name="AI for Marketing | Top AI Marketing Tools" data-startdate="2025-11-12" data-starttime="07:00 PM IST" tabindex="0">...</button> is not clickable at point (237, 26). Other element would receive the click: <div id="wl_loader" class="webinar_loader">...</div>
+  (Session info: chrome=142.0.7444.60)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f9580c76616d8a17a372d3b8f4d6f2ce, clickElement {id=f.35B023B1EDC7CF62718133FCF70FF174.d.F2DBE4A454023034156E482438058FF5.e.179}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\baiseg\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57533}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57533/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f9580c76616d8a17a372d3b8f4d6f2ce)] -> xpath: //button[contains(text(),'Register Now')]]
+Session ID: f9580c76616d8a17a372d3b8f4d6f2ce]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="register_webinar_upcoming register_webinar_btn registerbtn register-for-webinar_5_7443" data-webinar-id="7443" data-category-id="5" data-category-name="Machine Learning" data-webinar-name="AI for Marketing | Top AI Marketing Tools" data-startdate="2025-11-12" data-starttime="07:00 PM IST" tabindex="0">...</button> is not clickable at point (237, 26). Other element would receive the click: <div id="wl_loader" class="webinar_loader">...</div>
+  (Session info: chrome=142.0.7444.60)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f9580c76616d8a17a372d3b8f4d6f2ce, clickElement {id=f.35B023B1EDC7CF62718133FCF70FF174.d.F2DBE4A454023034156E482438058FF5.e.179}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\baiseg\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57533}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57533/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f9580c76616d8a17a372d3b8f4d6f2ce)] -> xpath: //button[contains(text(),'Register Now')]]
+Session ID: f9580c76616d8a17a372d3b8f4d6f2ce
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at com.Pages.WebinarPage.clickRegister(WebinarPage.java:58)
+at com.stepDefinitionTestNG.webinar.the_user_scrolls_and_clicks_on_the_register_button_from_configuration(webinar.java:52)
+at ✽.the user scrolls and clicks on the register button from configuration(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:19)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runner.TestRunnerTestNG@7b02881e]" started-at="2025-11-11T22:45:05 IST" name="tearDownClass" finished-at="2025-11-11T22:45:05 IST" duration-ms="40" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.runner.TestRunnerTestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
