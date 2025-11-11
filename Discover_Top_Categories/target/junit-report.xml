@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="3.715" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-11-10T08:02:38.204812600Z">
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Verify that Discover Top Categories section is visible on the homepage - #1.1" time="3.432">
+<failure/>
+<system-out><![CDATA[
+Given I launch the browser and open the application.........................passed
+When I scroll down to  "Discover Top Categories"............................undefined
+Then I should see the "Discover Top Categories" section displayed...........skipped
+]]></system-out>
+</testcase>
+</testsuite>
