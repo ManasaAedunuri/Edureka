@@ -1,6 +1,6 @@
 Feature: Navigate to Edureka Blog and open Machine Learning with Mahout article
 Scenario: user navigates through Website to open blog
-    Given the user opens the browser
+   Given the user opens the browser
     When the user navigates to the homepage
     And the user clicks on the menu
     And the user clicks on the subMenu
@@ -17,6 +17,25 @@ Scenario: user registers for a webinar using dynamic data
     And the user searches for the keyword from configuration
     And the user selects the webinar title from configuration
     And the user scrolls and clicks on the register button from configuration
-    Then the user should see the confirmation section from configuration  
+    Then the user should see the confirmation section from configuration 
+    
+
+
+  Scenario Outline: User searches and joins a community on Edureka 
+  Given the user opens the browser 
+  When the user navigates to the homepage from Property file with row <rowIndex>
+  And the user clicks on the menu from Property file 
+  And the user clicks on the submenu from Property file 
+  And the user searches for the community from Excel 
+  Then the user should be able to view and join the community from Excel
+Examples:
+| rowIndex | 
+| 0        |
+| 1        | 
+| 2        | 
+| 3        |
+
+
+     
     
     

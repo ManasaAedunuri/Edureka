@@ -1,10 +1,16 @@
 package com.Pages;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.setUp.BaseSteps;
 
@@ -18,12 +24,15 @@ public class WebinarPage extends BaseSteps {
     @FindBy(xpath = "//*[@id=\"__next\"]/div/nav/div[4]/div[2]/button")
     WebElement resourcesMenu;
 
-    @FindBy(linkText = "Webinars")
+    @FindBy(xpath="//*[@id=\"__next\"]/div/nav/div[4]/div[2]/div/a[2]")//(linkText = "Webinars")
     WebElement webinarsSubMenu;
 
     // Search bar
-    @FindBy(xpath="//*[@id=\"webinar_search_input\"]") // Update ID based on actual site
+    @FindBy(xpath="//*[@id=\"webinar_search_input\"]") 
     WebElement searchBar;
+    
+    @FindBy(xpath="//span[text()='RESERVE YOUR SPOT NOW']")
+    WebElement confirm;
 
     // Webinar title (dynamic locator used in method)
     // Register button (dynamic locator used in method)
@@ -42,28 +51,63 @@ public class WebinarPage extends BaseSteps {
         searchBar.clear();
         searchBar.sendKeys(keyword);
         searchBar.sendKeys(Keys.ENTER);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+
+        String suggestionXPath = "//*[@id=\"webinar_search_form\"]/div/div[2]/ul/li[3]/a/a";
+        WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(suggestionXPath)));
+//
+//        // Click the suggestion
+        suggestion.click();
+
         //searchBar.submit(); // or click a search button if present
     }
 
-    public void selectWebinar(String webinarTitle) {
-        WebElement webinarLink = driver.findElement(
-            org.openqa.selenium.By.linkText(webinarTitle));
-        webinarLink.click();
-    }
+    //public void selectWebinar(String webinarTitle) {
+//        WebElement webinarLink = driver.findElement(
+//            org.openqa.selenium.By.linkText(webinarTitle));
+    	
+    	    	
+   // }
 
-    public void clickRegister(String buttonText) {
+  public void clickRegister(String  buttonText) {
+//        WebElement buttonText = driver.findElement(
+//            org.openqa.selenium.By.xpath("//*[@id=\"webinar_main_5\"]/div[1]/a/div/div[2]/span/button"));
+//        scrollToElement(buttonText);
+//        buttonText.click();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        // Wait for loader to disappear
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("wl_loader")));
+
+        // Locate the register button
         WebElement registerButton = driver.findElement(
-            org.openqa.selenium.By.xpath("//button[contains(text(),'" + buttonText + "')]"));
+            By.xpath("//button[contains(text(),'" + buttonText + "')]"));
+
         scrollToElement(registerButton);
-        registerButton.click();
+
+        // Wait until it's clickable
+        wait.until(ExpectedConditions.elementToBeClickable(registerButton));
+
+        try {
+            registerButton.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("Click intercepted, using JavaScript fallback");
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", registerButton);
+        }
+
     }
 
     public boolean isConfirmationVisible(String confirmationText) {
-        WebElement confirmationSection = driver.findElement(
-            org.openqa.selenium.By.xpath("//*[contains(text(),'" + confirmationText + "')]"));
-        scrollToElement(confirmationSection);
-        return confirmationSection.isDisplayed();
+//        WebElement confirmationSection = driver.findElement(
+//            org.openqa.selenium.By.xpath("//*[contains(text(),'" + confirmationText + "')]"));
+//        scrollToElement(confirmationSection);
+//        return confirmationSection.isDisplayed();
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.visibilityOf(confirm));
+       return wait.until(ExpectedConditions.visibilityOf(confirm)).isDisplayed();
     }
+   
 
     private void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;

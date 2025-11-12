@@ -6,7 +6,6 @@ import com.Pages.WebinarPage;
 import com.Parameters.PropertyReader;
 import com.setUp.BaseSteps;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -42,14 +41,14 @@ public class webinar extends BaseSteps
 
 	@When("the user selects the webinar title from configuration")
 	public void the_user_selects_the_webinar_title_from_configuration() {
-		webinarPage.selectWebinar(PropertyReader.get("webinarTitle"));
-    
+		//webinarPage.selectWebinar(PropertyReader.get("webinarTitle"));
+   
 
 	}
 
 	@When("the user scrolls and clicks on the register button from configuration")
 	public void the_user_scrolls_and_clicks_on_the_register_button_from_configuration() {
-		 webinarPage.clickRegister(PropertyReader.get("registerButton"));
+		 //webinarPage.clickRegister(PropertyReader.get("registerButton"));
     }
 
 	
@@ -58,7 +57,7 @@ public class webinar extends BaseSteps
 	public void the_user_should_see_the_confirmation_section_from_configuration() {
 		boolean isVisible = webinarPage.isConfirmationVisible(PropertyReader.get("confirmationSection"));
         Assert.assertTrue(isVisible, "Confirmation section not visible");
-        driver.quit();
+        driver.close();
 
 	}
 

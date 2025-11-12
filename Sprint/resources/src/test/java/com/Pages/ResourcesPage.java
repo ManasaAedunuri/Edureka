@@ -18,7 +18,7 @@ public class ResourcesPage extends BaseSteps{
     @FindBy(xpath = "//*[@id=\"__next\"]/div/nav/div[4]/div[2]/button")
     WebElement resourcesMenu;
 
-    @FindBy(xpath = "//a[text()='Blog']")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/nav/div[4]/div[2]/div/a[1]")//*[@id="__next"]/div/nav/div[4]/div[2]/div/a[1]//a[text()='Blog']
     WebElement blogLink;
 
     @FindBy(xpath = "/html/body/section[1]/div/div/div[1]/a")
