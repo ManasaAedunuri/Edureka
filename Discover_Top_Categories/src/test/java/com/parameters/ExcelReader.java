@@ -1,26 +1,59 @@
 package com.parameters;
 
+import java.io.File;
 import java.io.FileInputStream;
-import java.util.HashMap;
-import java.util.Map;
-import org.apache.poi.ss.usermodel.*;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
-    public static Map<String, String> getRowData(String filePath, int sheetNo) {
-        Map<String, String> data = new HashMap<>();
-        try (FileInputStream fis = new FileInputStream(filePath);
-             Workbook workbook = WorkbookFactory.create(fis)) {
-            Sheet sheet = workbook.getSheetAt(sheetNo);
-            Row headerRow = sheet.getRow(0);
-            Row valueRow = sheet.getRow(1); // Assuming data in second row
-            for (int i = 0; i < headerRow.getLastCellNum(); i++) {
-                String key = headerRow.getCell(i).getStringCellValue();
-                String value = valueRow.getCell(i).getStringCellValue();
-                data.put(key, value);
+    private XSSFWorkbook wb;
+    private XSSFSheet sh;
+
+    // Constructor with validation
+    public ExcelReader(String filepath) {
+        try {
+            File file = new File(filepath);
+            if (!file.exists()) {
+                throw new IOException("Excel file not found at: " + filepath);
             }
-        } catch (Exception e) {
+            FileInputStream fis = new FileInputStream(file);
+            wb = new XSSFWorkbook(fis);
+        } catch (IOException e) {
+            System.out.println("Error loading Excel file: " + filepath);
             e.printStackTrace();
+            wb = null; // Ensure wb stays null if loading fails
         }
-        return data;
+    }
+
+    // Get cell data safely
+    public String getCellData(int sheetno, int row, int col) {
+        validateWorkbook();
+        sh = wb.getSheetAt(sheetno);
+        DataFormatter formatter = new DataFormatter();
+        return formatter.formatCellValue(sh.getRow(row).getCell(col));
+    }
+
+    // Get row count safely
+    public int getRowcount(int sheetno) {
+        validateWorkbook();
+        sh = wb.getSheetAt(sheetno);
+        return sh.getLastRowNum();
+    }
+
+    // Get column count safely
+    public int getColcount(int sheetno) {
+        validateWorkbook();
+        sh = wb.getSheetAt(sheetno);
+        return sh.getRow(0).getLastCellNum();
+    }
+
+    // Validate workbook before any operation
+    private void validateWorkbook() {
+        if (wb == null) {
+            throw new IllegalStateException("Workbook is not initialized. Check file path.");
+        }
     }
 }

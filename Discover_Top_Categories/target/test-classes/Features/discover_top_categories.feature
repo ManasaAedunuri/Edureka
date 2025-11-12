@@ -11,9 +11,20 @@ Scenario: Navigate to selected categories from homepage
   And clicks on category3
   Then each respective category page should load successfully
   
-@Pg
+
+@ViewMore
+Scenario: Navigate to Selenium course under Software Testing
+  Given the user is on the Edureka homepage
+  When the user scrolls to the sectionName section
+  And clicks on buttonName
+  And selects Software Testing category
+  And clicks on Selenium course
+  Then the Selenium course page should load successfully
+  
+@PG
 Scenario Outline: Navigate to a category and apply for a program using data from Excel
-  Given the user launches the application using data from <path> sheet <sheetno>
+  Given the user is on sourceUrl
+  And the user accesses the Excel data from <sheetno> using property-based path
   When the user scrolls to the sectionName section
   And clicks on the category from Excel
   Then the category page should load successfully based on title from Excel
@@ -23,6 +34,19 @@ Scenario Outline: Navigate to a category and apply for a program using data from
   And a confirmation message should be displayed
 
 Examples:
-  | path          | sheetno | sectionName             |
-  | testdata.xlsx | 0       | Discover Top Categories |
+| sheetno | 
+| 0       | 
+
+@AI
+Scenario: Navigate to category pages from Discover Top Categories
+  Given the user is on the Edureka homepage
+  When the user scrolls to the sectionName section
+  And clicks on Category2
+  Then the Category2 page should load successfully
+  And clicks on category2explore
+  And clicks on category5
+  Then  display relevant courses
+
+
+
 
