@@ -22,5 +22,45 @@ Scenario: verify Blog navigation and select Ebook
 	Then The Ebook is displayed
 
 @SF
-Scenario: 
+Scenario Outline:Submit Form Application 
+    Given I Launch the Edureka website
+    When I scroll to the footer
+	And I click on the target link
+	Then I should be redirected to the target page
+	And I click on target1
+	And I click on form
+	And I fill the form using data from "<sheet>" "<row>"
+	And I submit the form
+	Then I should see the Thankyou popup and close it
+    #And I enter Company Name as <company_name>
+    #And I select Training Need as <training_need>
+    #And I enter Email ID as <email>
+    #And I enter Phone Number as <phone>
+    #And I enter Query as <query>
+    #And I submit the form
+    #Then the form should be submitted successfully
+    
+    Examples:
+   |  sheet   |  row  |
+   |  sheet1  |  1    |
+   |  sheet1  |  2    |
+   |  sheet1  |  3    |
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

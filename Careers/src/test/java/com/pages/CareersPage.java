@@ -1,16 +1,28 @@
 package com.pages;
 
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.parameters.ExcelReader;
 import com.stepDefinitionTestNG.Hooks;
+
+import io.cucumber.java.en.Then;
 
 
 public class CareersPage extends BasePage{
 
 	WebDriver driver = Hooks.driver;
+//	List<String[]> excelData;
+//    int rowIndex = 0;
 
 	 @FindBy(xpath = "//*[@id=\"lazyhome_Footer\"]/section/div/div[2]/div[2]")
      static WebElement footerLink;
@@ -33,7 +45,18 @@ public class CareersPage extends BasePage{
 
     public CareersPage() {
         PageFactory.initElements(driver, this);
-    }
+
+//	if (excelData == null || excelData.isEmpty()) {
+//	        String filePath = "src/test/resources/Exceldata/Data.xlsx";
+//	        excelData = com.parameters.ExcelReader.readExcel(filePath);
+//	        if (excelData.isEmpty()) {
+//	            throw new RuntimeException("Excel data is empty! Check file path or sheet content.");
+//	        }
+//	    }
+
+	 }
+    
+    
 
     public  void scrollToFooter() throws InterruptedException {
         scrollToElement(footerLink);
@@ -121,4 +144,242 @@ public class CareersPage extends BasePage{
     	    }
     }
     
-}
+    
+    
+    
+    
+    
+    //Test_Scenario_03
+    
+    @FindBy(xpath = "//a[text()='Corporate Training'][1]")
+    static WebElement corporateTraining;
+    
+    @FindBy(xpath="//button[text()='CONNECT WITH US']")
+    static WebElement form;
+    
+    @FindBy(xpath="(//*[@id=\"popup-query-form\"]/div/div[1]/input)[2]")
+    static WebElement name;
+    
+    @FindBy(xpath="(//*[@id=\"popup-query-form\"]/div/div[2]/input)[2]")
+    static WebElement companyName;
+    
+    @FindBy(xpath="(//*[@id=\"learnerCount\"])[3]")
+    static WebElement trainingNeed;
+    
+    @FindBy(xpath="(//*[@id=\"popup-query-form\"]/div/div[4]/input)[2]")
+    static WebElement email;
+    
+    @FindBy(xpath="(//*[@id=\"popup-query-form\"]/div/div[5]/div/input)[2]")
+    static WebElement phone;
+    
+    @FindBy(xpath="(//*[@id=\"popup-query-form\"]/div/div[6]/textarea)[2]")
+    static WebElement query;
+    
+    @FindBy(xpath="//*[@id=\"corp-talk-modal-submit\"]")
+    static WebElement submit;
+
+    
+    public  void clickonCT() throws InterruptedException {
+//    	if (excelData == null || excelData.isEmpty()) {
+//	        String filePath = "src/test/resources/Exceldata/Data.xlsx";
+//	        excelData = com.parameters.ExcelReader.readExcel(filePath);
+//	    }
+        clickElement(corporateTraining);
+       // waitForElementVisible(careersLink);
+
+    }
+    public  void clickonform() throws InterruptedException {
+    	
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", form);
+	    wait.until(ExpectedConditions.visibilityOf(name));
+
+    }
+    
+    
+    Map<String, String> formData;
+    
+    
+    public void enterName(String sheet,String row)
+    {
+    	
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.elementToBeClickable(name));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", name);
+	    int rowNum = Integer.parseInt(row);
+	    formData = ExcelReader.getRowData(sheet, rowNum);
+	    //name.sendKeys(excelData.get(rowIndex)[0]);
+	    name.sendKeys(formData.get("Name"));
+    }
+    
+    public void enterCompanyName(String sheet,String row) throws InterruptedException
+    {
+    	wait.until(ExpectedConditions.visibilityOf(companyName));
+		   clickElement(companyName);
+		   //companyName.sendKeys(excelData.get(rowIndex)[1]);
+		   int rowNum = Integer.parseInt(row);
+		    formData = ExcelReader.getRowData(sheet, rowNum);
+		   companyName.sendKeys(formData.get("CompanyName"));
+    }
+    
+    public void enterTrainingNeed(String sheet,String row) throws InterruptedException
+    {
+    	wait.until(ExpectedConditions.visibilityOf(trainingNeed));
+		   clickElement(trainingNeed);
+		   //trainingNeed.sendKeys(excelData.get(rowIndex)[2]);
+		   int rowNum = Integer.parseInt(row);
+		    formData = ExcelReader.getRowData(sheet, rowNum);
+		   trainingNeed.sendKeys(formData.get("TrainingNeed"));
+    }
+    
+    public void enterEmail(String sheet,String row) throws InterruptedException
+    {
+    	 wait.until(ExpectedConditions.visibilityOf(email));
+		   clickElement(email);
+		   //email.sendKeys(excelData.get(rowIndex)[3]);
+		   int rowNum = Integer.parseInt(row);
+		    formData = ExcelReader.getRowData(sheet, rowNum);
+		   email.sendKeys(formData.get("Email"));
+    }
+    
+    
+    public void enterPhone(String sheet,String row) throws InterruptedException
+    {
+    	wait.until(ExpectedConditions.visibilityOf(phone));
+		   clickElement(phone);
+		   long phoneNum = Long.parseLong(formData.get("Phone"));
+		//phone.sendKeys(String.valueOf(phoneNum));
+		   int rowNum = Integer.parseInt(row);
+		    formData = ExcelReader.getRowData(sheet, rowNum);
+		   phone.sendKeys(String.valueOf(phoneNum));
+    }
+    
+    public void enterQuery(String sheet,String row) throws InterruptedException
+    {
+    	wait.until(ExpectedConditions.visibilityOf(query));
+		   clickElement(query);
+		   //query.sendKeys(excelData.get(rowIndex)[5]);
+		   int rowNum = Integer.parseInt(row);
+		    formData = ExcelReader.getRowData(sheet, rowNum);
+		   query.sendKeys(formData.get("Query"));
+    }
+    
+    public void clickSubmit() throws InterruptedException
+    {
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submit);
+	    wait.until(ExpectedConditions.visibilityOf(name));
+    	//clickElement(submit);
+	       
+    }
+    
+    
+    public void formSubmitted() throws InterruptedException
+    {
+    	assert driver.getPageSource().contains("Thank you");
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+       
+//   @Then("I click on target1")
+//   public void i_click_on_target1() throws InterruptedException {
+//
+//if (excelData == null || excelData.isEmpty()) {
+//        String filePath = "src/test/resources/Exceldata/Data.xlsx";
+//        excelData = com.parameters.ExcelReader.readExcel(filePath);
+//    }
+//
+//	    		clickElement(corporateTraining);
+//	    }
+//   
+//   @Then("I click on form")
+//   public void i_click_on_form() throws InterruptedException {
+//
+//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", form);
+//    wait.until(ExpectedConditions.visibilityOf(name));
+//
+//   }
+//   @Then("I enter Name as ")
+//   public void i_enter_name_as() throws InterruptedException {
+//
+//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//    wait.until(ExpectedConditions.elementToBeClickable(name));
+//    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", name);
+//    name.sendKeys(excelData.get(rowIndex)[0]);
+//   
+//   }
+//   @Then("I enter Company Name as ")
+//   public void i_enter_company_name_as() throws InterruptedException {
+//	   wait.until(ExpectedConditions.visibilityOf(companyName));
+//	   clickElement(companyName);
+//	   companyName.sendKeys(excelData.get(rowIndex)[1]);
+//   }
+//   @Then("I select Training Need as ")
+//   public void i_select_training_need_as() throws InterruptedException {
+//	   wait.until(ExpectedConditions.visibilityOf(trainingNeed));
+//	   clickElement(trainingNeed);
+//	   trainingNeed.sendKeys(excelData.get(rowIndex)[2]);
+//   }
+//   @Then("I enter Email ID as ")
+//   public void i_enter_email_id_as() throws InterruptedException {
+//	   wait.until(ExpectedConditions.visibilityOf(email));
+//	   clickElement(email);
+//	   email.sendKeys(excelData.get(rowIndex)[3]);
+//   }
+//   @Then("I enter Phone Number as ")
+//   public void i_enter_phone_number_as() throws InterruptedException {
+//	   wait.until(ExpectedConditions.visibilityOf(phone));
+//	   clickElement(phone);
+//	   long phoneNum = Long.parseLong(excelData.get(rowIndex)[4]);
+//	phone.sendKeys(String.valueOf(phoneNum));
+//   }
+//   @Then("I enter Query as ")
+//   public void i_enter_query_as() throws InterruptedException {
+//	   wait.until(ExpectedConditions.visibilityOf(query));
+//	   clickElement(query);
+//	   query.sendKeys(excelData.get(rowIndex)[5]);
+//   }
+//   @Then("I submit the form")
+//   public void i_submit_the_form() throws InterruptedException {
+//	   clickElement(submit);
+//       rowIndex++;
+//   }
+//   @Then("the form should be submitted successfully")
+//   public void the_form_should_be_submitted_successfully() {
+//	   assert driver.getPageSource().contains("Thank you");
+//   }
+       
+}  
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+
+    
+    
+    
+//   

@@ -1,6 +1,13 @@
 package com.stepDefinitionTestNG;
 
+import java.util.Map;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import com.pages.CareersPage;
+import com.parameters.ExcelReader;
 import com.parameters.PropertyReader;
 
 import io.cucumber.java.en.And;
@@ -11,6 +18,7 @@ import io.cucumber.java.en.When;
 public class Careers {
 	
 	CareersPage careersPage = new CareersPage();
+	
 	
 	@Given("I Launch the Edureka website")
 	public void i_launch_the_edureka_website() {
@@ -60,7 +68,7 @@ public class Careers {
 	
 	
 	
-	
+	//Test_Scenario_02
 	
 	
 	
@@ -86,4 +94,99 @@ public class Careers {
 	public void the_ebook_is_displayed() {
 	    careersPage.verifyEbook();
 	}
+	
+	
+	
+	
+	
+	
+	
+	//test Scenario_3
+	
+
+	
+
+	
+	@And("I click on target1")
+	   public void i_click_on_target1() throws InterruptedException {
+
+		    		careersPage.clickonCT();
+		    }
+	   
+	   @And("I click on form")
+	   public void i_click_on_form() throws InterruptedException {
+
+		   careersPage.clickonform();
+
+	   }
+	   
+	   
+	   @Then("I fill the form using data from {string} {string}")
+	   public void i_fill_the_form_using_data_from(String sheet, String row) throws InterruptedException {
+
+		
+        
+        careersPage.enterName(sheet,row);
+        careersPage.enterCompanyName(sheet,row);
+        careersPage.enterTrainingNeed(sheet, row);
+        careersPage.enterEmail(sheet, row);
+        careersPage.enterPhone(sheet, row);
+        careersPage.enterQuery(sheet, row);
+        
+
+//        driver.findElement(By.id("name")).sendKeys(formData.get("Name"));
+//        driver.findElement(By.id("companyName")).sendKeys(formData.get("CompanyName"));
+//        WebElement dropdown = driver.findElement(By.id("trainingNeed"));
+//        dropdown.click();
+//        dropdown.findElement(By.xpath("//option[text()='" + formData.get("TrainingNeed") + "']")).click();
+//        driver.findElement(By.id("email")).sendKeys(formData.get("Email"));
+//        driver.findElement(By.id("phone")).sendKeys(formData.get("Phone"));
+//        driver.findElement(By.id("query")).sendKeys(formData.get("Query"));
+    
+
+	   }
+
+		@And("I submit the form")
+		public void i_submit_the_form() throws InterruptedException  {
+			   careersPage.clickSubmit();
+		}
+	   @Then("I should see the Thankyou popup and close it")
+	   public void i_should_see_the_thankyou_popup_and_close_it() throws InterruptedException {
+	       Thread.sleep(1000);
+	   }
+	   
+	  
+	   @Then("the form should be submitted successfully")
+	   public void the_form_should_be_submitted_successfully() throws InterruptedException {
+		   careersPage.formSubmitted();
+	   }	
+	   
+	   
+//	   @And("I enter Name as ")
+//	   public void i_enter_name_as()  {
+//
+//		   careersPage.enterName();
+//	   
+//	   }
+//	   @And("I enter Company Name as ")
+//	   public void i_enter_company_name_as() throws InterruptedException  {
+//		   careersPage.enterCompanyName();
+//	   }
+//	   @And("I select Training Need as ")
+//	   public void i_select_training_need_as() throws InterruptedException  {
+//		   careersPage.enterTrainingNeed();
+//	   }
+//	   @And("I enter Email ID as ")
+//	   public void i_enter_email_id_as() throws InterruptedException {
+//		  careersPage.enterEmail();
+//	   }
+//	   @And("I enter Phone Number as ")
+//	   public void i_enter_phone_number_as() throws InterruptedException  {
+//		   careersPage.enterPhone();
+//	   }
+//	   @And("I enter Query as ")
+//	   public void i_enter_query_as() throws InterruptedException  {
+//		   careersPage.enterQuery();
+//	   }
+	   
 }
