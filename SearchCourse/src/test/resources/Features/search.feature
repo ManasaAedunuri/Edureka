@@ -17,3 +17,21 @@ And I click on aws technology
 And The user clicks on Job Role
 And Select filter from AWS page
 Then The page should display Cloud Devops courses
+
+@third
+Scenario Outline: Verify Popular Course Categories 
+Given The browser is launched and the Edureka homepage is opened
+When I click on the Search course bar
+And I click on Cloud Computing
+#And I click on search input field
+And I enter course name from sheet <sheet> and row <row>
+Then Courses page is visible
+
+Examples:
+| sheet | row |
+|   0   |  0  |
+|   0   |  1  |
+
+
+
+
