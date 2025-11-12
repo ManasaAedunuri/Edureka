@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\murvyshn\AppData\Local\Temp\testng-eclipse-1046434130\testng-customsuite.xml</span>
+                    <span>C:\Users\murvyshn\AppData\Local\Temp\testng-eclipse-443273222\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">3 methods, 3 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,7 +103,17 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.runner.TestRunnerTestNG" class="method navigator-link" hash-for-method="runScenario(&quot;Open Edureka and access LLM Prompt Engineering Certification&quot;, &quot;View Trending Courses&quot;)">runScenario("Open Edureka and access LLM Prompt Engineering Certification", "View Trending Courses")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.runner.TestRunnerTestNG" class="method navigator-link" hash-for-method="runScenario(&quot;Enroll in LLM Prompt Engineering Certification Course&quot;, &quot;Trending Courses&quot;)">runScenario("Enroll in LLM Prompt Engineering Certification Course", "Trending Courses")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.runner.TestRunnerTestNG" class="method navigator-link" hash-for-method="runScenario(&quot;View Trending Courses&quot;, &quot;Trending Courses&quot;)">runScenario("View Trending Courses", "Trending Courses")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.runner.TestRunnerTestNG" class="method navigator-link" hash-for-method="runScenario(&quot;Open Edureka&quot;, &quot;Trending Courses&quot;)">runScenario("Open Edureka", "Trending Courses")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -126,14 +136,91 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Open Edureka and access LLM Prompt Engineering Certification&quot;, &quot;View Trending Courses&quot;)">
-                  </a> <!-- runScenario("Open Edureka and access LLM Prompt Engineering Certification", "View Trending Courses") -->
+                  <a name="runScenario(&quot;Enroll in LLM Prompt Engineering Certification Course&quot;, &quot;Trending Courses&quot;)">
+                  </a> <!-- runScenario("Enroll in LLM Prompt Engineering Certification Course", "Trending Courses") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Open Edureka and access LLM Prompt Engineering Certification","View Trending Courses")</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])&quot; because &quot;com.pages.TrendingCoursesPage.driver&quot; is null
-	at com.pages.TrendingCoursesPage.scrollToTrendingCourses(TrendingCoursesPage.java:38)
-	at com.stepDefinitionTestNG.TrendingCourses.the_user_scrolls_to_the_trending_courses_section(TrendingCourses.java:30)
-	at ✽.the user scrolls to the Trending Courses section(file:///C:/Users/murvyshn/Sprint/TrendingCourses/src/test/resources/Features/trending_course.feature:5)
+                  <span class="parameters">("Enroll in LLM Prompt Engineering Certification Course","Trending Courses")</span>
+                  <div class="stack-trace">io.cucumber.testng.UndefinedStepException: The step &apos;The user launches the application as Edureka&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Given(&quot;The user launches the application as Edureka&quot;)
+public void the_user_launches_the_application_as_edureka() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at ✽.The user launches the application as Edureka(file:///C:/Users/murvyshn/Sprint/TrendingCourses/src/test/resources/Features/trending_course.feature:24)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;View Trending Courses&quot;, &quot;Trending Courses&quot;)">
+                  </a> <!-- runScenario("View Trending Courses", "Trending Courses") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("View Trending Courses","Trending Courses")</span>
+                  <div class="stack-trace">io.cucumber.testng.UndefinedStepException: The step &apos;the user launches the Edureka application&apos; is undefined.
+You can implement this step using the snippet(s) below:
+
+@Given(&quot;the user launches the Edureka application&quot;)
+public void the_user_launches_the_edureka_application() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at ✽.the user launches the Edureka application(file:///C:/Users/murvyshn/Sprint/TrendingCourses/src/test/resources/Features/trending_course.feature:10)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Open Edureka&quot;, &quot;Trending Courses&quot;)">
+                  </a> <!-- runScenario("Open Edureka", "Trending Courses") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Open Edureka","Trending Courses")</span>
+                  <div class="stack-trace">io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in com.stepDefinitionTestNG.CourseAccess.the_user_scrolls_to_the_trending_courses_section() and com.stepDefinitionTestNG.EnrollNow.the_user_scrolls_to_the_trending_courses_section()
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:313)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:307)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:74)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:135)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:132)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -145,7 +232,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\murvyshn\AppData\Local\Temp\testng-eclipse-1046434130\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\murvyshn\AppData\Local\Temp\testng-eclipse-443273222\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -202,16 +289,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.runner.TestRunnerTestNG')
-data.setCell(0, 3, 4310);
+data.setCell(0, 3, 106);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runScenario')
+data.setCell(1, 2, 'com.runner.TestRunnerTestNG')
+data.setCell(1, 3, 87);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'runScenario')
+data.setCell(2, 2, 'com.runner.TestRunnerTestNG')
+data.setCell(2, 3, 6);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 199 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -239,18 +334,30 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.runner.TestRunnerTestNG</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@7063686f)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@76b0ae1b)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("Open Edureka and access LLM Prompt Engineering Certification", "View Trending Courses")</span>
-                <span class="method-start">994 ms</span>
+                <span class="method-name">runScenario("Open Edureka", "Trending Courses")</span>
+                <span class="method-start">963 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("View Trending Courses", "Trending Courses")</span>
+                <span class="method-start">1057 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Enroll in LLM Prompt Engineering Certification Course", "Trending Courses")</span>
+                <span class="method-start">1166 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">5331 ms</span>
+                <span class="method-start">1176 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
