@@ -53,7 +53,7 @@ public class WebinarPage extends BaseSteps {
         searchBar.sendKeys(Keys.ENTER);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 
-        String suggestionXPath = "//*[@id=\"webinar_search_form\"]/div/div[2]/ul/li[3]/a/a";
+        String suggestionXPath = "///*[@id=\"webinar_search_form\"]/div/div[2]/ul/li[3]/a/a";
         WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(suggestionXPath)));
 //
 //        // Click the suggestion

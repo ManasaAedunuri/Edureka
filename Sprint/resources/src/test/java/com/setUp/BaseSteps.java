@@ -27,8 +27,9 @@ public class BaseSteps {
             driver = new FirefoxDriver();
         }
         else if (browser.equalsIgnoreCase("edge")) {
-        	//System.setProperty("webdriver.edge.driver", "C:\\Training\\Java\\selenium_grid\\msedgedriver.exe");
+        	System.setProperty("webdriver.edge.driver", "C:\\Sprint\\resources\\Drivers\\msedgedriver.exe");
             driver = new EdgeDriver();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
         else {
             System.out.println("Invalid browser specified in config.properties");

@@ -150,15 +150,18 @@
   <version>7.12.1</version>
   <scope>test</scope>
 </dependency>
+<!-- Apache POI -->
 <dependency>
-  <groupId>org.apache.logging.log4j</groupId>
-  <artifactId>log4j-api</artifactId>
-  <version>2.20.0</version>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.3</version> <!-- or latest stable -->
 </dependency>
+
+<!-- Apache Commons Compress -->
 <dependency>
-  <groupId>org.apache.logging.log4j</groupId>
-  <artifactId>log4j-core</artifactId>
-  <version>2.20.0</version>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-compress</artifactId>
+    <version>1.21</version> <!-- must match POI's expectations -->
 </dependency>
 
  
