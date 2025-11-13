@@ -1,7 +1,6 @@
 package com.pages;
 
 import java.time.Duration;
-import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,8 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.parameters.ExcelReader;
 import com.stepDefinitionTestNG.Hooks;
-
-import io.cucumber.java.en.Then;
 
 
 public class CareersPage extends BasePage{
@@ -107,7 +104,7 @@ public class CareersPage extends BasePage{
     
     
     
-    
+    //Test_Scenario_02
     
     @FindBy(xpath = "//a[text()='Blog']")
     static WebElement blog;
@@ -199,6 +196,20 @@ public class CareersPage extends BasePage{
     
     Map<String, String> formData;
     
+    public void enterFormData(Integer sheet, Integer row) throws InterruptedException
+    {
+    	String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
+        String rowStr = String.valueOf(row);
+
+        CareersPage careersPage = new CareersPage();
+		careersPage.enterName(sheetName, rowStr);
+        careersPage.enterCompanyName(sheetName, rowStr);
+        careersPage.enterTrainingNeed(sheetName, rowStr);
+        careersPage.enterEmail(sheetName, rowStr);
+        careersPage.enterPhone(sheetName, rowStr);
+        careersPage.enterQuery(sheetName, rowStr);
+    }
+    
     
     public void enterName(String sheet,String row)
     {
@@ -279,6 +290,52 @@ public class CareersPage extends BasePage{
     	assert driver.getPageSource().contains("Thank you");
     }
     
+    
+    
+    
+    //TS_04
+    
+    @FindBy(xpath="//*[@id=\"corpcat-14-artificial-intel\"]/div/div[10]")
+    static WebElement section;
+    
+    @FindBy(xpath="//*[@id=\"b2bhead\"]/article[4]/div/div[3]/div/a/span")
+    static WebElement download;
+    
+     @FindBy(xpath="//*[@id=\"popup-query-form\"]/div/div[7]/a")
+     static WebElement submitDownload;
+    
+    public void scrollToDownload() throws InterruptedException
+    {
+    	scrollToElement(section);
+    }
+    
+    public void clickDownload() throws InterruptedException
+    {
+    	clickElement(download);
+    }
+    
+    
+    
+    public void FillDownloadForm(Integer sheet, Integer row) throws InterruptedException
+    {
+
+String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
+        String rowStr = String.valueOf(row);
+
+        CareersPage careersPage = new CareersPage();
+		careersPage.enterName(sheetName, rowStr);
+        careersPage.enterCompanyName(sheetName, rowStr);
+        careersPage.enterTrainingNeed(sheetName, rowStr);
+        careersPage.enterEmail(sheetName, rowStr);
+        careersPage.enterPhone(sheetName, rowStr);
+        //careersPage.enterQuery(sheetName, rowStr);
+
+    }
+    
+    public void clickOnDownloadSubmit() throws InterruptedException
+    {
+    	clickElement(submitDownload);
+    }
     
     
     

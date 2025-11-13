@@ -121,30 +121,38 @@ public class Careers {
 	   }
 	   
 	   
-	   @Then("I fill the form using data from {string} {string}")
-	   public void i_fill_the_form_using_data_from(String sheet, String row) throws InterruptedException {
-
-		
-        
-        careersPage.enterName(sheet,row);
-        careersPage.enterCompanyName(sheet,row);
-        careersPage.enterTrainingNeed(sheet, row);
-        careersPage.enterEmail(sheet, row);
-        careersPage.enterPhone(sheet, row);
-        careersPage.enterQuery(sheet, row);
-        
-
-//        driver.findElement(By.id("name")).sendKeys(formData.get("Name"));
-//        driver.findElement(By.id("companyName")).sendKeys(formData.get("CompanyName"));
-//        WebElement dropdown = driver.findElement(By.id("trainingNeed"));
-//        dropdown.click();
-//        dropdown.findElement(By.xpath("//option[text()='" + formData.get("TrainingNeed") + "']")).click();
-//        driver.findElement(By.id("email")).sendKeys(formData.get("Email"));
-//        driver.findElement(By.id("phone")).sendKeys(formData.get("Phone"));
-//        driver.findElement(By.id("query")).sendKeys(formData.get("Query"));
-    
-
+//	   @Then("I fill the form using data from {string} {string}")
+//	   public void i_fill_the_form_using_data_from(String sheet, String row) throws InterruptedException {
+//
+//		
+//        
+//        careersPage.enterName(sheet,row);
+//        careersPage.enterCompanyName(sheet,row);
+//        careersPage.enterTrainingNeed(sheet, row);
+//        careersPage.enterEmail(sheet, row);
+//        careersPage.enterPhone(sheet, row);
+//        careersPage.enterQuery(sheet, row);
+//        
+//
+////        driver.findElement(By.id("name")).sendKeys(formData.get("Name"));
+////        driver.findElement(By.id("companyName")).sendKeys(formData.get("CompanyName"));
+////        WebElement dropdown = driver.findElement(By.id("trainingNeed"));
+////        dropdown.click();
+////        dropdown.findElement(By.xpath("//option[text()='" + formData.get("TrainingNeed") + "']")).click();
+////        driver.findElement(By.id("email")).sendKeys(formData.get("Email"));
+////        driver.findElement(By.id("phone")).sendKeys(formData.get("Phone"));
+////        driver.findElement(By.id("query")).sendKeys(formData.get("Query"));
+//    
+//
+//	   }
+	   
+	   @Then("I fill the form using data from {int} {int}")
+	   public void i_fill_the_form_using_data_from(Integer int1, Integer int2) throws InterruptedException {
+		   careersPage.enterFormData(int1, int2);
 	   }
+	   
+	   
+	  
 
 		@And("I submit the form")
 		public void i_submit_the_form() throws InterruptedException  {
@@ -162,31 +170,40 @@ public class Careers {
 	   }	
 	   
 	   
-//	   @And("I enter Name as ")
-//	   public void i_enter_name_as()  {
-//
-//		   careersPage.enterName();
-//	   
+      //TS_04
+	   
+	   
+	   @Then("I scroll to curriculums section")
+	   public void i_scroll_to_curriculums_section() throws InterruptedException {
+	       careersPage.scrollToDownload();
+		   
+	   }
+
+	   @Then("I click on Download button")
+	   public void i_click_on_download_button() throws InterruptedException {
+	       careersPage.clickDownload();
+	   }
+	   
+//	   @Then("I fill the form using data from {int} {int}")
+//	   public void i_fill_the_form_using_data_from(Integer int1, Integer int2) throws InterruptedException {
+//	       
+//		   careersPage.FillDownloadForm(int1, int2);
 //	   }
-//	   @And("I enter Company Name as ")
-//	   public void i_enter_company_name_as() throws InterruptedException  {
-//		   careersPage.enterCompanyName();
-//	   }
-//	   @And("I select Training Need as ")
-//	   public void i_select_training_need_as() throws InterruptedException  {
-//		   careersPage.enterTrainingNeed();
-//	   }
-//	   @And("I enter Email ID as ")
-//	   public void i_enter_email_id_as() throws InterruptedException {
-//		  careersPage.enterEmail();
-//	   }
-//	   @And("I enter Phone Number as ")
-//	   public void i_enter_phone_number_as() throws InterruptedException  {
-//		   careersPage.enterPhone();
-//	   }
-//	   @And("I enter Query as ")
-//	   public void i_enter_query_as() throws InterruptedException  {
-//		   careersPage.enterQuery();
-//	   }
+	   
+	   @Then("I fill the form using data from {int} {int} to download the list")
+	   public void i_fill_the_form_using_data_from_to_download_the_list(Integer int1, Integer int2) throws InterruptedException {
+		   careersPage.FillDownloadForm(int1, int2);
+	   }
+
+	   @Then("I click on submit")
+	   public void i_click_on_submit() throws InterruptedException {
+	       
+		   careersPage.clickOnDownloadSubmit();
+	   }
+
+	   @Then("full course List is downloaded")
+	   public void full_course_list_is_downloaded() {
+	       
+	   }
 	   
 }
