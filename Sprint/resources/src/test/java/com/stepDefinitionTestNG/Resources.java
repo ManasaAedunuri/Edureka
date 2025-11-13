@@ -9,9 +9,9 @@ import com.setUp.BaseSteps;
 
 import io.cucumber.java.en.*;
 
-public class Resources {
+public class Resources extends BaseSteps{
 
-    WebDriver driver;
+   
     ResourcesPage resourcesPage;
 
     @Given("the user opens the browser")
@@ -28,6 +28,7 @@ public class Resources {
 
     @When("the user clicks on the menu")
     public void the_user_clicks_on_the_menu() {
+    	resourcesPage=new ResourcesPage(driver);
         resourcesPage.clickResources();
     }
 
