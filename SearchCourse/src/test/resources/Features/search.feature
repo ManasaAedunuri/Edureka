@@ -19,18 +19,42 @@ And Select filter from AWS page
 Then The page should display Cloud Devops courses
 
 @third
-Scenario Outline: Verify Popular Course Categories 
+Scenario Outline: Verify Search Courses
 Given The browser is launched and the Edureka homepage is opened
 When I click on the Search course bar
-And I click on Cloud Computing
-#And I click on search input field
 And I enter course name from sheet <sheet> and row <row>
-Then Courses page is visible
+Then Search results page should be displayed
 
 Examples:
 | sheet | row |
 |   0   |  0  |
 |   0   |  1  |
+
+@fourth
+Scenario Outline: Verify Edureka Reviews
+Given The browser is launched and the Edureka homepage is opened
+When I click on the Search course bar
+And I click on Artificial Intelligence
+And I click on Sitejabber review button
+And I enter website name from sheet <sheet2> and row <row2>
+Then Reviews page of website should be displayed
+
+Examples:
+| sheet2 | row2 |
+|   1    |  0   |
+|   1    |  1   |
+
+
+#@fourth
+#Scenario Outline: Verify Popular Course Categories 
+#Given The browser is launched and the Edureka homepage is opened
+#When I click on the Search course bar
+#And I click on Cloud Computing
+#And I click on search input field
+#And I enter course name from sheet <sheet> and row <row>
+#Then Courses page is visible
+
+
 
 
 

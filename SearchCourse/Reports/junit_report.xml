@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="72.319" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-11-13T12:43:21.885825200Z">
+<testcase classname="Validate Search Course functionality on Edureka website" name="Verify Edureka Reviews - #1.1" time="36.354">
+<failure type="java.lang.AssertionError" message="Failed to enter website: Edureka expected [true] but found [false]">
+<![CDATA[java.lang.AssertionError: Failed to enter website: Edureka expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.stepDefinitionTestNG.Search.i_enter_website_name_from_sheet_and_row(Search.java:121)
+	at ✽.I enter website name from sheet 1 and row 0(file:///C:/Sprint_Implementation/SearchCourse/src/test/resources/Features/search.feature:39)
+]]>
+</failure>
+<system-out><![CDATA[
+Given The browser is launched and the Edureka homepage is opened............passed
+When I click on the Search course bar.......................................passed
+And I click on Artificial Intelligence......................................passed
+And I click on Sitejabber review button.....................................passed
+And I enter website name from sheet 1 and row 0.............................failed
+Then Reviews page of website should be displayed............................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Validate Search Course functionality on Edureka website" name="Verify Edureka Reviews - #1.2" time="34.936">
+<failure type="java.lang.AssertionError" message="Failed to enter website: Google expected [true] but found [false]">
+<![CDATA[java.lang.AssertionError: Failed to enter website: Google expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.stepDefinitionTestNG.Search.i_enter_website_name_from_sheet_and_row(Search.java:121)
+	at ✽.I enter website name from sheet 1 and row 1(file:///C:/Sprint_Implementation/SearchCourse/src/test/resources/Features/search.feature:39)
+]]>
+</failure>
+<system-out><![CDATA[
+Given The browser is launched and the Edureka homepage is opened............passed
+When I click on the Search course bar.......................................passed
+And I click on Artificial Intelligence......................................passed
+And I click on Sitejabber review button.....................................passed
+And I enter website name from sheet 1 and row 1.............................failed
+Then Reviews page of website should be displayed............................skipped
+]]></system-out>
+</testcase>
+</testsuite>

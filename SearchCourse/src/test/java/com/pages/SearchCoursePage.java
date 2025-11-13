@@ -2,6 +2,7 @@ package com.pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -159,16 +160,112 @@ public class SearchCoursePage extends BaseSteps{
 		}
 		return actResult;
     }
-
+    
     /* Scenario 3 */
-    @FindBy(xpath = "(//a)[text()='Cloud Computing'][3]")
+    @FindBy(id = "search-input")
+    WebElement enterInput;
+    
+    public boolean enterCourseInput(String cname) {
+    	try {
+    		wait.until(ExpectedConditions.visibilityOf(enterInput));
+    		enterInput.clear();
+    		enterInput.sendKeys(cname);
+    		enterInput.sendKeys(Keys.ENTER);
+    		return true;
+    	}
+    	catch(Exception e) {
+    		return false;
+    	}
+    }
+    
+    public boolean verifyDisplay() {
+    	try {
+			if (driver.getTitle().contains("Instructor-Led Online Training with 24X7 Lifetime Support | Edureka")) {
+				System.out.println(driver.getTitle());
+				Reports.generateReport(driver, test, Status.PASS, "Course details page is displayed");
+			}
+			return true;
+		}
+		catch(Exception e) {
+			Reports.generateReport(driver, test, Status.FAIL, "Course details page is not displayed");
+			return false;
+		}
+    }
+    
+    /* Scenario 4 */
+    @FindBy(xpath = "/html/body/div[3]/div/div/div/div[3]/div[1]/div[2]/div[2]/ul/li[1]/a")
+    WebElement buttonAI;
+    
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[3]/div[1]/div/div[2]/div[2]/div[2]")
+    WebElement reviewButton;
+    
+    @FindBy(xpath = "/html/body/div[2]/header[2]/div/div[1]/div[1]/div[1]/form")
+    WebElement secondSearchInput;
+    
+    public void clickAI() {
+    	try {
+    		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    		WebElement elementAIClick = wait.until(ExpectedConditions.elementToBeClickable(buttonAI));
+    		elementAIClick.click();
+    	}
+		catch(Exception e) {
+			//Reports.generateReport(driver, test, Status.FAIL, "Course details page is not displayed");
+			e.printStackTrace();
+		}
+    }
+    
+    public void clickReview() {
+    	try {
+    		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+    		wait.until(ExpectedConditions.elementToBeClickable(reviewButton));
+    		((JavascriptExecutor) driver).executeScript("arguments[0].click();", reviewButton);
+    		//sagReview.click();
+    	}
+    	catch(Exception e) {
+			//Reports.generateReport(driver, test, Status.FAIL, "Course details page is not displayed");
+		}
+    }
+    
+    public boolean enterWebsiteInput(String websiteName) {
+    	try {
+    		wait.until(ExpectedConditions.visibilityOf(secondSearchInput));
+    		wait.until(ExpectedConditions.elementToBeClickable(secondSearchInput));
+    		((JavascriptExecutor) driver).executeScript("arguments[0].click();", secondSearchInput);
+    		//secondSearchInput.click();
+    		//secondSearchInput.clear();
+    		secondSearchInput.sendKeys(websiteName);
+    		secondSearchInput.sendKeys(Keys.ENTER);
+    		return true;
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    		return false;
+    	}
+    }
+    
+    public boolean verifyReviewDisplay() {
+    	try {
+			if (driver.getTitle().contains("Sitejabber - Search")) {
+				System.out.println(driver.getTitle());
+				Reports.generateReport(driver, test, Status.PASS, "Review details page is displayed");
+			}
+			return true;
+		}
+		catch(Exception e) {
+			Reports.generateReport(driver, test, Status.FAIL, "Review details page is not displayed");
+			return false;
+		}
+    } 
+
+    /* Scenario 5 */
+   /* @FindBy(xpath = "(//a)[text()='Cloud Computing'][3]")
     WebElement cloudButton;
     
-    @FindBy(xpath = "(//input)[@placeholder='Enter Course, Category or keyword'][2]")
-    WebElement searchInputField;
-    
-    @FindBy(xpath = "//*[@id=\"remote\"]/span[2]")
-    WebElement searchButtonIcon;
+//    @FindBy(xpath = "(//input[@placeholder='Enter Course, Category or keyword'])[2]")
+//    WebElement searchInputField;
+//    
+//    @FindBy(xpath = "//*[@id=\"remote\"]/span[2]")
+//    WebElement searchButtonIcon;
     
     public boolean clickCloudComputing() {
     	try {
@@ -179,11 +276,14 @@ public class SearchCoursePage extends BaseSteps{
     	catch(Exception e) {
     		return false;
     	}
-    }
+    }*/
     
     /*public boolean clickSearchInput() {
     	try {
-    		wait.until(ExpectedConditions.elementToBeClickable(searchInputField));
+    		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    		WebElement searchInputField = wait.until(ExpectedConditions.elementToBeClickable(
+    				By.xpath("(//input[@placeholder='Enter Course, Category or keyword'])[2]")
+    						));
     		searchInputField.click();
     		return true;
     	}
@@ -192,16 +292,25 @@ public class SearchCoursePage extends BaseSteps{
     	}
     }*/
     
-    public boolean enterCourseInput(String cname) {
+    /*public boolean enterCourseInput(String cname) {
     	try {
-    		wait.until(ExpectedConditions.elementToBeClickable(searchInputField));
-    		wait.until(ExpectedConditions.elementToBeClickable(searchInputField));
+    		//wait.until(ExpectedConditions.elementToBeClickable(searchInputField));
+    		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    		WebElement searchInputField = wait.until(ExpectedConditions.elementToBeClickable(
+    				By.xpath("/html/body/header/nav/div[3]/input")
+    						));
+    		searchInputField.clear();
     		searchInputField.sendKeys(cname);
-    		searchButtonIcon.click();
-    		//searchInputField.sendKeys(Keys.ENTER);
+    		
+//    		WebElement searchButtonIcon = wait.until(ExpectedConditions.elementToBeClickable(
+//    				By.xpath("/html/body/header/nav/div[3]")
+//    				));
+//    		searchButtonIcon.click();
+    		searchInputField.sendKeys(Keys.ENTER);
     		return true;
     	}
     	catch(Exception e) {
+    		e.printStackTrace();
     		return false;
     	}
     }
@@ -220,5 +329,5 @@ public class SearchCoursePage extends BaseSteps{
 			return false;
 			//Reports.generateReport(driver, test, Status.FAIL, "Courses page is not visible");
 		}
-    }
+    }*/
 }

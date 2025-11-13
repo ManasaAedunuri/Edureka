@@ -7,9 +7,12 @@ import io.cucumber.testng.CucumberOptions;
 		features = "src\\test\\resources\\Features\\search.feature",
 		//tags="@first",
 		//tags="@second",
-		tags="@third",
+		//tags="@third",
+		tags = "@fourth",
 		glue = {"com.stepDefinitionTestNG"},
-		plugin = {"pretty", "html:Reports/cucumber-reports.html"}
+		plugin = {"pretty", "html:Reports/cucumber-reports.html",
+				"json:reports/json-report.json",
+				"junit:reports/junit_report.xml","pretty", "html:target/cucumber-reports.html"}
 		)
 
 public class TestRunnerTestNG extends AbstractTestNGCucumberTests {

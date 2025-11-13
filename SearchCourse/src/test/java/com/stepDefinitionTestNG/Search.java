@@ -78,21 +78,70 @@ public class Search extends BaseSteps {
 		BaseSteps.closeBrowser();
 	}
 	
-	
 	/* Scenario 3 */
-	@When("I click on Cloud Computing")
+	
+	@And("I enter course name from sheet {int} and row {int}")
+	public void i_enter_course_name_from_sheet_and_row(Integer sheetIndex, Integer rowIndex) {
+		String excelPathSO = prop.getProperty("excelpath");
+		
+	    String course = ExcelReader.getLocalityByRow(excelPathSO, sheetIndex, rowIndex);
+	    Assert.assertNotNull(course, "Course not found at sheet " + sheetIndex +", row " + rowIndex);
+	    
+	    boolean status = searchPage.enterCourseInput(course);
+	    Assert.assertTrue(status, "Failed to enter course: " + course);
+	}
+
+	@Then("Search results page should be displayed")
+	public void search_results_page_should_be_displayed() throws InterruptedException {
+		boolean status = searchPage.verifyDisplay();
+		Assert.assertTrue(status);
+		BaseSteps.closeBrowser();
+	}
+
+	/* Scenario 4 */
+	
+	@And("I click on Artificial Intelligence")
+	public void i_click_on_artificial_intelligence() {
+		searchPage.clickAI(); 
+	}
+
+	@And("I click on Sitejabber review button")
+	public void i_click_on_sitejabber_review_button() {
+		searchPage.clickReview();
+	}
+
+	@And("I enter website name from sheet {int} and row {int}")
+	public void i_enter_website_name_from_sheet_and_row(Integer sheetIndex, Integer rowIndex) {
+		String excelPathSO = prop.getProperty("excelpath");
+
+		String website = ExcelReader.getLocalityByRow(excelPathSO, sheetIndex, rowIndex);
+		Assert.assertNotNull(website, "Webiste not found at sheet " + sheetIndex +", row " + rowIndex);
+
+		boolean status = searchPage.enterWebsiteInput(website);
+		Assert.assertTrue(status, "Failed to enter website: " + website);
+	}
+
+	@Then("Reviews page of website should be displayed")
+	public void reviews_page_of_website_should_be_displayed() {
+		boolean status = searchPage.verifyReviewDisplay();
+		Assert.assertTrue(status);
+	}
+	
+	
+	/* Scenario 4 */
+	/*@And("I click on Cloud Computing")
 	public void i_click_on_cloud_computing() {
 	    boolean status = searchPage.clickCloudComputing();
 	    Assert.assertTrue(status);
 	}
 
-	/*@When("I click on search input field")
+	@And("I click on search input field")
 	public void i_click_on_search_input_field() {
 		boolean status = searchPage.clickSearchInput();
 		Assert.assertTrue(status);
-	}*/
+	}
 
-	@When("I enter course name from sheet {int} and row {int}")
+	@And("I enter course name from sheet {int} and row {int}")
 	public void i_enter_course_name_from_sheet_and_row(int sheetIndex, int rowIndex) {
 		String excelPathSo = prop.getProperty("excelpath");
 		
@@ -107,5 +156,5 @@ public class Search extends BaseSteps {
 	public void courses_page_is_visible() {
 		boolean status = searchPage.verifyVisibilityCoursePage();
 		Assert.assertTrue(status);
-	}
+	}*/
 }
