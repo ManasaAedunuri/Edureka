@@ -12,6 +12,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import com.parameters.PropertyReader;
 
+import io.cucumber.java.After;
+
 public class BaseSteps {
 	//initialize WebDriver
 	public  static WebDriver driver;
@@ -89,10 +91,18 @@ public class BaseSteps {
 			e.printStackTrace();
 		}
 	}
-	public static void scrollToSection(String sectionName) {
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    WebElement sectionElement = driver.findElement(By.xpath("//h2[contains(text(),'" + sectionName + "')]"));
-	    js.executeScript("arguments[0].scrollIntoView(true);", sectionElement);
-	}
+
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            System.out.println("Browser closed successfully.");
+        }
+    }
+
+//	public static void scrollToSection(String sectionName) {
+//	    JavascriptExecutor js = (JavascriptExecutor) driver;
+//	    WebElement sectionElement = driver.findElement(By.xpath("//h2[contains(text(),'" + sectionName + "')]"));
+//	    js.executeScript("arguments[0].scrollIntoView(true);", sectionElement);
+//	}
 	
 }
