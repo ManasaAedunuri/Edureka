@@ -90,7 +90,6 @@ public class Search extends BaseSteps {
 	    boolean status = searchPage.enterCourseInput(course);
 	    Assert.assertTrue(status, "Failed to enter course: " + course);
 	}
-
 	@Then("Search results page should be displayed")
 	public void search_results_page_should_be_displayed() throws InterruptedException {
 		boolean status = searchPage.verifyDisplay();
@@ -99,6 +98,31 @@ public class Search extends BaseSteps {
 	}
 
 	/* Scenario 4 */
+	
+	@When("I click on DevOps")
+	public void i_click_on_dev_ops() {
+		searchPage.clickDevOps();
+	}
+
+	@When("I click on View Details")
+	public void i_click_on_view_details() {
+		searchPage.clickViewDetails();
+	}
+
+	@When("I click on Times Now")
+	public void i_click_on_times_now() {
+		searchPage.clickTimesNow();
+	}
+
+	@Then("Times Now Article is visible")
+	public void times_now_article_is_visible() throws InterruptedException {
+		boolean status = searchPage.verifyArticlePage();
+		Assert.assertTrue(status);
+		BaseSteps.closeBrowser();
+	}
+	
+	
+	/* Scenario 5 */
 	
 	@And("I click on Artificial Intelligence")
 	public void i_click_on_artificial_intelligence() {

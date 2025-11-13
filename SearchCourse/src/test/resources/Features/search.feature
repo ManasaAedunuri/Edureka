@@ -31,6 +31,16 @@ Examples:
 |   0   |  1  |
 
 @fourth
+Scenario: Verify View Courses
+Given The browser is launched and the Edureka homepage is opened
+When I click on the Search course bar
+And I click on DevOps
+And I click on View Details
+And I click on Times Now
+Then Times Now Article is visible
+
+
+@fifth
 Scenario Outline: Verify Edureka Reviews
 Given The browser is launched and the Edureka homepage is opened
 When I click on the Search course bar

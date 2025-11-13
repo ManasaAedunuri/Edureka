@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 		//tags="@first",
 		//tags="@second",
 		//tags="@third",
-		tags = "@fourth",
+		//tags = "@fourth",
 		glue = {"com.stepDefinitionTestNG"},
 		plugin = {"pretty", "html:Reports/cucumber-reports.html",
 				"json:reports/json-report.json",

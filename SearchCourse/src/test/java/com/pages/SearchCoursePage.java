@@ -36,14 +36,8 @@ public class SearchCoursePage extends BaseSteps{
 
 	@FindBy(css = "#add-master-courses > a:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)")
 	WebElement courseLink;
-
-	
 	
 	// Constructor
-	/*public SearchCoursePage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}*/
 	public SearchCoursePage(WebDriver driver, ExtentTest test) {
         this.driver = driver;
         this.test = test;
@@ -171,9 +165,11 @@ public class SearchCoursePage extends BaseSteps{
     		enterInput.clear();
     		enterInput.sendKeys(cname);
     		enterInput.sendKeys(Keys.ENTER);
+    		Reports.generateReport(driver, test, Status.PASS, "Course name is enterd");
     		return true;
     	}
     	catch(Exception e) {
+    		Reports.generateReport(driver, test, Status.PASS, "Course name is not entered");
     		return false;
     	}
     }
@@ -193,6 +189,47 @@ public class SearchCoursePage extends BaseSteps{
     }
     
     /* Scenario 4 */
+    @FindBy(xpath = "(//a)[text()='DevOps'][3]/parent::li")
+    WebElement clickDev;
+    
+    @FindBy(xpath = "//a[text()='TimesNow']")
+    WebElement timeNow;
+    
+    public void clickDevOps() {
+    	WebElement devClick = wait.until(ExpectedConditions.elementToBeClickable(clickDev));
+    	devClick.click();
+    	Reports.generateReport(driver, test, Status.PASS, "DevOps is clicked");
+    }
+    
+    public void clickViewDetails() {
+    	WebElement element = driver.findElement(By.xpath("(//button)[text()='VIEW DETAILS'][1]"));
+    	//JavascriptExecutor js = (JavascriptExecutor) driver;
+    	//js.executeScript("arguments[0].scrollIntoView(true);", element);
+    	element.click();
+    	Reports.generateReport(driver, test, Status.PASS, "View Details is clicked");
+    }
+    
+    public void clickTimesNow() {
+    	wait.until(ExpectedConditions.elementToBeClickable(timeNow));
+    	timeNow.click();
+    	Reports.generateReport(driver, test, Status.PASS, "Times Now is clicked");
+    }
+    
+    public boolean verifyArticlePage() {
+    	try {
+			if (driver.getTitle().contains("Future-Proof Your Career: Top DevOps Courses to Consider in 2025 | Markets - Times Now")) {
+				System.out.println(driver.getTitle());
+				Reports.generateReport(driver, test, Status.PASS, "Course details page is displayed");
+			}
+			return true;
+		}
+		catch(Exception e) {
+			Reports.generateReport(driver, test, Status.FAIL, "Times Now article page is not displayed");
+			return false;
+		}
+    }
+    
+    /* Scenario 5 */
     @FindBy(xpath = "/html/body/div[3]/div/div/div/div[3]/div[1]/div[2]/div[2]/ul/li[1]/a")
     WebElement buttonAI;
     
