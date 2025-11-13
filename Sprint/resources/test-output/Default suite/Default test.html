@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Nov 11 22:44:43 IST 2025</td>
+<td>Started on:</td><td>Wed Nov 12 23:54:39 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>22 seconds (22753 ms)</td>
+<tr><td>Total time:</td><td>12 seconds (12397 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,73 +76,125 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.runner.TestRunnerTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.TestRunnerTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "user registers for a webinar using dynamic data", "Navigate to Edureka Blog and open Machine Learning with Mahout article"</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;register_webinar_upcoming register_webinar_btn registerbtn register-for-webinar_5_7443&quot; data-webinar-id=&quot;7443&quot; data-category-id=&quot;5&quot; data-category-name=&quot;Machine Learning&quot; data-webinar-name=&quot;AI for Marketing | Top AI Marketing Tools&quot; data-startdate=&quot;2025-11-12&quot; data-starttime=&quot;07:00 PM IST&quot; tabindex=&quot;0&quot;&gt;...&lt;/button&gt; is not clickable at point (237, 26). Other element would receive the click: &lt;div id=&quot;wl_loader&quot; class=&quot;webinar_loader&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=142.0.7444.60)
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f9580c76616d8a17a372d3b8f4d6f2ce, clickElement {id=f.35B023B1EDC7CF62718133FCF70FF174.d.F2DBE4A454023034156E482438058FF5.e.179}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\baiseg\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57533}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57533/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (f9580c76616d8a17a372d3b8f4d6f2ce)] -&gt; xpath: //button[contains(text(),&apos;Register Now&apos;)]]
-Session ID: f9580c76616d8a17a372d3b8f4d6f2ce
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.Pages.WebinarPage.clickRegister(WebinarPage.java:58)
-	at com.stepDefinitionTestNG.webinar.the_user_scrolls_and_clicks_on_the_register_button_from_configuration(webinar.java:52)
-	at ✽.the user scrolls and clicks on the register button from configuration(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:19)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1434506799", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1434506799'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;register_webinar_upcoming register_webinar_btn registerbtn register-for-webinar_5_7443&quot; data-webinar-id=&quot;7443&quot; data-category-id=&quot;5&quot; data-category-name=&quot;Machine Learning&quot; data-webinar-name=&quot;AI for Marketing | Top AI Marketing Tools&quot; data-startdate=&quot;2025-11-12&quot; data-starttime=&quot;07:00 PM IST&quot; tabindex=&quot;0&quot;&gt;...&lt;/button&gt; is not clickable at point (237, 26). Other element would receive the click: &lt;div id=&quot;wl_loader&quot; class=&quot;webinar_loader&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=142.0.7444.60)
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f9580c76616d8a17a372d3b8f4d6f2ce, clickElement {id=f.35B023B1EDC7CF62718133FCF70FF174.d.F2DBE4A454023034156E482438058FF5.e.179}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.60, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\baiseg\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57533}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57533/devtoo..., se:cdpVersion: 142.0.7444.60, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (f9580c76616d8a17a372d3b8f4d6f2ce)] -&gt; xpath: //button[contains(text(),&apos;Register Now&apos;)]]
-Session ID: f9580c76616d8a17a372d3b8f4d6f2ce
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.Pages.WebinarPage.clickRegister(WebinarPage.java:58)
-	at com.stepDefinitionTestNG.webinar.the_user_scrolls_and_clicks_on_the_register_button_from_configuration(webinar.java:52)
-	at ✽.the user scrolls and clicks on the register button from configuration(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:19)
+<td title='com.runner.TestRunnerTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.TestRunnerTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User searches and joins a community on Edureka", "Navigate to Edureka Blog and open Machine Learning with Mahout article"</td>
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.apache.commons.compress.archivers.zip.ZipArchiveEntry org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextEntry()&apos;
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:101)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:211)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:315)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:289)
+	at com.Parameters.ExcelReader.getLocalityByRow(ExcelReader.java:10)
+	at com.stepDefinitionTestNG.Community.the_user_navigates_to_the_homepage_from_excel(Community.java:21)
+	at ✽.the user navigates to the homepage from Property file with row 0(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:26)
+</pre></div><a href='#' onClick='toggleBox("stack-trace585878713", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace585878713'><pre>java.lang.NoSuchMethodError: &apos;org.apache.commons.compress.archivers.zip.ZipArchiveEntry org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextEntry()&apos;
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:101)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:211)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:315)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:289)
+	at com.Parameters.ExcelReader.getLocalityByRow(ExcelReader.java:10)
+	at com.stepDefinitionTestNG.Community.the_user_navigates_to_the_homepage_from_excel(Community.java:21)
+	at ✽.the user navigates to the homepage from Property file with row 0(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:26)
 </pre></div></td>
-<td>10</td>
-<td>com.runner.TestRunnerTestNG@7b02881e</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
+<td>3</td>
+<td>com.runner.TestRunnerTestNG@3c0be339</td></tr>
 <tr>
-<td title='com.runner.TestRunnerTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.TestRunnerTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "user navigates through Website to open blog", "Navigate to Edureka Blog and open Machine Learning with Mahout article"</td>
-<td></td>
-<td>10</td>
-<td>com.runner.TestRunnerTestNG@7b02881e</td></tr>
+<td title='com.runner.TestRunnerTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.TestRunnerTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User searches and joins a community on Edureka", "Navigate to Edureka Blog and open Machine Learning with Mahout article"</td>
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.apache.commons.compress.archivers.zip.ZipArchiveEntry org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextEntry()&apos;
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:101)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:211)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:315)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:289)
+	at com.Parameters.ExcelReader.getLocalityByRow(ExcelReader.java:10)
+	at com.stepDefinitionTestNG.Community.the_user_navigates_to_the_homepage_from_excel(Community.java:21)
+	at ✽.the user navigates to the homepage from Property file with row 1(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:26)
+</pre></div><a href='#' onClick='toggleBox("stack-trace923539816", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace923539816'><pre>java.lang.NoSuchMethodError: &apos;org.apache.commons.compress.archivers.zip.ZipArchiveEntry org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextEntry()&apos;
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:101)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:211)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:315)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:289)
+	at com.Parameters.ExcelReader.getLocalityByRow(ExcelReader.java:10)
+	at com.stepDefinitionTestNG.Community.the_user_navigates_to_the_homepage_from_excel(Community.java:21)
+	at ✽.the user navigates to the homepage from Property file with row 1(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:26)
+</pre></div></td>
+<td>2</td>
+<td>com.runner.TestRunnerTestNG@3c0be339</td></tr>
+<tr>
+<td title='com.runner.TestRunnerTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.TestRunnerTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User searches and joins a community on Edureka", "Navigate to Edureka Blog and open Machine Learning with Mahout article"</td>
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.apache.commons.compress.archivers.zip.ZipArchiveEntry org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextEntry()&apos;
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:101)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:211)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:315)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:289)
+	at com.Parameters.ExcelReader.getLocalityByRow(ExcelReader.java:10)
+	at com.stepDefinitionTestNG.Community.the_user_navigates_to_the_homepage_from_excel(Community.java:21)
+	at ✽.the user navigates to the homepage from Property file with row 3(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:26)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1476116591", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1476116591'><pre>java.lang.NoSuchMethodError: &apos;org.apache.commons.compress.archivers.zip.ZipArchiveEntry org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextEntry()&apos;
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:101)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:211)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:315)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:289)
+	at com.Parameters.ExcelReader.getLocalityByRow(ExcelReader.java:10)
+	at com.stepDefinitionTestNG.Community.the_user_navigates_to_the_homepage_from_excel(Community.java:21)
+	at ✽.the user navigates to the homepage from Property file with row 3(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:26)
+</pre></div></td>
+<td>2</td>
+<td>com.runner.TestRunnerTestNG@3c0be339</td></tr>
+<tr>
+<td title='com.runner.TestRunnerTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.TestRunnerTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User searches and joins a community on Edureka", "Navigate to Edureka Blog and open Machine Learning with Mahout article"</td>
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.apache.commons.compress.archivers.zip.ZipArchiveEntry org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextEntry()&apos;
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:101)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:211)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:315)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:289)
+	at com.Parameters.ExcelReader.getLocalityByRow(ExcelReader.java:10)
+	at com.stepDefinitionTestNG.Community.the_user_navigates_to_the_homepage_from_excel(Community.java:21)
+	at ✽.the user navigates to the homepage from Property file with row 2(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:26)
+</pre></div><a href='#' onClick='toggleBox("stack-trace50297459", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace50297459'><pre>java.lang.NoSuchMethodError: &apos;org.apache.commons.compress.archivers.zip.ZipArchiveEntry org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.getNextEntry()&apos;
+	at org.apache.poi.openxml4j.util.ZipArchiveThresholdInputStream.getNextEntry(ZipArchiveThresholdInputStream.java:150)
+	at org.apache.poi.openxml4j.util.ZipInputStreamZipEntrySource.&lt;init&gt;(ZipInputStreamZipEntrySource.java:101)
+	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:211)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:517)
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:490)
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:67)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:315)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:289)
+	at com.Parameters.ExcelReader.getLocalityByRow(ExcelReader.java:10)
+	at com.stepDefinitionTestNG.Community.the_user_navigates_to_the_homepage_from_excel(Community.java:21)
+	at ✽.the user navigates to the homepage from Property file with row 2(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:26)
+</pre></div></td>
+<td>2</td>
+<td>com.runner.TestRunnerTestNG@3c0be339</td></tr>
 </table><p>
 </body>
 </html>

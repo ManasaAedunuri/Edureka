@@ -32,7 +32,7 @@ public class BaseSteps {
         }
         else {
             System.out.println("Invalid browser specified in config.properties");
-            return;
+            
         }
         
         String url = prop.getProperty("homepage");
