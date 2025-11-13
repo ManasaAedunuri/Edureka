@@ -7,7 +7,10 @@ import io.cucumber.testng.CucumberOptions;
 	    features = "src/test/resources/Features/discover_top_categories.feature",
 	    glue = "com.stepDefinitionTestNG",
 	    //tags = "@TopCategories",
-	    tags = "@AI",
+	    //tags = "@AI",
+	    //tags= "@PG",
+	    //tags ="@TopCategories",
+
 	    plugin = {"pretty", "html:target/cucumber-reports.html",
 	    		    "json:reports/json-report.json",
 				"junit: reports/junit-report.xml"},

@@ -2,7 +2,7 @@ Feature: Verify Discover Top Categories and Brochure Download Functionality on E
 
 @TopCategories
 Scenario: Navigate to selected categories from homepage
-  Given the user is on the sourceUrl
+  Given the user is on sourceUrl
   When the user scrolls to the sectionName section
   And clicks on category1
   And navigates back to homepage
@@ -11,41 +11,43 @@ Scenario: Navigate to selected categories from homepage
   And clicks on category3
   Then each respective category page should load successfully
   
-
-@ViewMore
+ @ViewMore
 Scenario: Navigate to Selenium course under Software Testing
   Given the user is on the Edureka homepage
-  When the user scrolls to the sectionName section
+  When the user scrolls to the sectionName 
   And clicks on buttonName
-  And selects Software Testing category
+  And clicks on category4
   And clicks on Selenium course
   Then the Selenium course page should load successfully
   
-@PG
-Scenario Outline: Navigate to a category and apply for a program using data from Excel
-  Given the user is on sourceUrl
-  And the user accesses the Excel data from <sheetno> using property-based path
-  When the user scrolls to the sectionName section
-  And clicks on the category from Excel
-  Then the category page should load successfully based on title from Excel
-  And clicks on the apply button from Excel
-  And enters valid name, email, and phone number from Excel
-  Then the application form should be submitted successfully
-  And a confirmation message should be displayed
-
-Examples:
-| sheetno | 
-| 0       | 
-
 @AI
 Scenario: Navigate to category pages from Discover Top Categories
-  Given the user is on the Edureka homepage
-  When the user scrolls to the sectionName section
-  And clicks on Category2
+  Given the user is on the  homepage
+  When user scrolls to the sectionName 
+  And clicks on the Category2
   Then the Category2 page should load successfully
-  And clicks on category2explore
   And clicks on category5
-  Then  display relevant courses
+  And   display relevant courses
+  
+ @BrochureDownload
+Scenario Outline: Download brochure for PGP in Generative AI and ML and fill details from Excel
+  Given the user is on  Edureka homepage
+  When user scrolls to the sectionName
+  And clicks on category7
+  And clicks on category8
+  And clicks on buttonName2
+  And the user reads data from Excel at <sheetNo> and <rowIndex>
+  And enters name, email, and phone number from Excel
+  Then the brochure request form should be submitted successfully
+
+
+Examples:
+  | sheetNo | rowIndex |
+  | 0       | 1        |
+  | 0       | 2        |
+
+ 
+
 
 
 

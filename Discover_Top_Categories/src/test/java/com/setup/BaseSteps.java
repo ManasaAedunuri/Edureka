@@ -99,10 +99,22 @@ public class BaseSteps {
         }
     }
 
-//	public static void scrollToSection(String sectionName) {
-//	    JavascriptExecutor js = (JavascriptExecutor) driver;
+//	public static void scrollToElement(Object discoverTopCategoriesSection) {
+		// TODO Auto-generated method stub
+		
+//	}
+
+	public static void scrollToElement(String sectionName) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    WebElement sectionElement = driver.findElement(By.xpath("//h2[contains(text(),'" + sectionName + "')]"));
+	    js.executeScript("arguments[0].scrollIntoView(true);", sectionElement);
+	}
+
+//	public static void scrollToElement(Object discoverTopCategoriesSection) {
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
 //	    WebElement sectionElement = driver.findElement(By.xpath("//h2[contains(text(),'" + sectionName + "')]"));
 //	    js.executeScript("arguments[0].scrollIntoView(true);", sectionElement);
+//		
 //	}
 	
 }
