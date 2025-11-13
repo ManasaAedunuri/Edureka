@@ -1,3 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="0.328" tests="0" skipped="0" failures="0" errors="0" timestamp="2025-11-12T18:25:22.204808800Z">
+<testsuite name="Cucumber" time="112.85" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-13T12:33:32.798059800Z">
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Navigate to selected categories from homepage" time="49.216">
+<system-out><![CDATA[
+Given the user is on sourceUrl..............................................passed
+When the user scrolls to the sectionName section............................passed
+And clicks on category1.....................................................passed
+And navigates back to homepage..............................................passed
+And clicks on category2.....................................................passed
+And navigates back to homepage..............................................passed
+And clicks on category3.....................................................passed
+Then each respective category page should load successfully.................passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Navigate to Selenium course under Software Testing" time="11.73">
+<system-out><![CDATA[
+Given the user is on the Edureka homepage...................................passed
+When the user scrolls to the sectionName....................................passed
+And clicks on buttonName....................................................passed
+And clicks on category4.....................................................passed
+And clicks on Selenium course...............................................passed
+Then the Selenium course page should load successfully......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Navigate to category pages from Discover Top Categories" time="13.753">
+<system-out><![CDATA[
+Given the user is on the  homepage..........................................passed
+When user scrolls to the sectionName........................................passed
+And clicks on the Category2.................................................passed
+Then the Category2 page should load successfully............................passed
+And clicks on category5.....................................................passed
+And display relevant courses................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Download brochure for PGP in Generative AI and ML and fill details from Excel - #1.1" time="19.811">
+<system-out><![CDATA[
+Given the user is on  Edureka homepage......................................passed
+When user scrolls to the sectionName........................................passed
+And clicks on category7.....................................................passed
+And clicks on category8.....................................................passed
+And clicks on buttonName2...................................................passed
+And the user reads data from Excel at 0 and 1...............................passed
+And enters name, email, and phone number from Excel.........................passed
+Then the brochure request form should be submitted successfully.............passed
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Download brochure for PGP in Generative AI and ML and fill details from Excel - #1.2" time="18.026">
+<system-out><![CDATA[
+Given the user is on  Edureka homepage......................................passed
+When user scrolls to the sectionName........................................passed
+And clicks on category7.....................................................passed
+And clicks on category8.....................................................passed
+And clicks on buttonName2...................................................passed
+And the user reads data from Excel at 0 and 2...............................passed
+And enters name, email, and phone number from Excel.........................passed
+Then the brochure request form should be submitted successfully.............passed
+]]></system-out>
+</testcase>
 </testsuite>
