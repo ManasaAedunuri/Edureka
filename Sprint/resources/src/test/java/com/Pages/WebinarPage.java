@@ -12,13 +12,29 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.setUp.BaseSteps;
+import com.setUp.Reports;
 
 public class WebinarPage extends BaseSteps {
-    public WebinarPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+//	 static ExtentTest test;
+//    public WebinarPage(WebDriver driver) {
+//        WebinarPage.driver = driver;
+//        this.test=test;
+//        PageFactory.initElements(driver, this);
+//    }
+	 WebDriver driver;
+	    ExtentTest test;
+
+	    public WebinarPage(WebDriver driver, ExtentTest test) {
+	        this.driver = driver;
+	        this.test = test;
+	        PageFactory.initElements(driver, this);
+	    }
+	
+
+   
 
     
     @FindBy(xpath = "//*[@id=\"__next\"]/div/nav/div[4]/div[2]/button")
@@ -47,27 +63,43 @@ public class WebinarPage extends BaseSteps {
         webinarsSubMenu.click();
     }
 
-    public void searchKeyword(String keyword) {
+    public boolean searchKeyword(String keyword) {
+    	boolean actresult=true;
+    	try {
         searchBar.clear();
         searchBar.sendKeys(keyword);
         searchBar.sendKeys(Keys.ENTER);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        String suggestionXPath = "///*[@id=\"webinar_search_form\"]/div/div[2]/ul/li[3]/a/a";
-        WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(suggestionXPath)));
-//
-//        // Click the suggestion
+      String suggestionXPath = "//*[@id=\"webinar_search_form\"]/div/div[2]/ul/li[3]/a/a";
+       WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(suggestionXPath)));
         suggestion.click();
+        Reports.generateReport(driver, test, Status.PASS, "Selected suggestion from dropdown.");
+    	}catch(Exception e) {
+    		actresult=false;
+    		Reports.generateReport(driver, test, Status.FAIL, "Failed to select suggestion: " + e.getMessage());
+    	}
+    	return actresult;
+//        //String suggestionXPath = "//*[@id='webinar_search_form']//ul//li//a[contains(text(),'" + keyword + "')]";
+//        try {
+//            WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(suggestionXPath)));
+//
+//            // Optional: verify text match
+//            if (suggestion.getText().equalsIgnoreCase(keyword)) {
+//                suggestion.click();
+//            } else {
+//                System.out.println("Suggestion text mismatch: " + suggestion.getText());
+//            }
+//
+//        } catch (TimeoutException e) {
+//            System.out.println("Suggestion not found for keyword: " + keyword);
+//        }
 
-        //searchBar.submit(); // or click a search button if present
+
+        
     }
 
-    //public void selectWebinar(String webinarTitle) {
-//        WebElement webinarLink = driver.findElement(
-//            org.openqa.selenium.By.linkText(webinarTitle));
-    	
-    	    	
-   // }
+  
 
   public void clickRegister(String  buttonText) {
 //        WebElement buttonText = driver.findElement(

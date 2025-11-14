@@ -1,4 +1,5 @@
 Feature: Navigate to Edureka Blog and open Machine Learning with Mahout article
+@resources
 Scenario: user navigates through Website to open blog
     Given the user opens the browser
     When the user navigates to the homepage
@@ -8,7 +9,7 @@ Scenario: user navigates through Website to open blog
     And the user clicks on the article
     Then the article page should be displayed
    
-
+@webinar
 Scenario: user registers for a webinar using dynamic data
     Given the user opens the browser
     When the user navigates to the homepage from configuration
@@ -18,6 +19,15 @@ Scenario: user registers for a webinar using dynamic data
     And the user selects the webinar title from configuration
     And the user scrolls and clicks on the register button from configuration
     Then the user should see the confirmation section from configuration 
+    
+    
+@ask
+  Scenario: User navigates to Ask a Question page and verifies the header text
+    Given the user launches the browser with the URL from the properties file
+    When the user clicks on the menu from Properies file
+    And the user clicks on the submenu from Properties file 
+    And the user clicks on the ask a question button using the ID from the properties file
+    Then the user should see the header text on the Ask a Question page matches the expected value from the properties file
     
 
 @community

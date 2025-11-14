@@ -4,6 +4,7 @@ import org.testng.Assert;
 
 import com.Pages.WebinarPage;
 import com.Parameters.PropertyReader;
+import com.aventstack.extentreports.ExtentTest;
 import com.setUp.BaseSteps;
 
 import io.cucumber.java.en.Then;
@@ -12,12 +13,13 @@ import io.cucumber.java.en.When;
 public class webinar extends BaseSteps 
 {
 	WebinarPage webinarPage;
+	ExtentTest test=Hooks.test;
 	
 	@When("the user navigates to the homepage from configuration")
 	public void the_user_navigates_to_the_homepage_from_configuration()
 	{
-		 driver.get(PropertyReader.get("homepage"));
-	        webinarPage = new WebinarPage(driver);
+		 //driver.get(PropertyReader.get("homepage"));
+	        webinarPage = new WebinarPage(driver, test);
 
 	    
 	}
