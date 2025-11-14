@@ -121,64 +121,68 @@ public class Search extends BaseSteps {
 		BaseSteps.closeBrowser();
 	}
 	
-	
 	/* Scenario 5 */
+	@When("I click on ChatGPT")
+	public void i_click_on_chat_gpt() {
+		searchPage.clickChatGPT();
+	}
+
+	@When("I click on Generative AI Course Masters Program")
+	public void i_click_on_generative_ai_course_masters_program() {
+		searchPage.clickGenAICourse();
+	}
+
+	@When("I click Get in Touch")
+	public void i_click_get_in_touch() {
+		searchPage.clickGetInTouch();
+	}
+
+	@When("I fill the form using data from sheet {int} and row {int}")
+	public void i_fill_the_form_using_data_from_sheet_and_row(Integer int1, Integer int2) throws InterruptedException {
+		searchPage.enterFormData(int1, int2);
+	}
+
+	@When("I click on submit")
+	public void i_click_on_submit() {
+		searchPage.clickSubmit();
+	}
+
+	@Then("Thank You is displayed")
+	public void thank_you_is_displayed() throws InterruptedException {
+	    searchPage.displayThankYou();
+	    BaseSteps.closeBrowser();
+	}
 	
-	@And("I click on Artificial Intelligence")
-	public void i_click_on_artificial_intelligence() {
-		searchPage.clickAI(); 
+	/*@When("I click on Power BI")
+	public void i_click_on_power_bi() {
+		searchPage.clickPowerBI();
 	}
 
-	@And("I click on Sitejabber review button")
-	public void i_click_on_sitejabber_review_button() {
-		searchPage.clickReview();
+	@When("I click on course")
+	public void i_click_on_course() {
+		searchPage.clickAnyCourse();
 	}
 
-	@And("I enter website name from sheet {int} and row {int}")
-	public void i_enter_website_name_from_sheet_and_row(Integer sheetIndex, Integer rowIndex) {
-		String excelPathSO = prop.getProperty("excelpath");
-
-		String website = ExcelReader.getLocalityByRow(excelPathSO, sheetIndex, rowIndex);
-		Assert.assertNotNull(website, "Webiste not found at sheet " + sheetIndex +", row " + rowIndex);
-
-		boolean status = searchPage.enterWebsiteInput(website);
-		Assert.assertTrue(status, "Failed to enter website: " + website);
+	@When("I click on Google Reviews")
+	public void i_click_on_google_reviews() {
+		searchPage.clickGoogleReview();
 	}
 
-	@Then("Reviews page of website should be displayed")
-	public void reviews_page_of_website_should_be_displayed() {
-		boolean status = searchPage.verifyReviewDisplay();
+	@When("I enter place from sheet {int} and row {int}")
+	public void i_enter_place_from_sheet_and_row(Integer sheetIndex, Integer rowIndex) {
+		String excelPathSO = prop.getProperty("excelpath1");
+
+		String place = ExcelReader.getLocalityByRow(excelPathSO, sheetIndex, rowIndex);
+		Assert.assertNotNull(place, "Place found at sheet " + sheetIndex +", row " + rowIndex);
+
+		searchPage.enterPlace(place);
+		//Assert.assertTrue(status, "Failed to enter place: " + place);
+	}
+
+	@Then("Place is located in the Maps")
+	public void place_is_located_in_the_maps() throws InterruptedException {
+		boolean status = searchPage.verifyMaps();
 		Assert.assertTrue(status);
-	}
-	
-	
-	/* Scenario 4 */
-	/*@And("I click on Cloud Computing")
-	public void i_click_on_cloud_computing() {
-	    boolean status = searchPage.clickCloudComputing();
-	    Assert.assertTrue(status);
-	}
-
-	@And("I click on search input field")
-	public void i_click_on_search_input_field() {
-		boolean status = searchPage.clickSearchInput();
-		Assert.assertTrue(status);
-	}
-
-	@And("I enter course name from sheet {int} and row {int}")
-	public void i_enter_course_name_from_sheet_and_row(int sheetIndex, int rowIndex) {
-		String excelPathSo = prop.getProperty("excelpath");
-		
-		String course = ExcelReader.getLocalityByRow(excelPathSo, sheetIndex, rowIndex);
-		Assert.assertNotNull(course, "Course not found at sheet " + sheetIndex +", row " + rowIndex);
-		
-		boolean status = searchPage.enterCourseInput(course);
-		Assert.assertTrue(status, "Failed to enter course: " + course);
-	}
-
-	@Then("Courses page is visible")
-	public void courses_page_is_visible() {
-		boolean status = searchPage.verifyVisibilityCoursePage();
-		Assert.assertTrue(status);
+		BaseSteps.closeBrowser();
 	}*/
 }

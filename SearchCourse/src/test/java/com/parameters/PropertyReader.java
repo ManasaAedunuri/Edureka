@@ -24,6 +24,21 @@ public class PropertyReader {
 		}
 
 		return prop;
-
 	}
+	
+	
+	private static Properties config;
+	
+	static {
+        try {
+            FileInputStream fis = new FileInputStream("src\\test\\resources\\PropertiesFile\\search.properties");
+            config = new Properties();
+            config.load(fis);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load config.properties: " + e.getMessage());
+        }
+    }
+	public static String getProperty(String key) {
+        return config.getProperty(key);
+    }
 }

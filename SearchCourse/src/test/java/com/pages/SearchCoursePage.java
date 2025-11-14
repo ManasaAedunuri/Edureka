@@ -1,6 +1,7 @@
 package com.pages;
 
 import java.time.Duration;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,9 +12,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.parameters.ExcelReader;
+import com.parameters.PropertyReader;
 import com.setup.BaseSteps;
 import com.setup.Reports;
 import com.stepDefinitionTestNG.Hooks;
@@ -230,141 +234,141 @@ public class SearchCoursePage extends BaseSteps{
     }
     
     /* Scenario 5 */
-    @FindBy(xpath = "/html/body/div[3]/div/div/div/div[3]/div[1]/div[2]/div[2]/ul/li[1]/a")
-    WebElement buttonAI;
+    @FindBy(xpath = "//a[text()='chatgpt']")
+    WebElement chatGPT;
     
-    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[3]/div[1]/div/div[2]/div[2]/div[2]")
-    WebElement reviewButton;
+    @FindBy(xpath = "//h3[text()=' Generative AI Course Masters Program ']/parent::div")
+    WebElement genAI;
     
-    @FindBy(xpath = "/html/body/div[2]/header[2]/div/div[1]/div[1]/div[1]/form")
-    WebElement secondSearchInput;
+    @FindBy(xpath = "(//button)[text()='GET IN TOUCH'][1]")
+    WebElement getInTouch;
     
-    public void clickAI() {
-    	try {
-    		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    		WebElement elementAIClick = wait.until(ExpectedConditions.elementToBeClickable(buttonAI));
-    		elementAIClick.click();
-    	}
-		catch(Exception e) {
-			//Reports.generateReport(driver, test, Status.FAIL, "Course details page is not displayed");
-			e.printStackTrace();
-		}
+    @FindBy(id = "git_email")
+    WebElement email;
+    
+    @FindBy(id = "git_tel")
+    WebElement phone;
+    
+    @FindBy(xpath = "//button[text()='SUBMIT']")
+    WebElement submitButton;
+    
+    @FindBy(xpath = "//*[@id=\"gettopfoldclp\"]/div/div/div/div/div/p/span")
+    WebElement thankYou;
+    
+    public void clickChatGPT() {
+    	wait.until(ExpectedConditions.elementToBeClickable(chatGPT));
+    	chatGPT.click();
+    	//Reports.generateReport(driver, test, Status.PASS, "Power BI is clicked");
     }
     
-    public void clickReview() {
-    	try {
-    		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-    		wait.until(ExpectedConditions.elementToBeClickable(reviewButton));
-    		((JavascriptExecutor) driver).executeScript("arguments[0].click();", reviewButton);
-    		//sagReview.click();
-    	}
-    	catch(Exception e) {
-			//Reports.generateReport(driver, test, Status.FAIL, "Course details page is not displayed");
-		}
+    public void clickGenAICourse() {
+    	wait.until(ExpectedConditions.elementToBeClickable(genAI));
+    	genAI.click();
+    	//Reports.generateReport(driver, test, Status.PASS, "Course is clicked");
     }
     
-    public boolean enterWebsiteInput(String websiteName) {
-    	try {
-    		wait.until(ExpectedConditions.visibilityOf(secondSearchInput));
-    		wait.until(ExpectedConditions.elementToBeClickable(secondSearchInput));
-    		((JavascriptExecutor) driver).executeScript("arguments[0].click();", secondSearchInput);
-    		//secondSearchInput.click();
-    		//secondSearchInput.clear();
-    		secondSearchInput.sendKeys(websiteName);
-    		secondSearchInput.sendKeys(Keys.ENTER);
-    		return true;
-    	}
-    	catch(Exception e) {
-    		e.printStackTrace();
-    		return false;
-    	}
+    public void clickGetInTouch() {
+    	wait.until(ExpectedConditions.elementToBeClickable(getInTouch));
+    	getInTouch.click();
     }
     
-    public boolean verifyReviewDisplay() {
+    Map<String, String> formData;
+    PropertyReader propertyreader=new PropertyReader();
+    
+    public void enterFormData(Integer sheet, Integer row) throws InterruptedException
+    {
+    	String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
+        String rowStr = String.valueOf(row);
+ 
+        SearchCoursePage searchPage = new SearchCoursePage(driver, test);
+        searchPage.enterEmail(sheetName, rowStr);
+        searchPage.enterPhone(sheetName, rowStr);
+        
+    }
+    
+    public void enterEmail(String sheet,String row) throws InterruptedException
+    {
+    	 wait.until(ExpectedConditions.visibilityOf(email));
+		   //clickElement(email);
+		   //email.sendKeys(excelData.get(rowIndex)[3]);
+		   int rowNum = Integer.parseInt(row);
+		    formData = ExcelReader.getRowData(sheet, rowNum);
+		    String fieldEmail=propertyreader.getProperty("emailField");
+		   email.sendKeys(formData.get(fieldEmail));
+    }
+    
+    public void enterPhone(String sheet,String row) throws InterruptedException
+    {
+    	wait.until(ExpectedConditions.visibilityOf(phone));
+		   phone.click();
+		   int rowNum = Integer.parseInt(row);
+		    formData = ExcelReader.getRowData(sheet, rowNum);
+		    String fieldPhone=propertyreader.getProperty("phoneField");
+		    		
+		    long phoneNum = Long.parseLong(formData.get(fieldPhone));
+		   phone.sendKeys(String.valueOf(phoneNum));
+    }
+    
+    public void clickSubmit() {
+    	wait.until(ExpectedConditions.elementToBeClickable(submitButton));
+    	submitButton.click();
+    }
+    
+    public void displayThankYou() throws InterruptedException {
     	try {
-			if (driver.getTitle().contains("Sitejabber - Search")) {
+    		wait.until(ExpectedConditions.visibilityOf(thankYou));
+    		Assert.assertTrue(thankYou.isDisplayed(),"Submission Unsuccessful, Please enter valid Data");
+    	}
+    	catch (Exception e) {
+    		Assert.fail("Submission Unsuccessful, Please enter valid Data");
+    	}
+    	Thread.sleep(1000);
+    }
+    
+    /*public void clickGoogleReview() {
+
+    	WebElement element = driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div/div[1]/div/div"));
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("arguments[0].scrollIntoView(true);", element);
+
+    	//wait.until(ExpectedConditions.elementToBeClickable(googleReview));
+    	googleReview.click();
+    	//Reports.generateReport(driver, test, Status.PASS, "Course is clicked");
+    }
+    
+    public void enterPlace(String place) {
+//    	try {
+//    		wait.until(ExpectedConditions.visibilityOf(searchPlace));
+//    		searchPlace.clear();
+//    		searchPlace.sendKeys(place);
+//    		searchPlace.sendKeys(Keys.ENTER);
+//    		//Reports.generateReport(driver, test, Status.PASS, "Place is enterd");
+//    		return true;
+//    	}
+//    	catch(Exception e) {
+//    		//Reports.generateReport(driver, test, Status.PASS, "Place is not entered");
+//    		return false;
+//    	}
+    	cancelButton.click();
+    	wait.until(ExpectedConditions.visibilityOf(searchPlace));
+    	wait.until(ExpectedConditions.elementToBeClickable(searchPlace));
+    	((JavascriptExecutor) driver).executeScript("arguments[0].click();", searchPlace);
+		//searchPlace.clear();
+		searchPlace.sendKeys(place);
+		searchPlace.sendKeys(Keys.ENTER);
+    }
+    
+    public boolean verifyMaps() {
+    	try {
+			if (driver.getTitle().contains("Edureka - Google Maps")) {
 				System.out.println(driver.getTitle());
-				Reports.generateReport(driver, test, Status.PASS, "Review details page is displayed");
+				Reports.generateReport(driver, test, Status.PASS, "Maps page is visible");
 			}
 			return true;
 		}
 		catch(Exception e) {
-			Reports.generateReport(driver, test, Status.FAIL, "Review details page is not displayed");
+			Reports.generateReport(driver, test, Status.FAIL, "Maps page is not visible");
 			return false;
-		}
-    } 
-
-    /* Scenario 5 */
-   /* @FindBy(xpath = "(//a)[text()='Cloud Computing'][3]")
-    WebElement cloudButton;
-    
-//    @FindBy(xpath = "(//input[@placeholder='Enter Course, Category or keyword'])[2]")
-//    WebElement searchInputField;
-//    
-//    @FindBy(xpath = "//*[@id=\"remote\"]/span[2]")
-//    WebElement searchButtonIcon;
-    
-    public boolean clickCloudComputing() {
-    	try {
-    		wait.until(ExpectedConditions.elementToBeClickable(cloudButton));
-    		cloudButton.click();
-    		return true;
-    	}
-    	catch(Exception e) {
-    		return false;
-    	}
-    }*/
-    
-    /*public boolean clickSearchInput() {
-    	try {
-    		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    		WebElement searchInputField = wait.until(ExpectedConditions.elementToBeClickable(
-    				By.xpath("(//input[@placeholder='Enter Course, Category or keyword'])[2]")
-    						));
-    		searchInputField.click();
-    		return true;
-    	}
-    	catch(Exception e) {
-    		return false;
-    	}
-    }*/
-    
-    /*public boolean enterCourseInput(String cname) {
-    	try {
-    		//wait.until(ExpectedConditions.elementToBeClickable(searchInputField));
-    		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    		WebElement searchInputField = wait.until(ExpectedConditions.elementToBeClickable(
-    				By.xpath("/html/body/header/nav/div[3]/input")
-    						));
-    		searchInputField.clear();
-    		searchInputField.sendKeys(cname);
-    		
-//    		WebElement searchButtonIcon = wait.until(ExpectedConditions.elementToBeClickable(
-//    				By.xpath("/html/body/header/nav/div[3]")
-//    				));
-//    		searchButtonIcon.click();
-    		searchInputField.sendKeys(Keys.ENTER);
-    		return true;
-    	}
-    	catch(Exception e) {
-    		e.printStackTrace();
-    		return false;
-    	}
-    }
-
-    public boolean verifyVisibilityCoursePage() {
-		try {
-			if (driver.getTitle().contains("Instructor-Led Online Training with 24X7 Lifetime Support | Edureka")) {
-				System.out.println(driver.getTitle());
-				//Reports.generateReport(driver, test, Status.PASS, "Courses page is visible");
-			} else {
-				throw new AssertionError("Courses page not visible.");
-			}
-			return true;
-		}
-		catch(Exception e) {
-			return false;
-			//Reports.generateReport(driver, test, Status.FAIL, "Courses page is not visible");
 		}
     }*/
 }

@@ -39,33 +39,21 @@ And I click on View Details
 And I click on Times Now
 Then Times Now Article is visible
 
-
 @fifth
-Scenario Outline: Verify Edureka Reviews
+Scenario Outline: Verify Form Submission
 Given The browser is launched and the Edureka homepage is opened
 When I click on the Search course bar
-And I click on Artificial Intelligence
-And I click on Sitejabber review button
-And I enter website name from sheet <sheet2> and row <row2>
-Then Reviews page of website should be displayed
+And I click on ChatGPT
+And I click on Generative AI Course Masters Program
+And I click Get in Touch
+And I fill the form using data from sheet <sheet> and row <row>
+And I click on submit
+Then Thank You is displayed 
 
 Examples:
-| sheet2 | row2 |
-|   1    |  0   |
-|   1    |  1   |
-
-
-#@fourth
-#Scenario Outline: Verify Popular Course Categories 
-#Given The browser is launched and the Edureka homepage is opened
-#When I click on the Search course bar
-#And I click on Cloud Computing
-#And I click on search input field
-#And I enter course name from sheet <sheet> and row <row>
-#Then Courses page is visible
-
-
-
+| sheet  | row  |
+|   2    |  1   |
+|   2    |  2   |
 
 
 
