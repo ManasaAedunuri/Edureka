@@ -47,7 +47,22 @@ Examples:
   | 0       | 2        |
 
  
+@EnrollNow
+Scenario Outline: Download brochure for Generative AI course and fill details from Excel
+  Given user is on Edureka homepage
+  When scroll to sectionName
+  And clicks on buttonName
+  And click on the category4
+   And clicks on the Selenium course
+  And the user reads data from Excel at <sheetNo> and <rowIndex>
+  And clicks on buttonName3
+  And email, and phone number from Excel
+  Then the request form should be submitted successfully
 
+Examples:
+  | sheetNo | rowIndex |
+  | 1       | 1        |
+  | 1       | 2        |
 
 
 
