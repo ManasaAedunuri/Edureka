@@ -1,13 +1,8 @@
 package com.stepDefinitionTestNG;
 
-import java.util.Map;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import com.pages.CareersPage;
-import com.parameters.ExcelReader;
 import com.parameters.PropertyReader;
 
 import io.cucumber.java.en.And;
@@ -31,7 +26,7 @@ public class Careers {
 	    careersPage.scrollToFooter();  
 
 	}
-//
+
 	@When("I click on the target link")
 	public void i_click_on_the_target_link() throws InterruptedException {
 		careersPage.clickCareersLink();
@@ -65,10 +60,13 @@ public class Careers {
 		careersPage.scrollToJobDetails();
 	}
 	
+	@Then("Job details page should be visible")
+	public void job_details_page_should_be_visible() throws InterruptedException {
+	   careersPage.verifyJobDetails();
+	}
 	
 	
-	
-	//Test_Scenario_02
+	 //Test Scenario_02
 	
 	
 	
@@ -91,27 +89,20 @@ public class Careers {
 	
 
 	@Then("The Ebook is displayed")
-	public void the_ebook_is_displayed() {
+	public void the_ebook_is_displayed() throws InterruptedException {
 	    careersPage.verifyEbook();
 	}
 	
 	
 	
+	 //Test Scenario_03
 	
 	
-	
-	
-	//test Scenario_3
-	
-
-	
-
-	
-	@And("I click on target1")
+	  @And("I click on target1")
 	   public void i_click_on_target1() throws InterruptedException {
 
 		    		careersPage.clickonCT();
-		    }
+		}
 	   
 	   @And("I click on form")
 	   public void i_click_on_form() throws InterruptedException {
@@ -119,45 +110,19 @@ public class Careers {
 		   careersPage.clickonform();
 
 	   }
-	   
-	   
-//	   @Then("I fill the form using data from {string} {string}")
-//	   public void i_fill_the_form_using_data_from(String sheet, String row) throws InterruptedException {
-//
-//		
-//        
-//        careersPage.enterName(sheet,row);
-//        careersPage.enterCompanyName(sheet,row);
-//        careersPage.enterTrainingNeed(sheet, row);
-//        careersPage.enterEmail(sheet, row);
-//        careersPage.enterPhone(sheet, row);
-//        careersPage.enterQuery(sheet, row);
-//        
-//
-////        driver.findElement(By.id("name")).sendKeys(formData.get("Name"));
-////        driver.findElement(By.id("companyName")).sendKeys(formData.get("CompanyName"));
-////        WebElement dropdown = driver.findElement(By.id("trainingNeed"));
-////        dropdown.click();
-////        dropdown.findElement(By.xpath("//option[text()='" + formData.get("TrainingNeed") + "']")).click();
-////        driver.findElement(By.id("email")).sendKeys(formData.get("Email"));
-////        driver.findElement(By.id("phone")).sendKeys(formData.get("Phone"));
-////        driver.findElement(By.id("query")).sendKeys(formData.get("Query"));
-//    
-//
-//	   }
+	    
 	   
 	   @Then("I fill the form using data from {int} {int}")
 	   public void i_fill_the_form_using_data_from(Integer int1, Integer int2) throws InterruptedException {
 		   careersPage.enterFormData(int1, int2);
 	   }
 	   
-	   
-	  
 
 		@And("I submit the form")
 		public void i_submit_the_form() throws InterruptedException  {
 			   careersPage.clickSubmit();
 		}
+		
 	   @Then("I should see the Thankyou popup and close it")
 	   public void i_should_see_the_thankyou_popup_and_close_it() throws InterruptedException {
 	       Thread.sleep(1000);
@@ -170,8 +135,7 @@ public class Careers {
 	   }	
 	   
 	   
-      //TS_04
-	   
+	   //Test Scenario_04
 	   
 	   @Then("I scroll to curriculums section")
 	   public void i_scroll_to_curriculums_section() throws InterruptedException {
@@ -184,11 +148,6 @@ public class Careers {
 	       careersPage.clickDownload();
 	   }
 	   
-//	   @Then("I fill the form using data from {int} {int}")
-//	   public void i_fill_the_form_using_data_from(Integer int1, Integer int2) throws InterruptedException {
-//	       
-//		   careersPage.FillDownloadForm(int1, int2);
-//	   }
 	   
 	   @Then("I fill the form using data from {int} {int} to download the list")
 	   public void i_fill_the_form_using_data_from_to_download_the_list(Integer int1, Integer int2) throws InterruptedException {
@@ -202,18 +161,12 @@ public class Careers {
 	   }
 
 	   @Then("full course List is downloaded")
-	   public void full_course_list_is_downloaded() {
-	       
+	   public void full_course_list_is_downloaded() throws InterruptedException {
+	       careersPage.verifySuccessfulDownload();
 	   }
 	   
 	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
+	    
 	   //Test Scenario_05
 	   
 	   
@@ -238,7 +191,9 @@ public class Careers {
 	   }
 
 	   @Then("the video lectures page should be displayed")
-	   public void the_video_lectures_page_should_be_displayed() {
+	   public void the_video_lectures_page_should_be_displayed() throws InterruptedException {
+	       careersPage.verifyDevopsVideoSeriesPage();
+	       //Thread.sleep(2000);
 	       
 	   }
 	   

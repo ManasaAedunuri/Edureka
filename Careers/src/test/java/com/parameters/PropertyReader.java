@@ -21,5 +21,7 @@ public class PropertyReader {
     public static String getProperty(String key) {
         return config.getProperty(key);
     }
+    
+    
 
 }
