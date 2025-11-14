@@ -206,4 +206,40 @@ public class Careers {
 	       
 	   }
 	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   //Test Scenario_05
+	   
+	   
+	   @Then("I scroll to More Resources section to find target2")
+	   public void i_scroll_to_more_resources_section_to_find_target2() throws InterruptedException {
+	       careersPage.scrollToMoreResources();
+	   }
+
+	   @Then("I click on target2")
+	   public void i_click_on_target2() throws InterruptedException {
+	       careersPage.clickOnVideo();
+	   }
+
+	   @Then("I scroll to find Recently Added Videos")
+	   public void i_scroll_to_find_recently_added_videos() throws InterruptedException {
+	      careersPage.scrollToRecentVideos();
+	   }
+
+	   @When("I click on target3")
+	   public void i_click_on_target3() throws InterruptedException {
+	      careersPage.clickOnDevopsVideo();
+	   }
+
+	   @Then("the video lectures page should be displayed")
+	   public void the_video_lectures_page_should_be_displayed() {
+	       
+	   }
+	   
 }

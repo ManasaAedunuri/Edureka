@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features = ".\\src\\test\\resources\\Features\\careers.feature",
 
 glue = {"com.stepDefinitionTestNG"},
-tags="@SF",
+tags="@TS_05",
 
 plugin = {"pretty", "html:Reports/cucumber-reports.html",
 		

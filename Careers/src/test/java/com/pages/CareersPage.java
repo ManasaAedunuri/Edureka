@@ -338,6 +338,40 @@ String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
     }
     
     
+    //Test Scenario_05
+    
+    @FindBy(xpath = "/html/body/section[2]/div/div/div[9]")
+    static WebElement moreResources;
+    
+    @FindBy(xpath = "/html/body/section[3]/div/div/div[2]/a/div/div[2]/span[1]")
+    static WebElement video;
+    
+    @FindBy(xpath = "/html/body/section[1]/div/div/div[29]")
+    static WebElement recentVideos;
+    
+    @FindBy(xpath = "/html/body/section[2]/div/div/div[1]/div/div/a[2]/div/i")
+    static WebElement devopsVideo;
+    
+    
+    public void scrollToMoreResources() throws InterruptedException
+    {
+    	scrollToElement(moreResources);
+    }
+    
+    public void  clickOnVideo() throws InterruptedException
+    {
+    	clickElement(video);
+    }
+    
+    public void scrollToRecentVideos() throws InterruptedException
+    {
+    	scrollToElement(recentVideos);
+    }
+    
+    public void clickOnDevopsVideo() throws InterruptedException
+    {
+    	clickElement(devopsVideo);
+    }
     
     
     
@@ -347,83 +381,7 @@ String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
     
     
     
-    
-    
-    
-    
-    
-    
-       
-//   @Then("I click on target1")
-//   public void i_click_on_target1() throws InterruptedException {
-//
-//if (excelData == null || excelData.isEmpty()) {
-//        String filePath = "src/test/resources/Exceldata/Data.xlsx";
-//        excelData = com.parameters.ExcelReader.readExcel(filePath);
-//    }
-//
-//	    		clickElement(corporateTraining);
-//	    }
-//   
-//   @Then("I click on form")
-//   public void i_click_on_form() throws InterruptedException {
-//
-//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", form);
-//    wait.until(ExpectedConditions.visibilityOf(name));
-//
-//   }
-//   @Then("I enter Name as ")
-//   public void i_enter_name_as() throws InterruptedException {
-//
-//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//    wait.until(ExpectedConditions.elementToBeClickable(name));
-//    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", name);
-//    name.sendKeys(excelData.get(rowIndex)[0]);
-//   
-//   }
-//   @Then("I enter Company Name as ")
-//   public void i_enter_company_name_as() throws InterruptedException {
-//	   wait.until(ExpectedConditions.visibilityOf(companyName));
-//	   clickElement(companyName);
-//	   companyName.sendKeys(excelData.get(rowIndex)[1]);
-//   }
-//   @Then("I select Training Need as ")
-//   public void i_select_training_need_as() throws InterruptedException {
-//	   wait.until(ExpectedConditions.visibilityOf(trainingNeed));
-//	   clickElement(trainingNeed);
-//	   trainingNeed.sendKeys(excelData.get(rowIndex)[2]);
-//   }
-//   @Then("I enter Email ID as ")
-//   public void i_enter_email_id_as() throws InterruptedException {
-//	   wait.until(ExpectedConditions.visibilityOf(email));
-//	   clickElement(email);
-//	   email.sendKeys(excelData.get(rowIndex)[3]);
-//   }
-//   @Then("I enter Phone Number as ")
-//   public void i_enter_phone_number_as() throws InterruptedException {
-//	   wait.until(ExpectedConditions.visibilityOf(phone));
-//	   clickElement(phone);
-//	   long phoneNum = Long.parseLong(excelData.get(rowIndex)[4]);
-//	phone.sendKeys(String.valueOf(phoneNum));
-//   }
-//   @Then("I enter Query as ")
-//   public void i_enter_query_as() throws InterruptedException {
-//	   wait.until(ExpectedConditions.visibilityOf(query));
-//	   clickElement(query);
-//	   query.sendKeys(excelData.get(rowIndex)[5]);
-//   }
-//   @Then("I submit the form")
-//   public void i_submit_the_form() throws InterruptedException {
-//	   clickElement(submit);
-//       rowIndex++;
-//   }
-//   @Then("the form should be submitted successfully")
-//   public void the_form_should_be_submitted_successfully() {
-//	   assert driver.getPageSource().contains("Thank you");
-//   }
-       
-}  
+ }  
        
        
        
@@ -439,4 +397,4 @@ String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
     
     
     
-//   
+ 
