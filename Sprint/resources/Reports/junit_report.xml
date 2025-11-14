@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="83.131" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-11-14T12:01:24.814358800Z">
+<testcase classname="Navigate to Edureka Blog and open Machine Learning with Mahout article" name="user registers for a webinar using dynamic data" time="81.972">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (3140f095368d6f2969e06b211eb8d5a7)] -&gt; xpath: //span[text()='RESERVE YOUR SPOT NOW']] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\baiseg\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52906}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52906/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3140f095368d6f2969e06b211eb8d5a7">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (3140f095368d6f2969e06b211eb8d5a7)] -> xpath: //span[text()='RESERVE YOUR SPOT NOW']] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\baiseg\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52906}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52906/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3140f095368d6f2969e06b211eb8d5a7
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.Pages.WebinarPage.isConfirmationVisible(WebinarPage.java:139)
+	at com.stepDefinitionTestNG.webinar.the_user_should_see_the_confirmation_section_from_configuration(webinar.java:60)
+	at ✽.the user should see the confirmation section from configuration(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:21)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the user opens the browser............................................passed
+When the user navigates to the homepage from configuration..................passed
+And the user clicks on the menu from configuration..........................passed
+And the user clicks on the submenu from configuration.......................passed
+And the user searches for the keyword from configuration....................passed
+And the user selects the webinar title from configuration...................passed
+And the user scrolls and clicks on the register button from configuration...passed
+Then the user should see the confirmation section from configuration........failed
+]]></system-out>
+</testcase>
+</testsuite>
