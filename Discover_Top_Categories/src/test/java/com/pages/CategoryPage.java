@@ -80,6 +80,17 @@ public class CategoryPage extends BaseSteps {
         String current_title = driver.getTitle();
         return current_title.contains(expectedUrlPart);
     }
+    public static void safeClick(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+            element.click();
+        } catch (Exception e) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+            System.out.println("Clicked using JavaScript as fallback.");
+        }
+    }
 //    public boolean isCategoryPageLoaded2(String expectedText) {
 //        return driver.getTitle().contains(expectedText);
 //    }

@@ -439,6 +439,86 @@ public class DiscoverTopCategoriesSteps {
         Thread.sleep(2000);
         driver.quit();
     }
+    
+    /* GetInTouch scenario outline 5           */
+    @Given("user is on Edureka homepage")
+    public void user_is_on_edureka_homepage() {
+     	BaseSteps.launchBrowser();
+        driver = BaseSteps.driver;
+        driver.get(prop.getProperty("sourceUrl")); // Using sourceUrl from properties
+        homePage = new HomePage(driver);
+        System.out.println("Navigated to Edureka homepage: " + prop.getProperty("sourceUrl"));
+    }
+
+    @When("scroll to sectionName")
+    public void scroll_to_section_name() {
+      	homePage.scrollToDiscoverTopCategories();
+    }
+    @When("click on the category4")
+    public void click_on_the_category4() {
+     	String categoryName = prop.getProperty("category4"); // Read from properties file
+        homePage.clickCategory(categoryName);
+        BaseSteps.sleep(1000);
+        System.out.println("Clicked on " + categoryName + " category");
+    }
+
+    @When("clicks on the Selenium course")
+    public void clicks_on_the_selenium_course() {
+    	     WebElement firstCourse = driver.findElement(By.xpath("//button[text()='VIEW DETAILS']"));
+         String courseName = firstCourse.getAttribute("data-title"); // Capture for verification
+         System.out.println("Clicking on course: " + courseName);
+         firstCourse.click();
+    }
+
+   
+
+
+
+//    @When("clicks on buttonName3")
+//    public void clicks_on_button_name3() throws InterruptedException {
+//      	String buttonName = prop.getProperty("buttonName3"); // e.g., "Download Brochure"
+//        CategoryPage.safeClick(By.xpath("//button[contains(text(),'" + buttonName + "')]"));
+//        System.out.println("Clicked on button: " + buttonName);
+//        Thread.sleep(2000);
+//    }
+    @When("clicks on buttonName3")
+    public void clicks_on_button_name3() throws InterruptedException {
+      	//String buttonName = prop.getProperty("buttonName3"); // e.g., "Download Brochure"
+        CategoryPage.safeClick(By.xpath("//button[@class='videoinfo_btn_enr_stle__G_pv9 btn btn-primary']"));
+        //System.out.println("Clicked on button: " + buttonName);
+        Thread.sleep(2000);
+    }
+//    @When("clicks on buttonName3")
+//    public void clicks_on_button_name3() {
+//        String buttonName = prop.getProperty("buttonName3");
+//        CategoryPage.safeClick(By.xpath("//button[contains(text(),'" + buttonName + "')]"));
+//    }
+
+//    @Then("the request form should be submitted successfully")
+//    public void the_request_form_should_be_submitted_successfully() {
+//        
+//    }
+    @When("email, and phone number from Excel")
+    public void email_and_phone_number_from_excel() {
+      	String email = excelData.get("Email_ID"); // Match Excel header
+     	String phone = excelData.get("PhoneNumber");  // Match Excel header
+        homePage.enterEmail2(email != null ? email : "");
+        homePage.enterPhone2(phone != null ? phone : "");
+
+        System.out.println("Entered Name, Email, and Phone from Excel");
+    }
+    @Then("the request form should be submitted successfully")
+    public void the_request_form_should_be_submitted_successfully() throws InterruptedException {
+        // Click the Submit button using safeClick
+    	    By submitButton = By.xpath("//*[@id=\"firstENForm\"]/div[5]/button");
+      	CategoryPage.safeClick(submitButton);
+
+        System.out.println("request form submitted");
+        Thread.sleep(2000);
+        driver.quit();
+    }
+
+
 
 //    @Then("a confirmation message should be displayed")
 //    public void a_confirmation_message_should_be_displayed() {

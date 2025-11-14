@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 	    //tags = "@AI",
 	    //tags= "@PG",
 	    //tags ="@TopCategories",
-
+	    //tags="@EnrollNow",
 	    plugin = {"pretty", "html:target/cucumber-reports.html",
 	    		    "json:reports/json-report.json",
 				"junit: reports/junit-report.xml"},
