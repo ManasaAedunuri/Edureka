@@ -23,9 +23,9 @@ public class BasePage {
         Thread.sleep(1000);
     }
 
-    public void waitForTitleContains(String titleFragment) {
-        wait.until(ExpectedConditions.titleContains(titleFragment));
-    }
+//    public void waitForTitleContains(String titleFragment) {
+//        wait.until(ExpectedConditions.titleContains(titleFragment));
+//    }
 
 	
 	public void switchToNewTab() {
@@ -41,17 +41,17 @@ public class BasePage {
     }
    
 
-    public void sendKeys(WebElement element, String value) {
-        element.clear();
-        element.sendKeys(value);
-    }
-
-    public void selectDropdownByVisibleText(WebElement dropdown, String text) {
-        new Select(dropdown).selectByVisibleText(text);
-    }
-
-    public void waitForElementVisible(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
+//    public void sendKeys(WebElement element, String value) {
+//        element.clear();
+//        element.sendKeys(value);
+//    }
+//
+//    public void selectDropdownByVisibleText(WebElement dropdown, String text) {
+//        new Select(dropdown).selectByVisibleText(text);
+//    }
+//
+//    public void waitForElementVisible(WebElement element) {
+//        wait.until(ExpectedConditions.visibilityOf(element));
+//    }
 
 }

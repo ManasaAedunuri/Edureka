@@ -10,9 +10,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.parameters.ExcelReader;
+import com.parameters.PropertyReader;
 import com.stepDefinitionTestNG.Hooks;
+
+import io.cucumber.java.en.Then;
 
 
 public class CareersPage extends BasePage{
@@ -34,7 +38,7 @@ public class CareersPage extends BasePage{
     static WebElement internshipLink;
 
     
-    @FindBy(xpath="/html/body/section[2]/article/div[2]/div/div/div/div[1]/div[2]")
+    @FindBy(xpath="/html/body/section[2]/article/div[2]/div/div/div/div[1]/h4")
     static WebElement jobFooter;
     
     @FindBy(xpath = "//h4[text()='Job Details']")
@@ -42,29 +46,17 @@ public class CareersPage extends BasePage{
 
     public CareersPage() {
         PageFactory.initElements(driver, this);
-
-//	if (excelData == null || excelData.isEmpty()) {
-//	        String filePath = "src/test/resources/Exceldata/Data.xlsx";
-//	        excelData = com.parameters.ExcelReader.readExcel(filePath);
-//	        if (excelData.isEmpty()) {
-//	            throw new RuntimeException("Excel data is empty! Check file path or sheet content.");
-//	        }
-//	    }
-
 	 }
     
     
 
     public  void scrollToFooter() throws InterruptedException {
         scrollToElement(footerLink);
-       // waitForElementVisible(careersLink);
-
     }
 
     public  void clickCareersLink() throws InterruptedException {
         clickElement(careersLink);
-       // waitForElementVisible(careersLink);
-
+ 
     }
 
     public  void verifyJoinUsPage() throws InterruptedException {
@@ -97,10 +89,17 @@ public class CareersPage extends BasePage{
 
     public void scrollToJobDetails() throws InterruptedException  {
         scrollToElement(jobFooter);
-        
-        
-        
+          
     }
+    
+    public void verifyJobDetails() throws InterruptedException
+    {
+    	wait.until(ExpectedConditions.visibilityOf(jobDetails));
+        Assert.assertTrue(jobDetails.isDisplayed(),"Job Details are not Displayed");
+        Thread.sleep(2000);
+    }
+    
+    
     
     
     
@@ -115,30 +114,33 @@ public class CareersPage extends BasePage{
     @FindBy(xpath="/html/body/section[2]/div/div/div[1]/div/div/a/img")
     static WebElement awsBook;
     
+    @FindBy(xpath="//*[@id=\"blog-detail-information-3\"]/div[1]/h1")
+    static WebElement verifyEbook;
+    
     public  void clickBlog() throws InterruptedException {
         clickElement(blog);
-       // waitForElementVisible(careersLink);
+        
 
     }
     
     public  void clickEbook() throws InterruptedException {
         clickElement(ebook);
-       // waitForElementVisible(careersLink);
+       
 
     }
     
     public  void clickAWSBook() throws InterruptedException {
         clickElement(awsBook);
-       // waitForElementVisible(careersLink);
+       
 
     }
     
-    public void verifyEbook()
+    public void verifyEbook() throws InterruptedException
     {
-    	    if(driver.getTitle().equals("Free AWS Ebook"))
-    	    {
-    	    	   System.out.println(driver.getTitle());
-    	    }
+    	    wait.until(ExpectedConditions.visibilityOf(verifyEbook));
+            Assert.assertTrue(verifyEbook.isDisplayed(),"Ebook Details are not displayed");
+            Thread.sleep(2000);
+           
     }
     
     
@@ -174,27 +176,27 @@ public class CareersPage extends BasePage{
     
     @FindBy(xpath="//*[@id=\"corp-talk-modal-submit\"]")
     static WebElement submit;
+    
+    @FindBy(xpath="//*[@id=\"corp-custmorequery\"]/div/div/div[2]/div[2]/span/span")
+    static WebElement thankYouForSubmission;
 
     
     public  void clickonCT() throws InterruptedException {
-//    	if (excelData == null || excelData.isEmpty()) {
-//	        String filePath = "src/test/resources/Exceldata/Data.xlsx";
-//	        excelData = com.parameters.ExcelReader.readExcel(filePath);
-//	    }
+
         clickElement(corporateTraining);
-       // waitForElementVisible(careersLink);
+       
 
     }
     public  void clickonform() throws InterruptedException {
     	
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", form);
-	    wait.until(ExpectedConditions.visibilityOf(name));
+
+    	clickElement(form);
 
     }
     
     
     Map<String, String> formData;
+    PropertyReader propertyreader=new PropertyReader();
     
     public void enterFormData(Integer sheet, Integer row) throws InterruptedException
     {
@@ -211,6 +213,8 @@ public class CareersPage extends BasePage{
     }
     
     
+    
+    
     public void enterName(String sheet,String row)
     {
     	
@@ -219,8 +223,8 @@ public class CareersPage extends BasePage{
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", name);
 	    int rowNum = Integer.parseInt(row);
 	    formData = ExcelReader.getRowData(sheet, rowNum);
-	    //name.sendKeys(excelData.get(rowIndex)[0]);
-	    name.sendKeys(formData.get("Name"));
+	    String fieldName=propertyreader.getProperty("nameField");
+	    name.sendKeys(formData.get(fieldName));
     }
     
     public void enterCompanyName(String sheet,String row) throws InterruptedException
@@ -230,7 +234,8 @@ public class CareersPage extends BasePage{
 		   //companyName.sendKeys(excelData.get(rowIndex)[1]);
 		   int rowNum = Integer.parseInt(row);
 		    formData = ExcelReader.getRowData(sheet, rowNum);
-		   companyName.sendKeys(formData.get("CompanyName"));
+		    String fieldCompanyName=propertyreader.getProperty("companyNameField");
+		   companyName.sendKeys(formData.get(fieldCompanyName));
     }
     
     public void enterTrainingNeed(String sheet,String row) throws InterruptedException
@@ -240,7 +245,8 @@ public class CareersPage extends BasePage{
 		   //trainingNeed.sendKeys(excelData.get(rowIndex)[2]);
 		   int rowNum = Integer.parseInt(row);
 		    formData = ExcelReader.getRowData(sheet, rowNum);
-		   trainingNeed.sendKeys(formData.get("TrainingNeed"));
+		    String fieldTrainingNeed=propertyreader.getProperty("trainingNeedField");
+		   trainingNeed.sendKeys(formData.get(fieldTrainingNeed));
     }
     
     public void enterEmail(String sheet,String row) throws InterruptedException
@@ -250,7 +256,8 @@ public class CareersPage extends BasePage{
 		   //email.sendKeys(excelData.get(rowIndex)[3]);
 		   int rowNum = Integer.parseInt(row);
 		    formData = ExcelReader.getRowData(sheet, rowNum);
-		   email.sendKeys(formData.get("Email"));
+		    String fieldEmail=propertyreader.getProperty("emailField");
+		   email.sendKeys(formData.get(fieldEmail));
     }
     
     
@@ -258,10 +265,11 @@ public class CareersPage extends BasePage{
     {
     	wait.until(ExpectedConditions.visibilityOf(phone));
 		   clickElement(phone);
-		   long phoneNum = Long.parseLong(formData.get("Phone"));
-		//phone.sendKeys(String.valueOf(phoneNum));
 		   int rowNum = Integer.parseInt(row);
 		    formData = ExcelReader.getRowData(sheet, rowNum);
+		    String fieldPhone=propertyreader.getProperty("phoneField");
+		    		
+		    long phoneNum = Long.parseLong(formData.get(fieldPhone));
 		   phone.sendKeys(String.valueOf(phoneNum));
     }
     
@@ -272,14 +280,16 @@ public class CareersPage extends BasePage{
 		   //query.sendKeys(excelData.get(rowIndex)[5]);
 		   int rowNum = Integer.parseInt(row);
 		    formData = ExcelReader.getRowData(sheet, rowNum);
-		   query.sendKeys(formData.get("Query"));
+		    String fieldQuery=propertyreader.getProperty("QueryField");
+		   query.sendKeys(formData.get(fieldQuery));
     }
     
     public void clickSubmit() throws InterruptedException
     {
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submit);
-	    wait.until(ExpectedConditions.visibilityOf(name));
+	    //wait.until(ExpectedConditions.visibilityOf(name));
+	    Thread.sleep(2000);
     	//clickElement(submit);
 	       
     }
@@ -287,7 +297,11 @@ public class CareersPage extends BasePage{
     
     public void formSubmitted() throws InterruptedException
     {
-    	assert driver.getPageSource().contains("Thank you");
+    	
+    	wait.until(ExpectedConditions.visibilityOf(thankYouForSubmission));
+        Assert.assertTrue(thankYouForSubmission.isDisplayed(),"Form not Submitted,Please Enter Valid Data");
+        Thread.sleep(2000);
+
     }
     
     
@@ -303,6 +317,9 @@ public class CareersPage extends BasePage{
     
      @FindBy(xpath="//*[@id=\"popup-query-form\"]/div/div[7]/a")
      static WebElement submitDownload;
+     
+     @FindBy(xpath="//*[@id=\"corp-custmorequery\"]/div/div/div[2]/div[2]/span/span")
+     static WebElement thankYouForDownload;
     
     public void scrollToDownload() throws InterruptedException
     {
@@ -319,7 +336,7 @@ public class CareersPage extends BasePage{
     public void FillDownloadForm(Integer sheet, Integer row) throws InterruptedException
     {
 
-String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
+    	String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
         String rowStr = String.valueOf(row);
 
         CareersPage careersPage = new CareersPage();
@@ -328,13 +345,27 @@ String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
         careersPage.enterTrainingNeed(sheetName, rowStr);
         careersPage.enterEmail(sheetName, rowStr);
         careersPage.enterPhone(sheetName, rowStr);
-        //careersPage.enterQuery(sheetName, rowStr);
+        
 
     }
     
     public void clickOnDownloadSubmit() throws InterruptedException
     {
     	clickElement(submitDownload);
+    }
+    
+    public void verifySuccessfulDownload() throws InterruptedException
+    {
+
+		try {
+		        wait.until(ExpectedConditions.visibilityOf(thankYouForDownload));
+		        Assert.assertTrue(thankYouForDownload.isDisplayed(),"Download Unsuccessful, Please enter valid Data");
+		    } 
+		catch (Exception e) {
+		        Assert.fail("Download Unsuccessful, Please enter valid Data");
+		    }
+		Thread.sleep(2000);
+
     }
     
     
@@ -351,6 +382,9 @@ String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
     
     @FindBy(xpath = "/html/body/section[2]/div/div/div[1]/div/div/a[2]/div/i")
     static WebElement devopsVideo;
+    
+    @FindBy(xpath = "/html/body/section[2]/div/div/div[2]/div[1]/h2")
+    static WebElement devopsVideoSeries;
     
     
     public void scrollToMoreResources() throws InterruptedException
@@ -373,14 +407,19 @@ String sheetName = "Sheet" + sheet; // Assuming sheet names are Sheet1, Sheet2
     	clickElement(devopsVideo);
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
+    public void verifyDevopsVideoSeriesPage() throws InterruptedException
+    {
+    	
+       	try {
+	        wait.until(ExpectedConditions.visibilityOf(devopsVideoSeries));
+	        Assert.assertTrue(devopsVideoSeries.isDisplayed(),"Video Lectures Page is Not Displayed!!!!");
+	    } 
+       	catch (Exception e) {
+	        Assert.fail("Download Unsuccessful, Please enter valid Data");
+	    }
+       	Thread.sleep(2000);
+    }
+ 
  }  
        
        
