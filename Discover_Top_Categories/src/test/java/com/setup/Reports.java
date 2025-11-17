@@ -1,111 +1,123 @@
 package com.setup;
 
 import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date; 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
 
+import java.io.IOException;
+
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
+ 
+import org.apache.commons.io.FileUtils;
+
+import org.openqa.selenium.OutputType;
+
+import org.openqa.selenium.TakesScreenshot;
+
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.WebDriverException;
+ 
+import com.aventstack.extentreports.ExtentTest;
+
+import com.aventstack.extentreports.MediaEntityBuilder;
+
+import com.aventstack.extentreports.Status;
+ 
 public class Reports {
  
-	 public static void generateReport(WebDriver driver, ExtentTest test, Status status, String stepMessage) {
+	public static void generateReport(WebDriver driver, ExtentTest test, Status status, String stepMessage) {
 
-	        //driver is used to open website
+		//driver is used to open website
 
-	    	//ExtentTest is used to generate reports
+		//ExtentTest is used to generate reports
 
-	    	//status is a class 
+		//status is a class 
 
-	    	//test is a testcase 
+		//test is a testcase 
 
-	    	//stepMessage is description(buttons is not visible etc...)
+		//stepMessage is description(buttons is not visible etc...)
+		
 
-	    	if (status.equals(Status.PASS)) 
+		if (status.equals(Status.PASS)) 
 
-	    	{
+		{
 
-	            test.log(status, stepMessage);   
+			test.log(status, stepMessage);   
 
-	        } 
+		} 
 
-	    	else if (status.equals(Status.FAIL)) 
+		else if (status.equals(Status.FAIL)) 
 
-	    	{
+		{
 
-	            // Take screenshot if status is FAIL
+			// Take screenshot if status is FAIL
 
-	            String screenshotPath = captureScreenshot(driver, stepMessage);//if testcase fails it will take SS
+			String screenshotPath = captureScreenshot(driver, stepMessage);//if testcase fails it will take SS
 
-	            try 
+			try 
 
-	            {
+			{
 
-	                test.log(status, stepMessage,
+				test.log(status, stepMessage,
 
-	                        MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+						MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
-	            } 
+			} 
 
-	            catch (WebDriverException e) 
+			catch (WebDriverException e) 
 
-	            {
+			{
 
-	                e.printStackTrace();
+				e.printStackTrace();
 
-	                test.log(status, stepMessage + " (Screenshot failed to attach)");//attaching ss in extent reports
+				test.log(status, stepMessage + " (Screenshot failed to attach)");//attaching ss in extent reports
 
-	            }
+			}
 
-	        } 
+		} 
 
-	    	else 
+		else 
 
-	    	{
+		{
 
-	            test.log(status, stepMessage);//to check log status...skipping test cases only(not pass and not fail test case)
+			test.log(status, stepMessage);//to check log status...skipping test cases only(not pass and not fail test case)
 
-	        }
+		}
 
-	    }
+	}
  
-	    public static String captureScreenshot(WebDriver driver, String fileLabel) {
+	public static String captureScreenshot(WebDriver driver, String fileLabel) {
 
-	        String folderPath = System.getProperty("user.dir") + "/reports/screenshots/";//capture the SS with name and save it one loaction
+		String folderPath = System.getProperty("user.dir") + "/reports/screenshots/";//capture the SS with name and save it one loaction
 
-	        new File(folderPath).mkdirs();//creating a floder
+		new File(folderPath).mkdirs();//creating a floder
 
-	        String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH_mm_ss").format(new Date());//to generate unique name for screenshot and capture the dd-MM-yyyy_HH_mm_ss //output is string
+		String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH_mm_ss").format(new Date());//to generate unique name for screenshot and capture the dd-MM-yyyy_HH_mm_ss //output is string
 
-	        String safeFileName = fileLabel.replaceAll("[^a-zA-Z0-9]", "_") + "_" + timeStamp + ".png";//chracters will replace with _underscore
+		String safeFileName = fileLabel.replaceAll("[^a-zA-Z0-9]", "_") + "_" + timeStamp + ".png";//chracters will replace with _underscore
 
-	        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);//ss is file form and saving into filr variable 
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);//ss is file form and saving into filr variable 
 
-	        File destFile = new File(folderPath + safeFileName);//where we want to save in folder with file name
+		File destFile = new File(folderPath + safeFileName);//where we want to save in folder with file name
 
-	        try 
+		try 
 
-	        {
+		{
 
-	            FileUtils.copyFile(screenshot, destFile);//Fileutils is a class and (capture the SS,des folder)
+			FileUtils.copyFile(screenshot, destFile);//Fileutils is a class and (capture the SS,des folder)
 
-	        } 
+		} 
 
-	        catch (IOException e) {
+		catch (IOException e) {
 
-	            e.printStackTrace();
+			e.printStackTrace();
 
-	        }
+		}
  
-	        return "./screenshots/" + safeFileName;//returning the SS folder with files
-
-	    }
+		//return "./screenshots/" + safeFileName;//returning the SS folder with files
+		return destFile.getAbsolutePath();
+	}
 
 }
 

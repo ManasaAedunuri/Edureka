@@ -10,7 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.setup.BaseSteps;
 
 public class HomePage extends BaseSteps {
-
    
 
     // ✅ Page for static locators
@@ -49,6 +48,10 @@ public class HomePage extends BaseSteps {
 
     @FindBy(xpath = "//h3[text()='Generative AI Course Masters Program']")
     private WebElement aiMastersLink;
+    
+    @FindBy(xpath = "//*[@id='lazyhome_Categories']/div/div/ul/li[7]/a/label")
+    private WebElement seventhCategoryLabel;
+
 
     // ✅ Constructor
     public HomePage(WebDriver driver) {
@@ -162,6 +165,9 @@ public class HomePage extends BaseSteps {
     }
 
     public void clickAIMasters() {
-        CategoryPage.safeClick(aiMastersLink); // ✅ uses overloaded safeClick(WebElement)
+        CategoryPage.safeClick(aiMastersLink); // uses overloaded safeClick(WebElement)
+    }
+    public void clickSeventhCategoryLabel() {
+        CategoryPage.safeClick(seventhCategoryLabel); // Uses existing safeClick(WebElement)
     }
 }
