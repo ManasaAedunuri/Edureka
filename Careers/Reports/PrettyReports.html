@@ -1,0 +1,503 @@
+
+@TS_05
+Scenario: verify exploring video lectures                  # ./src/test/resources/Features/careers.feature:66
+
+@TS_06
+Scenario: Submit Form Application with Invalid Data          # ./src/test/resources/Features/careers.feature:94
+
+@TS_04
+Scenario Outline: Download Full Course List                      # ./src/test/resources/Features/careers.feature:61
+
+@TS_03
+Scenario Outline: Submit Form Application             # ./src/test/resources/Features/careers.feature:41
+
+@TS_04
+Scenario Outline: Download Full Course List                      # ./src/test/resources/Features/careers.feature:60
+
+@TS_03
+Scenario Outline: Submit Form Application             # ./src/test/resources/Features/careers.feature:40
+
+@TS_01
+Scenario: Navigate to Careers and select Internship # ./src/test/resources/Features/careers.feature:3
+
+@TS_02
+Scenario: verify Blog navigation and select Ebook        # ./src/test/resources/Features/careers.feature:15
+  ✔ Given I Launch the Edureka website              # com.stepDefinitionTestNG.Careers.i_launch_the_edureka_website()
+  ✔ Given I Launch the Edureka website                           # com.stepDefinitionTestNG.Careers.i_launch_the_edureka_website()
+  ✔ Given I Launch the Edureka website                           # com.stepDefinitionTestNG.Careers.i_launch_the_edureka_website()
+  ✔ Given I Launch the Edureka website                # com.stepDefinitionTestNG.Careers.i_launch_the_edureka_website()
+  ✔ Given I Launch the Edureka website                       # com.stepDefinitionTestNG.Careers.i_launch_the_edureka_website()
+  ✔ Given I Launch the Edureka website                # com.stepDefinitionTestNG.Careers.i_launch_the_edureka_website()
+  ✔ Given I Launch the Edureka website                   # com.stepDefinitionTestNG.Careers.i_launch_the_edureka_website()
+  ✔ Given I Launch the Edureka website                     # com.stepDefinitionTestNG.Careers.i_launch_the_edureka_website()
+  ✔ When I scroll to the footer                                  # com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer()
+  ✘ When I scroll to the footer                              # com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer()
+        java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [76543f17f332bf8c8aa609e66daa0d8e, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63354}, goog:processID: 20968, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63354/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 76543f17f332bf8c8aa609e66daa0d8e
+        	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+        	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+        	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+        	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:83)
+        Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [76543f17f332bf8c8aa609e66daa0d8e, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63354}, goog:processID: 20968, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63354/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 76543f17f332bf8c8aa609e66daa0d8e
+        	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+        	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+        	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+        	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+        	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+        	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+        	... 3 more
+  ✘ When I scroll to the footer                     # com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer()
+        java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [2537475f4396332e7f36fbf823c51488, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54207}, goog:processID: 828, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54207/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 2537475f4396332e7f36fbf823c51488
+        	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+        	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+        	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+        	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:5)
+        Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [2537475f4396332e7f36fbf823c51488, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54207}, goog:processID: 828, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54207/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 2537475f4396332e7f36fbf823c51488
+        	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+        	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+        	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+        	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+        	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+        	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+        	... 3 more
+  ↷ And I click on the target link                           # com.stepDefinitionTestNG.Careers.i_click_on_the_target_link()
+  ↷ And I click on the target link                  # com.stepDefinitionTestNG.Careers.i_click_on_the_target_link()
+  ↷ Then I should be redirected to the target page           # com.stepDefinitionTestNG.Careers.i_should_be_redirected_to_the_target_page()
+  ↷ And I click on target1                                   # com.stepDefinitionTestNG.Careers.i_click_on_target1()
+  ↷ And I click on form                                      # com.stepDefinitionTestNG.Careers.i_click_on_form()
+  ↷ And I fill the form using data from 3 1                  # com.stepDefinitionTestNG.Careers.i_fill_the_form_using_data_from(java.lang.Integer,java.lang.Integer)
+  ↷ And I submit the form                                    # com.stepDefinitionTestNG.Careers.i_submit_the_form()
+  ↷ Then It should show me an error for filling invalid data # com.stepDefinitionTestNG.Careers.it_should_show_me_an_error_for_filling_invalid_data()
+  ↷ Then I should be redirected to the target page  # com.stepDefinitionTestNG.Careers.i_should_be_redirected_to_the_target_page()
+  ↷ When I scroll down to sectionName2              # com.stepDefinitionTestNG.Careers.i_scroll_down_to_section_name2()
+  ↷ And I click on sectionName3 under Marketing     # com.stepDefinitionTestNG.Careers.i_click_on_section_name3_under_marketing()
+  ↷ Then a new tab should open with job description # com.stepDefinitionTestNG.Careers.a_new_tab_should_open_with_job_description()
+  ↷ And I scroll down to verify job details         # com.stepDefinitionTestNG.Careers.i_scroll_down_to_verify_job_details()
+  ↷ Then Job details page should be visible         # com.stepDefinitionTestNG.Careers.job_details_page_should_be_visible()
+  ✘ When I scroll to the footer                       # com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer()
+        java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 8d5297473c2161421bea2e5e11cdffde
+        	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+        	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+        	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+        	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:28)
+        Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 8d5297473c2161421bea2e5e11cdffde
+        	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+        	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+        	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+        	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+        	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+        	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+        	... 3 more
+  ↷ And I click on the target link                    # com.stepDefinitionTestNG.Careers.i_click_on_the_target_link()
+  ↷ Then I should be redirected to the target page    # com.stepDefinitionTestNG.Careers.i_should_be_redirected_to_the_target_page()
+  ↷ And I click on target1                            # com.stepDefinitionTestNG.Careers.i_click_on_target1()
+  ↷ And I click on form                               # com.stepDefinitionTestNG.Careers.i_click_on_form()
+  ↷ And I fill the form using data from 1 1           # com.stepDefinitionTestNG.Careers.i_fill_the_form_using_data_from(java.lang.Integer,java.lang.Integer)
+  ↷ And I submit the form                             # com.stepDefinitionTestNG.Careers.i_submit_the_form()
+  ↷ Then I should see the Thankyou popup and close it # com.stepDefinitionTestNG.Careers.i_should_see_the_thankyou_popup_and_close_it()
+  ✘ When I scroll to the footer                       # com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer()
+        java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [936958e9dee7c70c98919eb7032954e1, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63355}, goog:processID: 14424, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63355/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 936958e9dee7c70c98919eb7032954e1
+        	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+        	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+        	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+        	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:28)
+        Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [936958e9dee7c70c98919eb7032954e1, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63355}, goog:processID: 14424, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63355/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 936958e9dee7c70c98919eb7032954e1
+        	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+        	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+        	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+        	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+        	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+        	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+        	... 3 more
+  ↷ And I click on the target link                    # com.stepDefinitionTestNG.Careers.i_click_on_the_target_link()
+  ↷ Then I should be redirected to the target page    # com.stepDefinitionTestNG.Careers.i_should_be_redirected_to_the_target_page()
+  ↷ And I click on target1                            # com.stepDefinitionTestNG.Careers.i_click_on_target1()
+  ↷ And I click on form                               # com.stepDefinitionTestNG.Careers.i_click_on_form()
+  ↷ And I fill the form using data from 1 2           # com.stepDefinitionTestNG.Careers.i_fill_the_form_using_data_from(java.lang.Integer,java.lang.Integer)
+  ↷ And I submit the form                             # com.stepDefinitionTestNG.Careers.i_submit_the_form()
+  ↷ Then I should see the Thankyou popup and close it # com.stepDefinitionTestNG.Careers.i_should_see_the_thankyou_popup_and_close_it()
+  ✘ When I scroll to the footer                                  # com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer()
+        java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [e75b5ac8f80cb941ce9f03301a911c96, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61933}, goog:processID: 27808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61933/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: e75b5ac8f80cb941ce9f03301a911c96
+        	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+        	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+        	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+        	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:48)
+        Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [e75b5ac8f80cb941ce9f03301a911c96, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61933}, goog:processID: 27808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61933/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: e75b5ac8f80cb941ce9f03301a911c96
+        	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+        	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+        	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+        	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+        	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+        	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+        	... 3 more
+  ↷ And I click on the target link                               # com.stepDefinitionTestNG.Careers.i_click_on_the_target_link()
+  ↷ Then I should be redirected to the target page               # com.stepDefinitionTestNG.Careers.i_should_be_redirected_to_the_target_page()
+  ↷ And I click on target1                                       # com.stepDefinitionTestNG.Careers.i_click_on_target1()
+  ↷ And I scroll to curriculums section                          # com.stepDefinitionTestNG.Careers.i_scroll_to_curriculums_section()
+  ↷ And I click on Download button                               # com.stepDefinitionTestNG.Careers.i_click_on_download_button()
+  ↷ And I fill the form using data from 2 1 to download the list # com.stepDefinitionTestNG.Careers.i_fill_the_form_using_data_from_to_download_the_list(java.lang.Integer,java.lang.Integer)
+  ↷ And I click on submit                                        # com.stepDefinitionTestNG.Careers.i_click_on_submit()
+  ↷ Then full course List is downloaded                          # com.stepDefinitionTestNG.Careers.full_course_list_is_downloaded()
+  ✘ When I scroll to the footer                          # com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer()
+        java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 8d5297473c2161421bea2e5e11cdffde
+        	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+        	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+        	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+        	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:17)
+        Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+          (Session info: chrome=142.0.7444.163)
+        For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: 8d5297473c2161421bea2e5e11cdffde
+        	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+        	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+        	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+        	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+        	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+        	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+        	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+        	... 3 more
+  ↷ And I click on the target link                       # com.stepDefinitionTestNG.Careers.i_click_on_the_target_link()
+  ↷ Then I should be redirected to the target page       # com.stepDefinitionTestNG.Careers.i_should_be_redirected_to_the_target_page()
+  ↷ And I click on blog                                  # com.stepDefinitionTestNG.Careers.i_click_on_blog()
+  ↷ And I click on ebook to get free ebooks in blog page # com.stepDefinitionTestNG.Careers.i_click_on_ebook_to_get_free_ebooks_in_blog_page()
+  ↷ And I click on bookName in ebooks page               # com.stepDefinitionTestNG.Careers.i_click_on_book_name_in_ebooks_page()
+  ↷ Then The Ebook is displayed                          # com.stepDefinitionTestNG.Careers.the_ebook_is_displayed()
+  ✘ And I click on the target link                               # com.stepDefinitionTestNG.Careers.i_click_on_the_target_link()
+        org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [efb44dfe7232613e69144fb78efbba39, screenshot []]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: efb44dfe7232613e69144fb78efbba39
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:571)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+        	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:333)
+        	at com.setup.Reports.captureScreenshot(Reports.java:44)
+        	at com.setup.Reports.generateReport(Reports.java:23)
+        	at com.stepDefinitionTestNG.Careers.i_click_on_the_target_link(Careers.java:56)
+        	at ✽.I click on the target link(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:49)
+        Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@3091f141[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@15f206ac[Wrapped task = org.openqa.selenium.remote.http.jdk.JdkHttpClient$$Lambda/0x000001d581430f98@35518b92]] rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 199]
+        	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377)
+        	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:124)
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.executeAsync(JdkHttpClient.java:384)
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:413)
+        	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:212)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	... 7 more
+  ✘ When I scroll to the footer                            # com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer()
+        org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [efb44dfe7232613e69144fb78efbba39, screenshot []]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: efb44dfe7232613e69144fb78efbba39
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:571)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+        	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:333)
+        	at com.setup.Reports.captureScreenshot(Reports.java:44)
+        	at com.setup.Reports.generateReport(Reports.java:23)
+        	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:41)
+        	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:69)
+        Caused by: java.io.UncheckedIOException: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+        	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+        	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+        	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+        	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        	at java.base/java.lang.Thread.run(Thread.java:1575)
+        Caused by: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:973)
+        	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+        	... 8 more
+        Caused by: java.util.concurrent.RejectedExecutionException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+        	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.ensureExecutedAsync(HttpClientImpl.java:184)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:176)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:282)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:251)
+        	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.asyncReceive(Http1AsyncReceiver.java:468)
+        	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onNext(Http1AsyncReceiver.java:589)
+        	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onNext(Http1AsyncReceiver.java:546)
+        	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:865)
+        	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+        	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+        	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+        	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1478)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1423)
+        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1423)
+  ↷ Then I should be redirected to the target page               # com.stepDefinitionTestNG.Careers.i_should_be_redirected_to_the_target_page()
+  ↷ And I click on the target link                         # com.stepDefinitionTestNG.Careers.i_click_on_the_target_link()
+  ↷ Then I should be redirected to the target page         # com.stepDefinitionTestNG.Careers.i_should_be_redirected_to_the_target_page()
+  ↷ And I click on blog                                    # com.stepDefinitionTestNG.Careers.i_click_on_blog()
+  ↷ And I scroll to More Resources section to find target2 # com.stepDefinitionTestNG.Careers.i_scroll_to_more_resources_section_to_find_target2()
+  ↷ And I click on target2                                 # com.stepDefinitionTestNG.Careers.i_click_on_target2()
+  ↷ And I click on target1                                       # com.stepDefinitionTestNG.Careers.i_click_on_target1()
+  ↷ And I scroll to find Recently Added Videos             # com.stepDefinitionTestNG.Careers.i_scroll_to_find_recently_added_videos()
+  ↷ When I click on target3                                # com.stepDefinitionTestNG.Careers.i_click_on_target3()
+  ↷ Then the video lectures page should be displayed       # com.stepDefinitionTestNG.Careers.the_video_lectures_page_should_be_displayed()
+  ↷ And I scroll to curriculums section                          # com.stepDefinitionTestNG.Careers.i_scroll_to_curriculums_section()
+  ↷ And I click on Download button                               # com.stepDefinitionTestNG.Careers.i_click_on_download_button()
+  ↷ And I fill the form using data from 2 2 to download the list # com.stepDefinitionTestNG.Careers.i_fill_the_form_using_data_from_to_download_the_list(java.lang.Integer,java.lang.Integer)
+  ↷ And I click on submit                                        # com.stepDefinitionTestNG.Careers.i_click_on_submit()
+  ↷ Then full course List is downloaded                          # com.stepDefinitionTestNG.Careers.full_course_list_is_downloaded()
+        org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [efb44dfe7232613e69144fb78efbba39, quit []]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        Session ID: efb44dfe7232613e69144fb78efbba39
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:571)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+        	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:445)
+        	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:442)
+        	at com.setup.BaseSteps.closeBrowser(BaseSteps.java:49)
+        	at com.stepDefinitionTestNG.Hooks.afterScenario(Hooks.java:40)
+        Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.CompletableFuture$AsyncSupply@2094bde1 rejected from java.util.concurrent.ThreadPoolExecutor@70267c66[Shutting down, pool size = 2, active threads = 2, queued tasks = 6, completed tasks = 4]
+        	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377)
+        	at java.base/java.util.concurrent.CompletableFuture.asyncSupplyStage(CompletableFuture.java:1826)
+        	at java.base/java.util.concurrent.CompletableFuture.supplyAsync(CompletableFuture.java:2049)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:123)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	... 6 more
+        org.openqa.selenium.WebDriverException: Timed out waiting for driver server to stop.
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [efb44dfe7232613e69144fb78efbba39, quit {}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:164)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+        	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:445)
+        	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:442)
+        	at com.setup.BaseSteps.closeBrowser(BaseSteps.java:49)
+        	at com.stepDefinitionTestNG.Hooks.afterScenario(Hooks.java:40)
+        Caused by: java.util.concurrent.ExecutionException: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@75623f3[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@dae4883[Wrapped task = org.openqa.selenium.remote.http.jdk.JdkHttpClient$$Lambda/0x000001d581430f98@369b746]] rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 199]
+        	at java.base/java.util.concurrent.CompletableFuture.wrapInExecutionException(CompletableFuture.java:345)
+        	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:440)
+        	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2140)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:160)
+        	... 7 more
+        Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@75623f3[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@dae4883[Wrapped task = org.openqa.selenium.remote.http.jdk.JdkHttpClient$$Lambda/0x000001d581430f98@369b746]] rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 199]
+        	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377)
+        	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:124)
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.executeAsync(JdkHttpClient.java:384)
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:413)
+        	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:212)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
+        	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1812)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        	at java.base/java.lang.Thread.run(Thread.java:1575)
+        org.openqa.selenium.WebDriverException: Timed out waiting for driver server to stop.
+        Build info: version: '4.34.0', revision: '707dcb4246*'
+        System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+        Driver info: org.openqa.selenium.chrome.ChromeDriver
+        Command: [efb44dfe7232613e69144fb78efbba39, quit {}]
+        Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:164)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+        	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+        	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:445)
+        	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:442)
+        	at com.setup.BaseSteps.closeBrowser(BaseSteps.java:49)
+        	at com.stepDefinitionTestNG.Hooks.afterScenario(Hooks.java:40)
+        Caused by: java.util.concurrent.ExecutionException: java.io.UncheckedIOException: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+        	at java.base/java.util.concurrent.CompletableFuture.wrapInExecutionException(CompletableFuture.java:345)
+        	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:440)
+        	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2140)
+        	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:160)
+        	... 7 more
+        Caused by: java.io.UncheckedIOException: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+        	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+        	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+        	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+        	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        	at java.base/java.lang.Thread.run(Thread.java:1575)
+        Caused by: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:973)
+        	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+        	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+        	... 8 more
+        Caused by: java.util.concurrent.RejectedExecutionException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+        	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+        	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.ensureExecutedAsync(HttpClientImpl.java:184)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:176)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:282)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:251)
+        	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.asyncReceive(Http1AsyncReceiver.java:468)
+        	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onNext(Http1AsyncReceiver.java:589)
+        	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onNext(Http1AsyncReceiver.java:546)
+        	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:865)
+        	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+        	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+        	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+        	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+        	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1478)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1423)
+        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+        	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1423)

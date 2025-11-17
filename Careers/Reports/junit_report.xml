@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="44.738" tests="8" skipped="0" failures="8" errors="0" timestamp="2025-11-17T12:54:25.684078Z">
+<testcase classname="Validate Careers Functionality on Edureka" name="verify exploring video lectures" time="42.227">
+<failure type="org.openqa.selenium.remote.UnreachableBrowserException" message="Error communicating with the remote browser. It may have died.
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [efb44dfe7232613e69144fb78efbba39, screenshot []]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: efb44dfe7232613e69144fb78efbba39">
+<![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [efb44dfe7232613e69144fb78efbba39, screenshot []]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: efb44dfe7232613e69144fb78efbba39
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:571)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:333)
+	at com.setup.Reports.captureScreenshot(Reports.java:44)
+	at com.setup.Reports.generateReport(Reports.java:23)
+	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:41)
+	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:69)
+Caused by: java.io.UncheckedIOException: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.io.IOException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:973)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+	... 8 more
+Caused by: java.util.concurrent.RejectedExecutionException: Task jdk.internal.net.http.common.SequentialScheduler$SchedulableTask@7e562163 rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 4, active threads = 4, queued tasks = 0, completed tasks = 196]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.ensureExecutedAsync(HttpClientImpl.java:184)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:176)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:282)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:251)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.asyncReceive(Http1AsyncReceiver.java:468)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onNext(Http1AsyncReceiver.java:589)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onNext(Http1AsyncReceiver.java:546)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:865)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1478)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1423)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1423)
+]]>
+</failure>
+<system-out><![CDATA[
+Given I Launch the Edureka website..........................................passed
+When I scroll to the footer.................................................failed
+And I click on the target link..............................................skipped
+Then I should be redirected to the target page..............................skipped
+And I click on blog.........................................................skipped
+And I scroll to More Resources section to find target2......................skipped
+And I click on target2......................................................skipped
+And I scroll to find Recently Added Videos..................................skipped
+When I click on target3.....................................................skipped
+Then the video lectures page should be displayed............................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Validate Careers Functionality on Edureka" name="Submit Form Application with Invalid Data - #1.1" time="43.295">
+<failure type="java.lang.RuntimeException" message="org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [76543f17f332bf8c8aa609e66daa0d8e, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63354}, goog:processID: 20968, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63354/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 76543f17f332bf8c8aa609e66daa0d8e">
+<![CDATA[java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [76543f17f332bf8c8aa609e66daa0d8e, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63354}, goog:processID: 20968, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63354/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 76543f17f332bf8c8aa609e66daa0d8e
+	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:83)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [76543f17f332bf8c8aa609e66daa0d8e, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63354}, goog:processID: 20968, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63354/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 76543f17f332bf8c8aa609e66daa0d8e
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+	... 3 more
+]]>
+</failure>
+<system-out><![CDATA[
+Given I Launch the Edureka website..........................................passed
+When I scroll to the footer.................................................failed
+And I click on the target link..............................................skipped
+Then I should be redirected to the target page..............................skipped
+And I click on target1......................................................skipped
+And I click on form.........................................................skipped
+And I fill the form using data from 3 1.....................................skipped
+And I submit the form.......................................................skipped
+Then It should show me an error for filling invalid data....................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Validate Careers Functionality on Edureka" name="Download Full Course List - #1.2" time="43.234">
+<failure type="org.openqa.selenium.remote.UnreachableBrowserException" message="Error communicating with the remote browser. It may have died.
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [efb44dfe7232613e69144fb78efbba39, screenshot []]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: efb44dfe7232613e69144fb78efbba39">
+<![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [efb44dfe7232613e69144fb78efbba39, screenshot []]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52648}, goog:processID: 3860, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52648/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: efb44dfe7232613e69144fb78efbba39
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:571)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:333)
+	at com.setup.Reports.captureScreenshot(Reports.java:44)
+	at com.setup.Reports.generateReport(Reports.java:23)
+	at com.stepDefinitionTestNG.Careers.i_click_on_the_target_link(Careers.java:56)
+	at ✽.I click on the target link(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:49)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@3091f141[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@15f206ac[Wrapped task = org.openqa.selenium.remote.http.jdk.JdkHttpClient$$Lambda/0x000001d581430f98@35518b92]] rejected from java.util.concurrent.ThreadPoolExecutor@418a9c80[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 199]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:124)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.executeAsync(JdkHttpClient.java:384)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:413)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:212)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	... 7 more
+]]>
+</failure>
+<system-out><![CDATA[
+Given I Launch the Edureka website..........................................passed
+When I scroll to the footer.................................................passed
+And I click on the target link..............................................failed
+Then I should be redirected to the target page..............................skipped
+And I click on target1......................................................skipped
+And I scroll to curriculums section.........................................skipped
+And I click on Download button..............................................skipped
+And I fill the form using data from 2 2 to download the list................skipped
+And I click on submit.......................................................skipped
+Then full course List is downloaded.........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Validate Careers Functionality on Edureka" name="Submit Form Application - #1.2" time="43.302">
+<failure type="java.lang.RuntimeException" message="org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [936958e9dee7c70c98919eb7032954e1, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63355}, goog:processID: 14424, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63355/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 936958e9dee7c70c98919eb7032954e1">
+<![CDATA[java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [936958e9dee7c70c98919eb7032954e1, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63355}, goog:processID: 14424, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63355/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 936958e9dee7c70c98919eb7032954e1
+	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:28)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [936958e9dee7c70c98919eb7032954e1, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63355}, goog:processID: 14424, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63355/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 936958e9dee7c70c98919eb7032954e1
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+	... 3 more
+]]>
+</failure>
+<system-out><![CDATA[
+Given I Launch the Edureka website..........................................passed
+When I scroll to the footer.................................................failed
+And I click on the target link..............................................skipped
+Then I should be redirected to the target page..............................skipped
+And I click on target1......................................................skipped
+And I click on form.........................................................skipped
+And I fill the form using data from 1 2.....................................skipped
+And I submit the form.......................................................skipped
+Then I should see the Thankyou popup and close it...........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Validate Careers Functionality on Edureka" name="Download Full Course List - #1.1" time="43.299">
+<failure type="java.lang.RuntimeException" message="org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e75b5ac8f80cb941ce9f03301a911c96, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61933}, goog:processID: 27808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61933/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e75b5ac8f80cb941ce9f03301a911c96">
+<![CDATA[java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e75b5ac8f80cb941ce9f03301a911c96, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61933}, goog:processID: 27808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61933/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e75b5ac8f80cb941ce9f03301a911c96
+	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:48)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e75b5ac8f80cb941ce9f03301a911c96, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61933}, goog:processID: 27808, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61933/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e75b5ac8f80cb941ce9f03301a911c96
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+	... 3 more
+]]>
+</failure>
+<system-out><![CDATA[
+Given I Launch the Edureka website..........................................passed
+When I scroll to the footer.................................................failed
+And I click on the target link..............................................skipped
+Then I should be redirected to the target page..............................skipped
+And I click on target1......................................................skipped
+And I scroll to curriculums section.........................................skipped
+And I click on Download button..............................................skipped
+And I fill the form using data from 2 1 to download the list................skipped
+And I click on submit.......................................................skipped
+Then full course List is downloaded.........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Validate Careers Functionality on Edureka" name="Submit Form Application - #1.1" time="42.283">
+<failure type="java.lang.RuntimeException" message="org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d5297473c2161421bea2e5e11cdffde">
+<![CDATA[java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d5297473c2161421bea2e5e11cdffde
+	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:28)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d5297473c2161421bea2e5e11cdffde
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+	... 3 more
+]]>
+</failure>
+<system-out><![CDATA[
+Given I Launch the Edureka website..........................................passed
+When I scroll to the footer.................................................failed
+And I click on the target link..............................................skipped
+Then I should be redirected to the target page..............................skipped
+And I click on target1......................................................skipped
+And I click on form.........................................................skipped
+And I fill the form using data from 1 1.....................................skipped
+And I submit the form.......................................................skipped
+Then I should see the Thankyou popup and close it...........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Validate Careers Functionality on Edureka" name="Navigate to Careers and select Internship" time="42.289">
+<failure type="java.lang.RuntimeException" message="org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2537475f4396332e7f36fbf823c51488, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54207}, goog:processID: 828, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54207/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2537475f4396332e7f36fbf823c51488">
+<![CDATA[java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2537475f4396332e7f36fbf823c51488, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54207}, goog:processID: 828, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54207/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2537475f4396332e7f36fbf823c51488
+	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:5)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2537475f4396332e7f36fbf823c51488, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54207}, goog:processID: 828, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54207/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2537475f4396332e7f36fbf823c51488
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+	... 3 more
+]]>
+</failure>
+<system-out><![CDATA[
+Given I Launch the Edureka website..........................................passed
+When I scroll to the footer.................................................failed
+And I click on the target link..............................................skipped
+Then I should be redirected to the target page..............................skipped
+When I scroll down to sectionName2..........................................skipped
+And I click on sectionName3 under Marketing.................................skipped
+Then a new tab should open with job description.............................skipped
+And I scroll down to verify job details.....................................skipped
+Then Job details page should be visible.....................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Validate Careers Functionality on Edureka" name="verify Blog navigation and select Ebook" time="43.299">
+<failure type="java.lang.RuntimeException" message="org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d5297473c2161421bea2e5e11cdffde">
+<![CDATA[java.lang.RuntimeException: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d5297473c2161421bea2e5e11cdffde
+	at com.pages.BasePage.scrollToElement(BasePage.java:32)
+	at com.pages.CareersPage.scrollToFooter(CareersPage.java:66)
+	at com.stepDefinitionTestNG.Careers.i_scroll_to_the_footer(Careers.java:38)
+	at ✽.I scroll to the footer(file:///C:/Sprint%20Implementation/Careers/./src/test/resources/Features/careers.feature:17)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: element not found
+  (Session info: chrome=142.0.7444.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d5297473c2161421bea2e5e11cdffde, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.C1B9A18D438BB74D3F9B6C4B2CFAE36A.d.5BEC52BBF16ACD8359461EBD50944245.e.73}], script=arguments[0].scrollIntoView(true);}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.162 (c076baf266c..., userDataDir: C:\Users\katshiri\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56073}, goog:processID: 3108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56073/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d5297473c2161421bea2e5e11cdffde
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
+	at com.pages.BasePage.scrollToElement(BasePage.java:27)
+	... 3 more
+]]>
+</failure>
+<system-out><![CDATA[
+Given I Launch the Edureka website..........................................passed
+When I scroll to the footer.................................................failed
+And I click on the target link..............................................skipped
+Then I should be redirected to the target page..............................skipped
+And I click on blog.........................................................skipped
+And I click on ebook to get free ebooks in blog page........................skipped
+And I click on bookName in ebooks page......................................skipped
+Then The Ebook is displayed.................................................skipped
+]]></system-out>
+</testcase>
+</testsuite>
