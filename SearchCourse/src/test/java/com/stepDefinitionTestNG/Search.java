@@ -32,28 +32,19 @@ public class Search extends BaseSteps {
 	public void i_click_on_the_search_course_bar() {
 		searchPage.clickSearchBar();
 	}
-	@When("I enter a Big Data in the search input field")
-	public void i_enter_a_big_data_in_the_search_input_field() {
+	
+	@When("I enter Manasa in the search input field")
+	public void i_enter_manasa_in_the_search_input_field() {
 		String courseName = prop.getProperty("validCourseName");
 		searchPage.enterCourseName(courseName);
 	}
-	@Then("The search results page should be displayed")
-	public void the_search_results_page_should_be_displayed() {
-		boolean status = searchPage.verifySearchResults();
-		Assert.assertTrue(status);
-	}
-	@When("I click on Big Data Hadoop Certification Training Course from the search results")
-	public void i_click_on_big_data_hadoop_certification_training_course_from_the_search_results() {
-		String selectCourseName = prop.getProperty("selectCourseName1");
-		searchPage.selectCourse(selectCourseName);
-	}
-	@Then("The course details page should be displayed")
-	public void the_course_details_page_should_be_displayed() throws InterruptedException {
-		boolean status = searchPage.verifyCourseDetailsPage();
+
+	@Then("The result should be Your search did not match any courses")
+	public void the_result_should_be_your_search_did_not_match_any_courses() throws InterruptedException {
+		boolean status = searchPage.verifySearchResult();
 		Assert.assertTrue(status);
 		BaseSteps.closeBrowser();
 	}
-	
 	
 	// Scenario 2
 	@And("I click on aws technology")
@@ -153,36 +144,26 @@ public class Search extends BaseSteps {
 	    BaseSteps.closeBrowser();
 	}
 	
-	/*@When("I click on Power BI")
+	/* Scenario 6 */
+	@When("I click on Power BI")
 	public void i_click_on_power_bi() {
 		searchPage.clickPowerBI();
 	}
 
 	@When("I click on course")
 	public void i_click_on_course() {
-		searchPage.clickAnyCourse();
+		searchPage.selectCoursePowerBI();
 	}
 
 	@When("I click on Google Reviews")
 	public void i_click_on_google_reviews() {
-		searchPage.clickGoogleReview();
+		searchPage.clickGoogleReviews();
 	}
-
-	@When("I enter place from sheet {int} and row {int}")
-	public void i_enter_place_from_sheet_and_row(Integer sheetIndex, Integer rowIndex) {
-		String excelPathSO = prop.getProperty("excelpath1");
-
-		String place = ExcelReader.getLocalityByRow(excelPathSO, sheetIndex, rowIndex);
-		Assert.assertNotNull(place, "Place found at sheet " + sheetIndex +", row " + rowIndex);
-
-		searchPage.enterPlace(place);
-		//Assert.assertTrue(status, "Failed to enter place: " + place);
-	}
-
-	@Then("Place is located in the Maps")
-	public void place_is_located_in_the_maps() throws InterruptedException {
-		boolean status = searchPage.verifyMaps();
+	
+	@Then("Google Reviews page is displayed")
+	public void google_reviews_page_is_displayed() throws InterruptedException {
+		boolean status = searchPage.verifyGoogleReview();
 		Assert.assertTrue(status);
 		BaseSteps.closeBrowser();
-	}*/
+	}
 }

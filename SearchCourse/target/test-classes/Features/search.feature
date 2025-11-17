@@ -4,10 +4,8 @@ Feature: Validate Search Course functionality on Edureka website
 Scenario: Verify scarch navigation and course details for valid course
 Given The browser is launched and the Edureka homepage is opened
 When I click on the Search course bar
-And I enter a Big Data in the search input field
-Then The search results page should be displayed
-When I click on Big Data Hadoop Certification Training Course from the search results
-Then The course details page should be displayed
+And I enter Manasa in the search input field
+Then The result should be Your search did not match any courses
 
 @second
 Scenario: Verify navigating through Popular Courses and applying filters
@@ -31,15 +29,6 @@ Examples:
 |   0   |  1  |
 
 @fourth
-Scenario: Verify View Courses
-Given The browser is launched and the Edureka homepage is opened
-When I click on the Search course bar
-And I click on DevOps
-And I click on View Details
-And I click on Times Now
-Then Times Now Article is visible
-
-@fifth
 Scenario Outline: Verify Form Submission
 Given The browser is launched and the Edureka homepage is opened
 When I click on the Search course bar
@@ -54,6 +43,24 @@ Examples:
 | sheet  | row  |
 |   2    |  1   |
 |   2    |  2   |
+
+@fifth
+Scenario: Verify View Courses
+Given The browser is launched and the Edureka homepage is opened
+When I click on the Search course bar
+And I click on DevOps
+And I click on View Details
+And I click on Times Now
+Then Times Now Article is visible
+
+@sixth
+Scenario Outline: Verify Popular Course Categories 
+Given The browser is launched and the Edureka homepage is opened
+When I click on the Search course bar
+And I click on Power BI
+And I click on course
+And I click on Google Reviews
+Then Google Reviews page is displayed
 
 
 

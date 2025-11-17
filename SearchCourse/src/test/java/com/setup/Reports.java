@@ -17,52 +17,52 @@ import com.aventstack.extentreports.Status;
 
 public class Reports {
 
-	 public static void generateReport(WebDriver driver, ExtentTest test, Status status, String stepMessage) {
-	        //driver is used to open website
-	    	//ExtentTest is used to generate reports
-	    	//status is a class 
-	    	//test is a testcase 
-	    	//stepMessage is description(buttons is not visible etc...)
-	    	if (status.equals(Status.PASS)) 
-	    	{
-	            test.log(status, stepMessage);   
-	        } 
-	    	else if (status.equals(Status.FAIL)) 
-	    	{
-	            // Take screenshot if status is FAIL
-	            String screenshotPath = captureScreenshot(driver, stepMessage);//if testcase fails it will take SS
-	            try 
-	            {
-	                test.log(status, stepMessage,
-	                        MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-	            } 
-	            catch (WebDriverException e) 
-	            {
-	                e.printStackTrace();
-	                test.log(status, stepMessage + " (Screenshot failed to attach)");//attaching ss in extent reports
-	            }
-	        } 
-	    	else 
-	    	{
-	            test.log(status, stepMessage);//to check log status...skipping test cases only(not pass and not fail test case)
-	        }
-	    }
+	public static void generateReport(WebDriver driver, ExtentTest test, Status status, String stepMessage) {
+		//driver is used to open website
+		//ExtentTest is used to generate reports
+		//status is a class 
+		//test is a testcase 
+		//stepMessage is description(buttons is not visible etc...)
+		if (status.equals(Status.PASS)) 
+		{
+			test.log(status, stepMessage);   
+		} 
+		else if (status.equals(Status.FAIL)) 
+		{
+			// Take screenshot if status is FAIL
+			String screenshotPath = captureScreenshot(driver, stepMessage);//if testcase fails it will take SS
+			try 
+			{
+				test.log(status, stepMessage,
+						MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			} 
+			catch (WebDriverException e) 
+			{
+				e.printStackTrace();
+				test.log(status, stepMessage + " (Screenshot failed to attach)");//attaching ss in extent reports
+			}
+		} 
+		else 
+		{
+			test.log(status, stepMessage);//to check log status...skipping test cases only(not pass and not fail test case)
+		}
+	}
 
-	    public static String captureScreenshot(WebDriver driver, String fileLabel) {
-	        String folderPath = System.getProperty("user.dir") + "/reports/screenshots/";//capture the SS with name and save it one loaction
-	        new File(folderPath).mkdirs();//creating a floder
-	        String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH_mm_ss").format(new Date());//to generate unique name for screenshot and capture the dd-MM-yyyy_HH_mm_ss //output is string
-	        String safeFileName = fileLabel.replaceAll("[^a-zA-Z0-9]", "_") + "_" + timeStamp + ".png";//chracters will replace with _underscore
-	        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);//ss is file form and saving into filr variable 
-	        File destFile = new File(folderPath + safeFileName);//where we want to save in folder with file name
-	        try 
-	        {
-	            FileUtils.copyFile(screenshot, destFile);//Fileutils is a class and (capture the SS,des folder)
-	        } 
-	        catch (IOException e) {
-	            e.printStackTrace();
-	        }
+	public static String captureScreenshot(WebDriver driver, String fileLabel) {
+		String folderPath = System.getProperty("user.dir") + "/reports/screenshots/";//capture the SS with name and save it one loaction
+		new File(folderPath).mkdirs();//creating a floder
+		String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH_mm_ss").format(new Date());//to generate unique name for screenshot and capture the dd-MM-yyyy_HH_mm_ss //output is string
+		String safeFileName = fileLabel.replaceAll("[^a-zA-Z0-9]", "_") + "_" + timeStamp + ".png";//chracters will replace with _underscore
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);//ss is file form and saving into filr variable 
+		File destFile = new File(folderPath + safeFileName);//where we want to save in folder with file name
+		try 
+		{
+			FileUtils.copyFile(screenshot, destFile);//Fileutils is a class and (capture the SS,des folder)
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 
-	        return "./screenshots/" + safeFileName;//returning the SS folder with files
-	    }
+		return "./screenshots/" + safeFileName;//returning the SS folder with files
+	}
 }

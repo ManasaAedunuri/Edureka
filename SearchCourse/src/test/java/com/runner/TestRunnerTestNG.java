@@ -9,9 +9,12 @@ import io.cucumber.testng.CucumberOptions;
 		//tags="@second",
 		//tags="@third",
 		//tags = "@fourth",
-		tags = "@fifth",
+		//tags = "@fifth",
+		//tags = "@sixth",
 		glue = {"com.stepDefinitionTestNG"},
-		plugin = {"pretty", "html:Reports/cucumber-reports.html",
+		plugin = {"pretty:Reports/pretty-reports.html", "html:Reports/cucumber-reports.html",
+				"html:target/cucumber-report.html",
+				"html:reports/HTMLReports.html",
 				"json:reports/json-report.json",
 				"junit:reports/junit_report.xml","pretty", "html:target/cucumber-reports.html"}
 		)

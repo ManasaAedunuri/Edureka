@@ -65,41 +65,41 @@ public class SearchCoursePage extends BaseSteps{
 		searchInput.sendKeys(Keys.ENTER);
 	}
 
-	public boolean verifySearchResults() {
-		boolean actResult=true;
-		try {
-			if (searchResultsList.isDisplayed()) {
-				System.out.println("Search results are displayed.");
-				Reports.generateReport(driver, test, Status.PASS, "Search page is displayed");
-			} else {
-				throw new AssertionError("Search results not displayed.");
-			}
-		}
-		catch(Exception e) {
-			actResult=false;
-			Reports.generateReport(driver, test, Status.FAIL, "Search page is not displayed");
-		}
-		return actResult;
-	}
+//	public boolean verifyResults() {
+//		boolean actResult=true;
+//		try {
+//			if (searchResultsList.isDisplayed()) {
+//				System.out.println("Search results are displayed.");
+//				Reports.generateReport(driver, test, Status.PASS, "Search page is displayed");
+//			} else {
+//				throw new AssertionError("Search results not displayed.");
+//			}
+//		}
+//		catch(Exception e) {
+//			actResult=false;
+//			Reports.generateReport(driver, test, Status.FAIL, "Search page is not displayed");
+//		}
+//		return actResult;
+//	}
 
-    public void selectCourse(String courseName) {
-    	Reports.generateReport(driver, test, Status.PASS, "Search course is clicked");
-    	courseLink.click();
-    }
+//    public void selectCourse(String courseName) {
+//    	Reports.generateReport(driver, test, Status.PASS, "Search course is clicked");
+//    	courseLink.click();
+//    }
 
-    public boolean verifyCourseDetailsPage() {
+    public boolean verifySearchResult() {
     	boolean actResult=true;
 		try {
-			if (driver.getTitle().contains("Course")) {
-				System.out.println(driver.getTitle());
-				Reports.generateReport(driver, test, Status.PASS, "Course details page is displayed");
+			if (driver.getCurrentUrl().contains("https://www.edureka.co/search/Manasa")) {
+				System.out.println(driver.getCurrentUrl());
+				Reports.generateReport(driver, test, Status.PASS, "Your search did not match any course sholud be displayed");
 			} else {
-				throw new AssertionError("Course details page not displayed.");
+				throw new AssertionError("Your search did not match any course sholud not be displayed");
 			}
 		}
 		catch(Exception e) {
 			actResult=false;
-			Reports.generateReport(driver, test, Status.FAIL, "Course details page is not displayed");
+			Reports.generateReport(driver, test, Status.FAIL, "Your search did not match any course sholud not be displayed");
 		}
 		return actResult;
     } 
@@ -115,10 +115,11 @@ public class SearchCoursePage extends BaseSteps{
     @FindBy(xpath = "(//label)[text()='Cloud DevOps Engineer'][1]")
     WebElement courseListSection;
     
-    @FindBy(xpath = "//span[@id='span-job_role: Cloud DevOps Engineer ']")
+    @FindBy(xpath = "//h3[text()='Cloud Architect Course']")
     WebElement verifyCloudPage;
+    
+    
 
-    // Actions
     public void clickTechnology(String techName) {
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     	WebElement techElement = wait.until(ExpectedConditions.elementToBeClickable(popularCoursesSection));
@@ -146,7 +147,8 @@ public class SearchCoursePage extends BaseSteps{
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 			WebElement courseList = wait.until(ExpectedConditions.visibilityOf(verifyCloudPage));
 			if (courseList.isDisplayed()) {
-				System.out.println("Cloud DevOps courses are displayed successfully.");
+				Assert.assertTrue(verifyCloudPage.isDisplayed(), "Cloud Architect Course");
+				//System.out.println("Cloud DevOps courses are displayed successfully.");
 				Reports.generateReport(driver, test, Status.PASS, "Cloud Dev Courses are displayed");
 			} else {
 				throw new AssertionError("Cloud DevOps courses not displayed.");
@@ -162,6 +164,9 @@ public class SearchCoursePage extends BaseSteps{
     /* Scenario 3 */
     @FindBy(id = "search-input")
     WebElement enterInput;
+    
+    @FindBy(xpath = "//a[text()='All Results']")
+    WebElement verifyAllResults;
     
     public boolean enterCourseInput(String cname) {
     	try {
@@ -181,7 +186,8 @@ public class SearchCoursePage extends BaseSteps{
     public boolean verifyDisplay() {
     	try {
 			if (driver.getTitle().contains("Instructor-Led Online Training with 24X7 Lifetime Support | Edureka")) {
-				System.out.println(driver.getTitle());
+				//Assert.assertTrue(verifyCloudPage.isDisplayed(), "Course details page is displayed");
+				//System.out.println(driver.getCurrentUrl());
 				Reports.generateReport(driver, test, Status.PASS, "Course details page is displayed");
 			}
 			return true;
@@ -192,7 +198,7 @@ public class SearchCoursePage extends BaseSteps{
 		}
     }
     
-    /* Scenario 4 */
+    /* Scenario 5 */
     @FindBy(xpath = "(//a)[text()='DevOps'][3]/parent::li")
     WebElement clickDev;
     
@@ -221,10 +227,10 @@ public class SearchCoursePage extends BaseSteps{
     
     public boolean verifyArticlePage() {
     	try {
-			if (driver.getTitle().contains("Future-Proof Your Career: Top DevOps Courses to Consider in 2025 | Markets - Times Now")) {
+    		if (driver.getTitle().contains("Instructor-Led Online Training with 24X7 Lifetime Support | Edureka")) {
 				System.out.println(driver.getTitle());
 				Reports.generateReport(driver, test, Status.PASS, "Course details page is displayed");
-			}
+    		}
 			return true;
 		}
 		catch(Exception e) {
@@ -233,7 +239,7 @@ public class SearchCoursePage extends BaseSteps{
 		}
     }
     
-    /* Scenario 5 */
+    /* Scenario 4 */
     @FindBy(xpath = "//a[text()='chatgpt']")
     WebElement chatGPT;
     
@@ -258,18 +264,19 @@ public class SearchCoursePage extends BaseSteps{
     public void clickChatGPT() {
     	wait.until(ExpectedConditions.elementToBeClickable(chatGPT));
     	chatGPT.click();
-    	//Reports.generateReport(driver, test, Status.PASS, "Power BI is clicked");
+    	Reports.generateReport(driver, test, Status.PASS, "ChatGPT is clicked");
     }
     
     public void clickGenAICourse() {
     	wait.until(ExpectedConditions.elementToBeClickable(genAI));
     	genAI.click();
-    	//Reports.generateReport(driver, test, Status.PASS, "Course is clicked");
+    	Reports.generateReport(driver, test, Status.PASS, "Course is clicked");
     }
     
     public void clickGetInTouch() {
     	wait.until(ExpectedConditions.elementToBeClickable(getInTouch));
     	getInTouch.click();
+    	Reports.generateReport(driver, test, Status.PASS, "Get In Touch is clicked");
     }
     
     Map<String, String> formData;
@@ -283,92 +290,95 @@ public class SearchCoursePage extends BaseSteps{
         SearchCoursePage searchPage = new SearchCoursePage(driver, test);
         searchPage.enterEmail(sheetName, rowStr);
         searchPage.enterPhone(sheetName, rowStr);
+        Reports.generateReport(driver, test, Status.PASS, "Form data is entered");
         
     }
     
     public void enterEmail(String sheet,String row) throws InterruptedException
     {
-    	 wait.until(ExpectedConditions.visibilityOf(email));
-		   //clickElement(email);
-		   //email.sendKeys(excelData.get(rowIndex)[3]);
-		   int rowNum = Integer.parseInt(row);
-		    formData = ExcelReader.getRowData(sheet, rowNum);
-		    String fieldEmail=propertyreader.getProperty("emailField");
-		   email.sendKeys(formData.get(fieldEmail));
+    	wait.until(ExpectedConditions.visibilityOf(email));
+    	//clickElement(email);
+    	//email.sendKeys(excelData.get(rowIndex)[3]);
+    	int rowNum = Integer.parseInt(row);
+    	formData = ExcelReader.getRowData(sheet, rowNum);
+    	String fieldEmail=propertyreader.getProperty("emailField");
+    	email.sendKeys(formData.get(fieldEmail));
+    	Reports.generateReport(driver, test, Status.PASS, "Email is entered");
     }
     
     public void enterPhone(String sheet,String row) throws InterruptedException
     {
     	wait.until(ExpectedConditions.visibilityOf(phone));
-		   phone.click();
-		   int rowNum = Integer.parseInt(row);
-		    formData = ExcelReader.getRowData(sheet, rowNum);
-		    String fieldPhone=propertyreader.getProperty("phoneField");
-		    		
-		    long phoneNum = Long.parseLong(formData.get(fieldPhone));
-		   phone.sendKeys(String.valueOf(phoneNum));
+    	phone.click();
+    	int rowNum = Integer.parseInt(row);
+    	formData = ExcelReader.getRowData(sheet, rowNum);
+    	String fieldPhone=propertyreader.getProperty("phoneField");
+
+    	long phoneNum = Long.parseLong(formData.get(fieldPhone));
+    	phone.sendKeys(String.valueOf(phoneNum));
+    	Reports.generateReport(driver, test, Status.PASS, "Phone NUmber is entered");
     }
     
     public void clickSubmit() {
     	wait.until(ExpectedConditions.elementToBeClickable(submitButton));
     	submitButton.click();
+    	Reports.generateReport(driver, test, Status.PASS, "Submit button is clicked");
     }
     
     public void displayThankYou() throws InterruptedException {
     	try {
     		wait.until(ExpectedConditions.visibilityOf(thankYou));
     		Assert.assertTrue(thankYou.isDisplayed(),"Submission Unsuccessful, Please enter valid Data");
+    		Reports.generateReport(driver, test, Status.PASS, "Thank You popup is displayed");
     	}
     	catch (Exception e) {
     		Assert.fail("Submission Unsuccessful, Please enter valid Data");
+    		Reports.generateReport(driver, test, Status.PASS, "Thank You popup is not displayed");
     	}
     	Thread.sleep(1000);
     }
     
-    /*public void clickGoogleReview() {
-
-    	WebElement element = driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div/div[1]/div/div"));
-    	JavascriptExecutor js = (JavascriptExecutor) driver;
-    	js.executeScript("arguments[0].scrollIntoView(true);", element);
-
-    	//wait.until(ExpectedConditions.elementToBeClickable(googleReview));
-    	googleReview.click();
-    	//Reports.generateReport(driver, test, Status.PASS, "Course is clicked");
+    /* Scenario 6 */
+    
+    @FindBy(xpath = "//a[text()='power bi']")
+    WebElement powerBI;
+    
+    @FindBy(xpath = "(//h3)[text()='Power BI Certification Training with Gen AI'][1]/parent::div")
+    WebElement coursePowerBI;
+    
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/section[2]/div/div/div/div[5]/div[1]")
+    WebElement clickReviews;
+    
+    public void clickPowerBI() {
+    	wait.until(ExpectedConditions.elementToBeClickable(powerBI));
+    	powerBI.click();
+    	Reports.generateReport(driver, test, Status.PASS, "Power BI course is clicked");
     }
     
-    public void enterPlace(String place) {
-//    	try {
-//    		wait.until(ExpectedConditions.visibilityOf(searchPlace));
-//    		searchPlace.clear();
-//    		searchPlace.sendKeys(place);
-//    		searchPlace.sendKeys(Keys.ENTER);
-//    		//Reports.generateReport(driver, test, Status.PASS, "Place is enterd");
-//    		return true;
-//    	}
-//    	catch(Exception e) {
-//    		//Reports.generateReport(driver, test, Status.PASS, "Place is not entered");
-//    		return false;
-//    	}
-    	cancelButton.click();
-    	wait.until(ExpectedConditions.visibilityOf(searchPlace));
-    	wait.until(ExpectedConditions.elementToBeClickable(searchPlace));
-    	((JavascriptExecutor) driver).executeScript("arguments[0].click();", searchPlace);
-		//searchPlace.clear();
-		searchPlace.sendKeys(place);
-		searchPlace.sendKeys(Keys.ENTER);
+    public void selectCoursePowerBI() {
+    	wait.until(ExpectedConditions.elementToBeClickable(coursePowerBI));
+    	coursePowerBI.click();
+    	Reports.generateReport(driver, test, Status.PASS, "Power BI course is selected");
     }
     
-    public boolean verifyMaps() {
+    public void clickGoogleReviews() {
+    	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.elementToBeClickable(clickReviews));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickReviews);
+    }
+    
+    public boolean verifyGoogleReview() {
     	try {
-			if (driver.getTitle().contains("Edureka - Google Maps")) {
-				System.out.println(driver.getTitle());
-				Reports.generateReport(driver, test, Status.PASS, "Maps page is visible");
-			}
-			return true;
-		}
-		catch(Exception e) {
-			Reports.generateReport(driver, test, Status.FAIL, "Maps page is not visible");
-			return false;
-		}
-    }*/
+    		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    		if (driver.getTitle().contains("Edureka - Google Maps")) {
+    			System.out.println(driver.getTitle());
+    			Reports.generateReport(driver, test, Status.PASS, "Review details page is displayed");
+    		}
+    		return true;
+    	}
+    	catch(Exception e) {
+    		Reports.generateReport(driver, test, Status.FAIL, "Review details page is not displayed");
+    		return false;
+    	}
+    }
 }

@@ -1,0 +1,70 @@
+
+@first
+[1mScenario:[22m Verify scarch navigation and course details for valid course [90m# src/test/resources/Features/search.feature:4[39m
+  [32m✔[39m [32m[1mGiven [22mThe browser is launched and the Edureka homepage is opened[39m   [90m# com.stepDefinitionTestNG.Search.the_browser_is_launched_and_the_edureka_homepage_is_opened()[39m
+  [32m✔[39m [32m[1mWhen [22mI click on the Search course bar[39m                              [90m# com.stepDefinitionTestNG.Search.i_click_on_the_search_course_bar()[39m
+  [32m✔[39m [32m[1mAnd [22mI enter Manasa in the search input field[39m                       [90m# com.stepDefinitionTestNG.Search.i_enter_manasa_in_the_search_input_field()[39m
+  [32m✔[39m [32m[1mThen [22mThe result should be Your search did not match any courses[39m    [90m# com.stepDefinitionTestNG.Search.the_result_should_be_your_search_did_not_match_any_courses()[39m
+
+@second
+[1mScenario:[22m Verify navigating through Popular Courses and applying filters [90m# src/test/resources/Features/search.feature:11[39m
+  [32m✔[39m [32m[1mGiven [22mThe browser is launched and the Edureka homepage is opened[39m     [90m# com.stepDefinitionTestNG.Search.the_browser_is_launched_and_the_edureka_homepage_is_opened()[39m
+  [32m✔[39m [32m[1mWhen [22mI click on the Search course bar[39m                                [90m# com.stepDefinitionTestNG.Search.i_click_on_the_search_course_bar()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on aws technology[39m                                        [90m# com.stepDefinitionTestNG.Search.i_click_on_aws_technology()[39m
+  [32m✔[39m [32m[1mAnd [22mThe user clicks on Job Role[39m                                      [90m# com.stepDefinitionTestNG.Search.the_user_clicks_on_job_role()[39m
+  [32m✔[39m [32m[1mAnd [22mSelect filter from AWS page[39m                                      [90m# com.stepDefinitionTestNG.Search.select_filter_from_aws_page()[39m
+  [32m✔[39m [32m[1mThen [22mThe page should display Cloud Devops courses[39m                    [90m# com.stepDefinitionTestNG.Search.the_page_should_display_cloud_devops_courses()[39m
+
+@third
+[1mScenario Outline:[22m Verify Search Courses                              [90m# src/test/resources/Features/search.feature:28[39m
+  [32m✔[39m [32m[1mGiven [22mThe browser is launched and the Edureka homepage is opened[39m [90m# com.stepDefinitionTestNG.Search.the_browser_is_launched_and_the_edureka_homepage_is_opened()[39m
+  [32m✔[39m [32m[1mWhen [22mI click on the Search course bar[39m                            [90m# com.stepDefinitionTestNG.Search.i_click_on_the_search_course_bar()[39m
+  [32m✔[39m [32m[1mAnd [22mI enter course name from sheet [1m0[22m and row [1m0[22m[39m                   [90m# com.stepDefinitionTestNG.Search.i_enter_course_name_from_sheet_and_row(java.lang.Integer,java.lang.Integer)[39m
+  [32m✔[39m [32m[1mThen [22mSearch results page should be displayed[39m                     [90m# com.stepDefinitionTestNG.Search.search_results_page_should_be_displayed()[39m
+
+@third
+[1mScenario Outline:[22m Verify Search Courses                              [90m# src/test/resources/Features/search.feature:29[39m
+  [32m✔[39m [32m[1mGiven [22mThe browser is launched and the Edureka homepage is opened[39m [90m# com.stepDefinitionTestNG.Search.the_browser_is_launched_and_the_edureka_homepage_is_opened()[39m
+  [32m✔[39m [32m[1mWhen [22mI click on the Search course bar[39m                            [90m# com.stepDefinitionTestNG.Search.i_click_on_the_search_course_bar()[39m
+  [32m✔[39m [32m[1mAnd [22mI enter course name from sheet [1m0[22m and row [1m1[22m[39m                   [90m# com.stepDefinitionTestNG.Search.i_enter_course_name_from_sheet_and_row(java.lang.Integer,java.lang.Integer)[39m
+  [32m✔[39m [32m[1mThen [22mSearch results page should be displayed[39m                     [90m# com.stepDefinitionTestNG.Search.search_results_page_should_be_displayed()[39m
+
+@fourth
+[1mScenario Outline:[22m Verify Form Submission                             [90m# src/test/resources/Features/search.feature:44[39m
+  [32m✔[39m [32m[1mGiven [22mThe browser is launched and the Edureka homepage is opened[39m [90m# com.stepDefinitionTestNG.Search.the_browser_is_launched_and_the_edureka_homepage_is_opened()[39m
+  [32m✔[39m [32m[1mWhen [22mI click on the Search course bar[39m                            [90m# com.stepDefinitionTestNG.Search.i_click_on_the_search_course_bar()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on ChatGPT[39m                                           [90m# com.stepDefinitionTestNG.Search.i_click_on_chat_gpt()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on Generative AI Course Masters Program[39m              [90m# com.stepDefinitionTestNG.Search.i_click_on_generative_ai_course_masters_program()[39m
+  [32m✔[39m [32m[1mAnd [22mI click Get in Touch[39m                                         [90m# com.stepDefinitionTestNG.Search.i_click_get_in_touch()[39m
+  [32m✔[39m [32m[1mAnd [22mI fill the form using data from sheet [1m2[22m and row [1m1[22m[39m            [90m# com.stepDefinitionTestNG.Search.i_fill_the_form_using_data_from_sheet_and_row(java.lang.Integer,java.lang.Integer)[39m
+  [32m✔[39m [32m[1mAnd [22mI click on submit[39m                                            [90m# com.stepDefinitionTestNG.Search.i_click_on_submit()[39m
+  [32m✔[39m [32m[1mThen [22mThank You is displayed[39m                                      [90m# com.stepDefinitionTestNG.Search.thank_you_is_displayed()[39m
+
+@fourth
+[1mScenario Outline:[22m Verify Form Submission                             [90m# src/test/resources/Features/search.feature:45[39m
+  [32m✔[39m [32m[1mGiven [22mThe browser is launched and the Edureka homepage is opened[39m [90m# com.stepDefinitionTestNG.Search.the_browser_is_launched_and_the_edureka_homepage_is_opened()[39m
+  [32m✔[39m [32m[1mWhen [22mI click on the Search course bar[39m                            [90m# com.stepDefinitionTestNG.Search.i_click_on_the_search_course_bar()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on ChatGPT[39m                                           [90m# com.stepDefinitionTestNG.Search.i_click_on_chat_gpt()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on Generative AI Course Masters Program[39m              [90m# com.stepDefinitionTestNG.Search.i_click_on_generative_ai_course_masters_program()[39m
+  [32m✔[39m [32m[1mAnd [22mI click Get in Touch[39m                                         [90m# com.stepDefinitionTestNG.Search.i_click_get_in_touch()[39m
+  [32m✔[39m [32m[1mAnd [22mI fill the form using data from sheet [1m2[22m and row [1m2[22m[39m            [90m# com.stepDefinitionTestNG.Search.i_fill_the_form_using_data_from_sheet_and_row(java.lang.Integer,java.lang.Integer)[39m
+  [32m✔[39m [32m[1mAnd [22mI click on submit[39m                                            [90m# com.stepDefinitionTestNG.Search.i_click_on_submit()[39m
+  [32m✔[39m [32m[1mThen [22mThank You is displayed[39m                                      [90m# com.stepDefinitionTestNG.Search.thank_you_is_displayed()[39m
+
+@fifth
+[1mScenario:[22m Verify View Courses                                        [90m# src/test/resources/Features/search.feature:48[39m
+  [32m✔[39m [32m[1mGiven [22mThe browser is launched and the Edureka homepage is opened[39m [90m# com.stepDefinitionTestNG.Search.the_browser_is_launched_and_the_edureka_homepage_is_opened()[39m
+  [32m✔[39m [32m[1mWhen [22mI click on the Search course bar[39m                            [90m# com.stepDefinitionTestNG.Search.i_click_on_the_search_course_bar()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on DevOps[39m                                            [90m# com.stepDefinitionTestNG.Search.i_click_on_dev_ops()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on View Details[39m                                      [90m# com.stepDefinitionTestNG.Search.i_click_on_view_details()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on Times Now[39m                                         [90m# com.stepDefinitionTestNG.Search.i_click_on_times_now()[39m
+  [32m✔[39m [32m[1mThen [22mTimes Now Article is visible[39m                                [90m# com.stepDefinitionTestNG.Search.times_now_article_is_visible()[39m
+
+@sixth
+[1mScenario Outline:[22m Verify Popular Course Categories                   [90m# src/test/resources/Features/search.feature:57[39m
+  [32m✔[39m [32m[1mGiven [22mThe browser is launched and the Edureka homepage is opened[39m [90m# com.stepDefinitionTestNG.Search.the_browser_is_launched_and_the_edureka_homepage_is_opened()[39m
+  [32m✔[39m [32m[1mWhen [22mI click on the Search course bar[39m                            [90m# com.stepDefinitionTestNG.Search.i_click_on_the_search_course_bar()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on Power BI[39m                                          [90m# com.stepDefinitionTestNG.Search.i_click_on_power_bi()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on course[39m                                            [90m# com.stepDefinitionTestNG.Search.i_click_on_course()[39m
+  [32m✔[39m [32m[1mAnd [22mI click on Google Reviews[39m                                    [90m# com.stepDefinitionTestNG.Search.i_click_on_google_reviews()[39m
+  [32m✔[39m [32m[1mThen [22mGoogle Reviews page is displayed[39m                            [90m# com.stepDefinitionTestNG.Search.google_reviews_page_is_displayed()[39m
