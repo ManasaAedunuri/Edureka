@@ -1,0 +1,84 @@
+
+@resources
+[1mScenario:[22m user navigates through Website to open blog [90m# src/test/resources/Features/resources.feature:3[39m
+
+@ask
+[1mScenario:[22m User navigates to Ask a Question page and verifies the header text                                                [90m# src/test/resources/Features/resources.feature:23[39m
+  [32m✔[39m [32m[1mGiven [22mthe user opens the browser[39m                  [90m# com.stepDefinitionTestNG.Resources.the_user_opens_the_browser()[39m
+  [32m✔[39m [32m[1mGiven [22mthe user opens the browser[39m                                                                                        [90m# com.stepDefinitionTestNG.Resources.the_user_opens_the_browser()[39m
+  [32m✔[39m [32m[1mWhen [22mthe user navigates to the homepage[39m           [90m# com.stepDefinitionTestNG.Resources.the_user_navigates_to_the_homepage()[39m
+  [32m✔[39m [32m[1mWhen [22mthe user clicks on the menu from Properies file[39m                                                                    [90m# com.stepDefinitionTestNG.AskAQuestion.the_user_clicks_on_the_menu_from_properies_file()[39m
+  [32m✔[39m [32m[1mAnd [22mthe user clicks on the menu[39m                   [90m# com.stepDefinitionTestNG.Resources.the_user_clicks_on_the_menu()[39m
+  [32m✔[39m [32m[1mAnd [22mthe user clicks on the submenu from Properties file[39m                                                                 [90m# com.stepDefinitionTestNG.AskAQuestion.the_user_clicks_on_the_submenu_from_properties_file()[39m
+  [32m✔[39m [32m[1mAnd [22mthe user clicks on the ask a question button using the ID from the properties file[39m                                  [90m# com.stepDefinitionTestNG.AskAQuestion.the_user_clicks_on_the_ask_a_question_button_using_the_id_from_the_properties_file()[39m
+  [32m✔[39m [32m[1mAnd [22mthe user clicks on the subMenu[39m                [90m# com.stepDefinitionTestNG.Resources.the_user_clicks_on_the_sub_menu()[39m
+  [32m✔[39m [32m[1mAnd [22mthe user selects the category[39m                 [90m# com.stepDefinitionTestNG.Resources.the_user_selects_the_category()[39m
+  [32m✔[39m [32m[1mAnd [22mthe user clicks on the article[39m                [90m# com.stepDefinitionTestNG.Resources.the_user_clicks_on_the_article()[39m
+  [32m✔[39m [32m[1mThen [22mthe article page should be displayed[39m         [90m# com.stepDefinitionTestNG.Resources.the_article_page_should_be_displayed()[39m
+  [31m✘[39m [31m[1mThen [22mthe user should see the header text on the Ask a Question page matches the expected value from the properties file[39m [90m# com.stepDefinitionTestNG.AskAQuestion.the_user_should_see_the_header_text_on_the_ask_a_question_page_matches_the_expected_value_from_the_properties_file()[39m
+        [31morg.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.[39m
+        [31mBuild info: version: '4.34.0', revision: '707dcb4246*'[39m
+        [31mSystem info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'[39m
+        [31mDriver info: org.openqa.selenium.chrome.ChromeDriver[39m
+        [31mCommand: [f80621903e78b38602dc8772b3b9bc05, findElement [value, using]][39m
+        [31mCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\baiseg\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64307}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64307/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}[39m
+        [31mSession ID: f80621903e78b38602dc8772b3b9bc05[39m
+        [31m	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:571)[39m
+        [31m	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)[39m
+        [31m	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)[39m
+        [31m	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)[39m
+        [31m	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)[39m
+        [31m	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)[39m
+        [31m	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)[39m
+        [31m	at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)[39m
+        [31m	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)[39m
+        [31m	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)[39m
+        [31m	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)[39m
+        [31m	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)[39m
+        [31m	at com.pages.AskAQuestionPage.isTextVisible(AskAQuestionPage.java:49)[39m
+        [31m	at com.stepDefinitionTestNG.AskAQuestion.the_user_should_see_the_header_text_on_the_ask_a_question_page_matches_the_expected_value_from_the_properties_file(AskAQuestion.java:46)[39m
+        [31m	at ✽.the user should see the header text on the Ask a Question page matches the expected value from the properties file(file:///C:/Sprint/resources/src/test/resources/Features/resources.feature:28)[39m
+        [31mCaused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@2e13fc4e[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@3afafa2d[Wrapped task = org.openqa.selenium.remote.http.jdk.JdkHttpClient$$Lambda/0x000001c91a3308c0@3f19013c]] rejected from java.util.concurrent.ThreadPoolExecutor@4a1b1d58[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 305][39m
+        [31m	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)[39m
+        [31m	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)[39m
+        [31m	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)[39m
+        [31m	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)[39m
+        [31m	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.executeAsync(JdkHttpClient.java:384)[39m
+        [31m	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:413)[39m
+        [31m	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:212)[39m
+        [31m	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)[39m
+        [31m	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)[39m
+        [31m	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)[39m
+        [31m	... 14 more[39m
+        [31morg.openqa.selenium.WebDriverException: Timed out waiting for driver server to stop.[39m
+        [31mBuild info: version: '4.34.0', revision: '707dcb4246*'[39m
+        [31mSystem info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'[39m
+        [31mDriver info: org.openqa.selenium.chrome.ChromeDriver[39m
+        [31mCommand: [f80621903e78b38602dc8772b3b9bc05, quit {}][39m
+        [31mCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.135, chrome: {chromedriverVersion: 141.0.7390.78 (2b53b0e231fc..., userDataDir: C:\Users\baiseg\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64307}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64307/devtoo..., se:cdpVersion: 142.0.7444.135, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}[39m
+        [31m	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:164)[39m
+        [31m	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)[39m
+        [31m	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)[39m
+        [31m	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)[39m
+        [31m	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:445)[39m
+        [31m	at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:442)[39m
+        [31m	at com.stepDefinitionTestNG.Hooks.afterScenario(Hooks.java:46)[39m
+        [31mCaused by: java.util.concurrent.ExecutionException: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@4b7ae03d[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@41828b4d[Wrapped task = org.openqa.selenium.remote.http.jdk.JdkHttpClient$$Lambda/0x000001c91a3308c0@4f456d0d]] rejected from java.util.concurrent.ThreadPoolExecutor@4a1b1d58[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 305][39m
+        [31m	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)[39m
+        [31m	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)[39m
+        [31m	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:160)[39m
+        [31m	... 6 more[39m
+        [31mCaused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@4b7ae03d[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@41828b4d[Wrapped task = org.openqa.selenium.remote.http.jdk.JdkHttpClient$$Lambda/0x000001c91a3308c0@4f456d0d]] rejected from java.util.concurrent.ThreadPoolExecutor@4a1b1d58[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 305][39m
+        [31m	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2081)[39m
+        [31m	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841)[39m
+        [31m	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1376)[39m
+        [31m	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)[39m
+        [31m	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.executeAsync(JdkHttpClient.java:384)[39m
+        [31m	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:413)[39m
+        [31m	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:212)[39m
+        [31m	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)[39m
+        [31m	at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)[39m
+        [31m	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)[39m
+        [31m	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)[39m
+        [31m	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)[39m
+        [31m	at java.base/java.lang.Thread.run(Thread.java:1583)[39m
