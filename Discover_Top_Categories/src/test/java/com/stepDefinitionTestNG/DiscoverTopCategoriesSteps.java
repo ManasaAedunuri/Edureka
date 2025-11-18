@@ -13,11 +13,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.pages.CategoryPage;
 import com.pages.HomePage;
 import com.parameters.ExcelReader;
 import com.parameters.PropertyReader;
 import com.setup.BaseSteps;
+import com.setup.Reports;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -31,6 +33,7 @@ public class DiscoverTopCategoriesSteps {
     HomePage homePage;
     CategoryPage categoryPage;
 	Map<String, String> excelData;
+	ExtentTest test= Hooks.test;
 	/*scenario 1 DISCOVER TOP CATEGORIES        */
 //    @Given("the user is on the sourceUrl")
 //    public void the_user_is_on_the_source_url() {
@@ -97,6 +100,7 @@ public class DiscoverTopCategoriesSteps {
         if (!actualTitle.contains(expectedTitlePart)) {
             throw new AssertionError("Expected title to contain: " + expectedTitlePart + " but got: " + actualTitle);
         }
+        Reports.captureScreenshot(driver, "screenshot_scenario_01");
         driver.quit();
     }
 
@@ -209,6 +213,7 @@ public class DiscoverTopCategoriesSteps {
         String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains("Selenium"), "Course page did not load successfully");
         System.out.println("Verified course page title: " + actualTitle);
+        Reports.captureScreenshot(driver, "screenshot_scenario_02");
         driver.quit();
     }
     
@@ -267,6 +272,7 @@ public class DiscoverTopCategoriesSteps {
 
         Assert.assertTrue(heading.isDisplayed(), "Category2 page did not load successfully");
         System.out.println("✅ Verified Category2 page with heading: " + heading.getText());
+        
     }
 
    
@@ -367,8 +373,9 @@ public class DiscoverTopCategoriesSteps {
         ));
 
         Assert.assertTrue(heading.isDisplayed(), "Relevant course page not displayed");
-        System.out.println("✅ Verified course page heading: " + heading.getText());
+        System.out.println("Verified course page heading: " + heading.getText());
         Thread.sleep(2000);
+        Reports.captureScreenshot(driver, "screenshot_scenario_03");
         driver.quit();
     }
     
@@ -437,6 +444,7 @@ public class DiscoverTopCategoriesSteps {
 
         System.out.println("Brochure request form submitted");
         Thread.sleep(2000);
+        Reports.captureScreenshot(driver, "screenshot_scenario_04");
         driver.quit();
     }
     
@@ -515,8 +523,28 @@ public class DiscoverTopCategoriesSteps {
 
         System.out.println("request form submitted");
         Thread.sleep(2000);
+        Reports.captureScreenshot(driver, "screenshot_scenario_05");
         driver.quit();
     }
+    
+    /* scenario 6                  */
+    @Then("the error message should be displayed")
+    public void the_error_message_should_be_displayed() throws InterruptedException {
+    	By submitButton = By.xpath("//*[@id=\"firstENForm\"]/div[5]/button");
+      	CategoryPage.safeClick(submitButton);
+
+        System.out.println("request form submitted");
+        Thread.sleep(2000);
+        Reports.captureScreenshot(driver, "screenshot_scenario_06");
+        driver.quit();
+    }
+  
+
+//    @Then("it should display no matches found")
+//    public void it_should_display_no_matches_found() {
+//        
+//    }
+
 
 
 

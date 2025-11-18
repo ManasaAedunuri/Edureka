@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="39.13" tests="7" skipped="0" failures="7" errors="0" timestamp="2025-11-17T05:04:04.896827100Z">
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Navigate to selected categories from homepage" time="3.997">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)&quot; because &quot;test&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)" because "test" is null
+	at com.setup.Reports.generateReport(Reports.java:93)
+	at com.pages.HomePage.scrollToDiscoverTopCategories(HomePage.java:67)
+	at com.stepDefinitionTestNG.DiscoverTopCategoriesSteps.the_user_scrolls_to_the_section_name_section(DiscoverTopCategoriesSteps.java:54)
+	at ✽.the user scrolls to the sectionName section(file:///C:/Sprint_Implementation/Discover_Top_Categories/src/test/resources/Features/discover_top_categories.feature:6)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the user is on sourceUrl..............................................passed
+When the user scrolls to the sectionName section............................failed
+And clicks on category1.....................................................skipped
+And navigates back to homepage..............................................skipped
+And clicks on category2.....................................................skipped
+And navigates back to homepage..............................................skipped
+And clicks on category3.....................................................skipped
+Then each respective category page should load successfully.................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Navigate to Selenium course under Software Testing" time="3.33">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)&quot; because &quot;test&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)" because "test" is null
+	at com.setup.Reports.generateReport(Reports.java:93)
+	at com.pages.HomePage.scrollToDiscoverTopCategories(HomePage.java:67)
+	at com.stepDefinitionTestNG.DiscoverTopCategoriesSteps.the_user_scrolls_to_the_section_name(DiscoverTopCategoriesSteps.java:182)
+	at ✽.the user scrolls to the sectionName(file:///C:/Sprint_Implementation/Discover_Top_Categories/src/test/resources/Features/discover_top_categories.feature:17)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the user is on the Edureka homepage...................................passed
+When the user scrolls to the sectionName....................................failed
+And clicks on buttonName....................................................skipped
+And clicks on category4.....................................................skipped
+And clicks on Selenium course...............................................skipped
+Then the Selenium course page should load successfully......................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Navigate to category pages from Discover Top Categories" time="3.887">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)&quot; because &quot;test&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)" because "test" is null
+	at com.setup.Reports.generateReport(Reports.java:93)
+	at com.pages.HomePage.scrollToDiscoverTopCategories(HomePage.java:67)
+	at com.stepDefinitionTestNG.DiscoverTopCategoriesSteps.user_scrolls_to_the_section_name(DiscoverTopCategoriesSteps.java:229)
+	at ✽.user scrolls to the sectionName(file:///C:/Sprint_Implementation/Discover_Top_Categories/src/test/resources/Features/discover_top_categories.feature:26)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the user is on the  homepage..........................................passed
+When user scrolls to the sectionName........................................failed
+And clicks on the Category2.................................................skipped
+Then the Category2 page should load successfully............................skipped
+And clicks on category5.....................................................skipped
+And display relevant courses................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Download brochure for PGP in Generative AI and ML and fill details from Excel - #1.1" time="5.491">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)&quot; because &quot;test&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)" because "test" is null
+	at com.setup.Reports.generateReport(Reports.java:93)
+	at com.pages.HomePage.scrollToDiscoverTopCategories(HomePage.java:67)
+	at com.stepDefinitionTestNG.DiscoverTopCategoriesSteps.user_scrolls_to_the_section_name(DiscoverTopCategoriesSteps.java:229)
+	at ✽.user scrolls to the sectionName(file:///C:/Sprint_Implementation/Discover_Top_Categories/src/test/resources/Features/discover_top_categories.feature:35)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the user is on  Edureka homepage......................................passed
+When user scrolls to the sectionName........................................failed
+And clicks on category7.....................................................skipped
+And clicks on category8.....................................................skipped
+And clicks on buttonName2...................................................skipped
+And the user reads data from Excel at 0 and 1...............................skipped
+And enters name, email, and phone number from Excel.........................skipped
+Then the brochure request form should be submitted successfully.............skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Download brochure for PGP in Generative AI and ML and fill details from Excel - #1.2" time="6.137">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)&quot; because &quot;test&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)" because "test" is null
+	at com.setup.Reports.generateReport(Reports.java:93)
+	at com.pages.HomePage.scrollToDiscoverTopCategories(HomePage.java:67)
+	at com.stepDefinitionTestNG.DiscoverTopCategoriesSteps.user_scrolls_to_the_section_name(DiscoverTopCategoriesSteps.java:229)
+	at ✽.user scrolls to the sectionName(file:///C:/Sprint_Implementation/Discover_Top_Categories/src/test/resources/Features/discover_top_categories.feature:35)
+]]>
+</failure>
+<system-out><![CDATA[
+Given the user is on  Edureka homepage......................................passed
+When user scrolls to the sectionName........................................failed
+And clicks on category7.....................................................skipped
+And clicks on category8.....................................................skipped
+And clicks on buttonName2...................................................skipped
+And the user reads data from Excel at 0 and 2...............................skipped
+And enters name, email, and phone number from Excel.........................skipped
+Then the brochure request form should be submitted successfully.............skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Download brochure for Generative AI course and fill details from Excel - #1.1" time="5.91">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)&quot; because &quot;test&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)" because "test" is null
+	at com.setup.Reports.generateReport(Reports.java:93)
+	at com.pages.HomePage.scrollToDiscoverTopCategories(HomePage.java:67)
+	at com.stepDefinitionTestNG.DiscoverTopCategoriesSteps.scroll_to_section_name(DiscoverTopCategoriesSteps.java:457)
+	at ✽.scroll to sectionName(file:///C:/Sprint_Implementation/Discover_Top_Categories/src/test/resources/Features/discover_top_categories.feature:53)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on Edureka homepage...........................................passed
+When scroll to sectionName..................................................failed
+And clicks on buttonName....................................................skipped
+And click on the category4..................................................skipped
+And clicks on the Selenium course...........................................skipped
+And the user reads data from Excel at 1 and 1...............................skipped
+And clicks on buttonName3...................................................skipped
+And email, and phone number from Excel......................................skipped
+Then the request form should be submitted successfully......................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Verify Discover Top Categories and Brochure Download Functionality on Edureka website" name="Download brochure for Generative AI course and fill details from Excel - #1.2" time="8.917">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)&quot; because &quot;test&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String, com.aventstack.extentreports.model.Media)" because "test" is null
+	at com.setup.Reports.generateReport(Reports.java:93)
+	at com.pages.HomePage.scrollToDiscoverTopCategories(HomePage.java:67)
+	at com.stepDefinitionTestNG.DiscoverTopCategoriesSteps.scroll_to_section_name(DiscoverTopCategoriesSteps.java:457)
+	at ✽.scroll to sectionName(file:///C:/Sprint_Implementation/Discover_Top_Categories/src/test/resources/Features/discover_top_categories.feature:53)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on Edureka homepage...........................................passed
+When scroll to sectionName..................................................failed
+And clicks on buttonName....................................................skipped
+And click on the category4..................................................skipped
+And clicks on the Selenium course...........................................skipped
+And the user reads data from Excel at 1 and 2...............................skipped
+And clicks on buttonName3...................................................skipped
+And email, and phone number from Excel......................................skipped
+Then the request form should be submitted successfully......................skipped
+]]></system-out>
+</testcase>
+</testsuite>
