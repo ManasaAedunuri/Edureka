@@ -11,76 +11,88 @@ Scenario: Navigate to Careers and select Internship
 	And I scroll down to verify job details
 	Then Job details page should be visible
 
-#@TS_02
-#Scenario: verify Blog navigation and select Ebook
-    #Given I Launch the Edureka website
-    #When I scroll to the footer
-	#And I click on the target link
-	#Then I should be redirected to the target page
-	#And I click on blog 
-	#And I click on ebook to get free ebooks in blog page
-	#And I click on bookName in ebooks page
-	#Then The Ebook is displayed
+@TS_02
+Scenario: verify Blog navigation and select Ebook
+    Given I Launch the Edureka website
+    When I scroll to the footer
+	And I click on the target link
+	Then I should be redirected to the target page
+	And I click on blog 
+	And I click on ebook to get free ebooks in blog page
+	And I click on bookName in ebooks page
+	Then The Ebook is displayed
 
-#@TS_03
-#Scenario Outline:Submit Form Application 
-    #Given I Launch the Edureka website
-    #When I scroll to the footer
-	#And I click on the target link
-	#Then I should be redirected to the target page
-	#And I click on target1
-	#And I click on form
-	#And I fill the form using data from <sheet> <row>
-	#And I submit the form
-	#Then I should see the Thankyou popup and close it
+@TS_03
+Scenario Outline:Submit Form Application 
+    Given I Launch the Edureka website
+    When I scroll to the footer
+	And I click on the target link
+	Then I should be redirected to the target page
+	And I click on target1
+	And I click on form
+	And I fill the form using data from <sheet> <row>
+	And I submit the form
+	Then I should see the Thankyou popup and close it
    
     
-    #Examples:
-   #|  sheet   |  row  |
-   #|  1       |  1    |
-   #|  1       |  2    |
-   #|  1       |  3    |
+    Examples:
+   |  sheet   |  row  |
+   |  1       |  1    |
+   |  1       |  2    |
+  
    
    
-#@TS_04
-#Scenario Outline: Download Full Course List
-    #Given I Launch the Edureka website
-    #When I scroll to the footer
-	#And I click on the target link
-	#Then I should be redirected to the target page
-	#And I click on target1 
-	#And I scroll to curriculums section
-	#And I click on Download button
-	#And I fill the form using data from <sheet> <row> to download the list
-	#And I click on submit
-	#Then full course List is downloaded
+@TS_04
+Scenario Outline: Download Full Course List
+    Given I Launch the Edureka website
+    When I scroll to the footer
+	And I click on the target link
+	Then I should be redirected to the target page
+	And I click on target1 
+	And I scroll to curriculums section
+	And I click on Download button
+	And I fill the form using data from <sheet> <row> to download the list
+	And I click on submit
+	Then full course List is downloaded
 	
-	#Examples:
-   #|  sheet |  row  |
-   #|  2     |  1    |
-   #|  2     |  2    |
-   #|  2     |  3    |
+	Examples:
+   |  sheet |  row  |
+   |  2     |  1    |
+   |  2     |  2    |
    
    
-#@TS_05
-#Scenario: verify exploring video lectures   
    
-    #Given I Launch the Edureka website
-    #When I scroll to the footer
-	#And I click on the target link
-	#Then I should be redirected to the target page
-	#And I click on blog
-	#And I scroll to More Resources section to find target2
-	#And I click on target2
-	#And I scroll to find Recently Added Videos
-	#When I click on target3
-	#Then the video lectures page should be displayed
+@TS_05
+Scenario: verify exploring video lectures   
+   
+    Given I Launch the Edureka website
+    When I scroll to the footer
+	And I click on the target link
+	Then I should be redirected to the target page
+	And I click on blog
+	And I scroll to More Resources section to find target2
+	And I click on target2
+	And I scroll to find Recently Added Videos
+	When I click on target3
+	Then the video lectures page should be displayed
 	
+@TS_06
+Scenario: Submit Form Application with Invalid Data 
 	
-	
+    Given I Launch the Edureka website
+    When I scroll to the footer
+	And I click on the target link
+	Then I should be redirected to the target page
+	And I click on target1
+	And I click on form
+	And I fill the form using data from <sheet> <row>
+	And I submit the form
+	Then It should show me an error for filling invalid data
 
-
-
+Examples:
+   |  sheet   |  row  |
+   |  3       |  1    |
+  
 
 
 
